@@ -35,6 +35,50 @@ export default function AboutPage() {
             </div>
           </div>
 
+          {/* ====== FOUNDER & CEO ====== */}
+          <div className="mt-16">
+            <div className="text-center">
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-accent-500">Leadership</p>
+              <h2 className="mt-2 heading-3">Meet Our Founder</h2>
+              <div className="mx-auto mt-2 h-1 w-16 rounded-full bg-accent-500" />
+            </div>
+
+            <div className="mt-10 grid items-center gap-8 rounded-2xl bg-gradient-to-br from-brand-50 via-white to-amber-50 p-6 ring-1 ring-slate-200 sm:p-10 md:grid-cols-[auto,1fr] md:gap-12">
+              {/* Photo */}
+              <div className="relative mx-auto md:mx-0">
+                <div className="absolute -inset-3 rounded-full bg-gradient-to-br from-brand-700 to-accent-500 opacity-20 blur-xl" aria-hidden />
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/bikash.jpg"
+                  alt="Bikash Bhat — Founder & CEO of Bhat Overseas"
+                  className="relative h-48 w-48 rounded-full object-cover shadow-xl ring-4 ring-white sm:h-56 sm:w-56"
+                />
+              </div>
+
+              {/* Bio */}
+              <div>
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-brand-700 px-3 py-1 text-xs font-bold uppercase tracking-wider text-white">
+                  Founder &amp; CEO
+                </span>
+                <h3 className="mt-3 text-2xl font-extrabold text-slate-900 sm:text-3xl">
+                  Bikash Bhat
+                </h3>
+                <p className="mt-4 text-base leading-relaxed text-slate-700">
+                  Bikash founded Bhat Overseas in 2023 with a clear mission — build a recruitment
+                  agency Nepali workers can actually trust. He personally oversees every screening
+                  and verification step, ensuring no candidate is sent abroad without a real
+                  interview, transparent contract, and a partner employer Bhat Overseas has worked
+                  with directly.
+                </p>
+                <blockquote className="mt-5 border-l-4 border-accent-500 pl-4 italic text-slate-700">
+                  &ldquo;We do not collect documents from every applicant. Only shortlisted
+                  candidates — after interview &amp; screening — are processed. That&rsquo;s our
+                  promise to every Nepali worker who comes to us.&rdquo;
+                </blockquote>
+              </div>
+            </div>
+          </div>
+
           <div className="mt-12">
             <h2 className="heading-3">{t("about.values.title")}</h2>
             <div className="mt-6 grid gap-4 sm:grid-cols-2">
@@ -54,7 +98,7 @@ export default function AboutPage() {
 
           <div className="mt-12 grid gap-6 sm:grid-cols-3 text-center">
             <div className="rounded-xl bg-brand-50 p-6">
-              <div className="text-4xl font-extrabold text-brand-700">500+</div>
+              <div className="text-4xl font-extrabold text-brand-700">1,000+</div>
               <div className="mt-1 text-sm text-slate-600">Workers placed abroad</div>
             </div>
             <div className="rounded-xl bg-brand-50 p-6">
@@ -62,8 +106,8 @@ export default function AboutPage() {
               <div className="mt-1 text-sm text-slate-600">Destination countries</div>
             </div>
             <div className="rounded-xl bg-brand-50 p-6">
-              <div className="text-4xl font-extrabold text-brand-700">98%</div>
-              <div className="mt-1 text-sm text-slate-600">On-time placement rate</div>
+              <div className="text-4xl font-extrabold text-brand-700">16+</div>
+              <div className="mt-1 text-sm text-slate-600">Verified partner employers</div>
             </div>
           </div>
 
