@@ -15,7 +15,7 @@ const meta: Record<string, { flag: string; image: string; gradient: string; tagl
   },
   Romania: {
     flag: "🇷🇴",
-    image: "/romania.png",
+    image: "",
     gradient: "from-blue-700 via-amber-500 to-red-700",
     tagline: "Construction · Agriculture · Manufacturing"
   },
@@ -105,14 +105,26 @@ export default function CountriesPage() {
               >
                 {/* Header: city image + flag overlay */}
                 <div className="relative h-56 sm:h-72">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={m.image}
-                    alt={c}
-                    className="absolute inset-0 h-full w-full object-cover"
-                    onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }}
-                  />
-                  <div className={`absolute inset-0 bg-gradient-to-t ${m.gradient} opacity-60`} />
+                  {m.image && (
+                    <>
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={m.image}
+                        alt={c}
+                        className="absolute inset-0 h-full w-full object-cover"
+                        onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }}
+                      />
+                    </>
+                  )}
+                  {/* Tricolor flag gradient — used as full background when no image */}
+                  <div className={`absolute inset-0 bg-gradient-to-br ${m.gradient} ${m.image ? "opacity-60" : "opacity-100"}`} />
+                  {/* Decorative dot pattern when no photo, for visual texture */}
+                  {!m.image && (
+                    <div className="absolute inset-0 opacity-15" style={{
+                      backgroundImage: "radial-gradient(circle at 30% 30%, white 1.5px, transparent 1.5px)",
+                      backgroundSize: "32px 32px"
+                    }} />
+                  )}
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900/85 via-slate-900/40 to-transparent" />
 
                   {/* Country header content */}
