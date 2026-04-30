@@ -16,13 +16,19 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl container-px py-12">
         <div className="grid gap-10 md:grid-cols-3">
           <div>
-            <div className="flex items-center gap-2">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-700 text-white font-bold">
-                BO
-              </div>
-              <div className="text-lg font-bold text-white">Bhat Overseas</div>
+            {/* Logo on dark background — wrapped in white panel so the dark-blue logo shows */}
+            <div className="inline-flex items-center rounded-lg bg-white px-3 py-2">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/logo.jpg"
+                alt="Bhat Overseas"
+                className="h-12 w-auto"
+              />
             </div>
-            <p className="mt-4 text-sm leading-relaxed">{t("footer.tagline")}</p>
+            <p className="mt-4 text-sm font-semibold italic text-blue-200">
+              Building Bridges, Empowering Nations
+            </p>
+            <p className="mt-3 text-sm leading-relaxed">{t("footer.tagline")}</p>
             <p className="mt-3 text-xs text-slate-400">{t("footer.disclaimer")}</p>
           </div>
 

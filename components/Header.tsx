@@ -20,14 +20,13 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/95 backdrop-blur">
       <div className="mx-auto flex max-w-7xl items-center justify-between container-px py-4">
-        <Link href="/" className="flex items-center gap-2">
-          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-700 text-white font-bold">
-            BO
-          </div>
-          <div className="leading-tight">
-            <div className="text-base font-bold text-slate-900">Bhat Overseas</div>
-            <div className="text-xs text-slate-500">Pvt. Ltd.</div>
-          </div>
+        <Link href="/" className="flex items-center" aria-label="Bhat Overseas — Home">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/logo.jpg"
+            alt="Bhat Overseas — Building Bridges, Empowering Nations"
+            className="h-12 w-auto sm:h-14"
+          />
         </Link>
 
         <nav className="hidden lg:flex items-center gap-8">

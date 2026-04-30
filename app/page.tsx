@@ -73,7 +73,10 @@ export default function HomePage() {
             <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-sm font-medium ring-1 ring-white/20">
               🇳🇵 Government-licensed Nepali recruitment agency
             </span>
-            <h1 className="mt-6 text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
+            <p className="mt-4 text-base font-semibold uppercase tracking-[0.25em] text-accent-500/90">
+              Building Bridges · Empowering Nations
+            </p>
+            <h1 className="mt-3 text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
               {t("hero.title")}
             </h1>
             <p className="mt-5 text-lg text-blue-100 sm:text-xl">{t("hero.subtitle")}</p>
