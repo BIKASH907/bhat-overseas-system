@@ -64,16 +64,16 @@ const featuredPartners: PartnerCard[] = [
 const trustItems = [
   { iconBg: "bg-brand-50", iconColor: "text-brand-700", icon: "🛡️", title: "Govt. Licensed", subtitle: "Authorized Recruitment Agency" },
   { iconBg: "bg-emerald-50", iconColor: "text-emerald-700", icon: "👥", title: "16+ Partners", subtitle: "Verified EU Employers" },
-  { iconBg: "bg-amber-50", iconColor: "text-amber-700", icon: "🏅", title: "98%", subtitle: "Visa Success Rate" },
-  { iconBg: "bg-rose-50", iconColor: "text-rose-700", icon: "🎧", title: "24/7 Support", subtitle: "From Application to Abroad" }
+  { iconBg: "bg-amber-50", iconColor: "text-amber-700", icon: "🔍", title: "Screened & Verified", subtitle: "Every CV is Checked" },
+  { iconBg: "bg-rose-50", iconColor: "text-rose-700", icon: "🎧", title: "Full Support", subtitle: "From Application to Deployment" }
 ];
 
 // Stats — bottom strip of the home page
 const bigStats = [
-  { value: "10+", label: "Years of Experience" },
-  { value: "15,000+", label: "Workers Placed" },
-  { value: "3+", label: "Countries" },
-  { value: "500+", label: "Trusted Employers" }
+  { value: "Govt.", label: "Licensed Agency" },
+  { value: "1,000+", label: "Workers Placed" },
+  { value: "16+", label: "Verified Employers" },
+  { value: "3", label: "Countries Served" }
 ];
 
 // Why-choose-us features
@@ -128,9 +128,10 @@ export default function HomePage() {
               </h1>
 
               <p className="mt-5 max-w-xl text-base sm:text-lg" style={{ color: "#6B7280", lineHeight: 1.6 }}>
-                Explore overseas job opportunities in{" "}
-                <strong style={{ color: "#0A3D91" }}>Turkey, Romania &amp; Austria</strong> with an
-                easy visa process and full support — start to finish.
+                Government-licensed recruitment for Nepali workers in{" "}
+                <strong style={{ color: "#0A3D91" }}>Turkey, Romania &amp; Austria</strong>. We{" "}
+                <strong style={{ color: "#1A1A1A" }}>screen, verify, and interview</strong> every candidate
+                before submission to employers — no shortcuts, no false promises.
               </p>
 
               {/* Feature icons row */}
@@ -538,7 +539,7 @@ export default function HomePage() {
             {bigStats.map((s, i) => (
               <div key={i} className="flex items-center gap-4">
                 <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-xl bg-white/10 ring-1 ring-white/20">
-                  <span className="text-2xl">{["📅", "👥", "🌍", "🏢"][i]}</span>
+                  <span className="text-2xl">{["🛡️", "👥", "🤝", "🌍"][i]}</span>
                 </div>
                 <div>
                   <div className="text-3xl font-extrabold leading-none">{s.value}</div>

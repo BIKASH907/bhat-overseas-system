@@ -5,53 +5,39 @@ import Link from "next/link";
 const steps = [
   {
     n: 1,
-    title: "Application Submission",
-    body: "Candidates apply online via our website or visit our Kathmandu office in person. No documents are required at this stage — just basic profile information.",
-    icon: "📝",
+    title: "CV Screening",
+    body: "Every application we receive is reviewed against the job's actual requirements — skills, age, experience, language ability, and physical fitness. No CV is forwarded to employers without being checked first.",
+    icon: "🔍",
     color: "from-brand-500 to-brand-700"
   },
   {
     n: 2,
-    title: "Screening",
-    body: "Our recruitment team carefully reviews each profile against the job requirements. Skills, experience, age, language ability and physical fitness are all considered.",
-    icon: "🔍",
+    title: "Interview",
+    body: "Shortlisted candidates attend an interview with our team in Nepal — and where required, directly with the foreign employer (in person, video call, or phone).",
+    icon: "💬",
     color: "from-cyan-500 to-blue-600"
   },
   {
     n: 3,
-    title: "Interview",
-    body: "Shortlisted candidates are invited to an interview — either with our team in Nepal or directly with the foreign employer (in person, video call, or phone).",
-    icon: "💬",
-    color: "from-emerald-500 to-teal-600"
-  },
-  {
-    n: 4,
-    title: "Document Submission",
-    body: "ONLY candidates selected after the interview are asked to submit documents — passport, education/skill certificates, medical reports, and police clearance. We never ask for original documents from unselected applicants.",
+    title: "Skill & Document Verification",
+    body: "Only candidates who pass the interview are asked for documents. We verify skill certificates, passport details, medical reports, and police clearance with the issuing authorities. We never collect originals from unselected applicants.",
     icon: "📄",
     color: "from-amber-500 to-orange-600",
     highlight: true
   },
   {
-    n: 5,
-    title: "Medical & Verification",
-    body: "Selected candidates complete a health check at an approved medical centre and we verify all submitted documents with the issuing authorities.",
-    icon: "🏥",
-    color: "from-rose-500 to-pink-600"
-  },
-  {
-    n: 6,
-    title: "Visa Processing",
-    body: "We file the work permit and visa application with the destination country's authorities, prepare the contract, and follow up until approval.",
+    n: 4,
+    title: "Final Selection & Visa Processing",
+    body: "Verified candidates are submitted to the employer for final selection. Once approved, we file the work permit and visa application, prepare the contract, and follow up until approval.",
     icon: "🛂",
-    color: "from-indigo-500 to-purple-600"
+    color: "from-emerald-500 to-teal-600"
   },
   {
-    n: 7,
+    n: 5,
     title: "Deployment",
     body: "Flight booking, pre-departure orientation, and on-arrival support. Our partner team in the destination country welcomes you and helps you settle into your new role.",
     icon: "✈️",
-    color: "from-sky-500 to-brand-700"
+    color: "from-indigo-500 to-purple-600"
   }
 ];
 
@@ -63,7 +49,7 @@ export default function ProcessPage() {
           <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-xs font-bold uppercase tracking-wider ring-1 ring-white/20">
             🛡️ Ethical Recruitment Process
           </span>
-          <h1 className="mt-5 heading-1 !text-white">Our 7-Step Recruitment Process</h1>
+          <h1 className="mt-5 heading-1 !text-white">Our 5-Step Recruitment Process</h1>
           <p className="mt-4 max-w-3xl text-lg text-blue-100">
             Bhat Overseas follows a structured, transparent process used by leading
             government-licensed manpower companies in Nepal. Every candidate goes through
