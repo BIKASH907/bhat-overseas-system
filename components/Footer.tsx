@@ -12,27 +12,43 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="mt-20 border-t border-slate-200 bg-slate-900 text-slate-300">
-      <div className="mx-auto max-w-7xl container-px py-12">
+    <footer
+      className="relative mt-20 text-blue-100"
+      style={{ background: "linear-gradient(180deg, #0A3D91 0%, #06296A 100%)" }}
+    >
+      {/* Top accent stripe */}
+      <div
+        className="absolute inset-x-0 top-0 h-1"
+        style={{ background: "linear-gradient(to right, #FF6B00, #FFAB5C, #FF6B00)" }}
+        aria-hidden
+      />
+      <div className="mx-auto max-w-7xl container-px py-14">
         <div className="grid gap-10 md:grid-cols-3">
           <div>
-            {/* Logo on dark background — wrapped in white panel so the dark-blue logo shows */}
-            <div className="inline-flex items-center rounded-lg bg-white px-3 py-2">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/logo.jpg"
-                alt="Bhat Overseas"
-                className="h-12 w-auto"
+            {/* Logo — white card with soft glow halo for premium feel */}
+            <div className="relative inline-block">
+              <div
+                className="absolute -inset-2 rounded-xl opacity-40 blur-lg"
+                style={{ background: "linear-gradient(135deg, #FF6B00 0%, #FFAB5C 100%)" }}
+                aria-hidden
               />
+              <div className="relative inline-flex items-center rounded-xl bg-white px-4 py-3 shadow-xl ring-1 ring-white/30">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/logo.jpg"
+                  alt="Bhat Overseas"
+                  className="h-14 w-auto"
+                />
+              </div>
             </div>
-            <p className="mt-4 text-sm font-semibold italic text-blue-200">
+            <p className="mt-5 text-sm font-bold italic text-orange-300">
               Building Bridges, Empowering Nations
             </p>
             <p className="mt-3 text-sm leading-relaxed">{t("footer.tagline")}</p>
             <p className="mt-3 rounded-lg border border-emerald-700/40 bg-emerald-900/30 px-3 py-2 text-xs font-medium leading-relaxed text-emerald-100">
               ✓ A trusted and ethical manpower company ensuring safe recruitment for Nepali workers.
             </p>
-            <p className="mt-3 text-xs text-slate-400">{t("footer.disclaimer")}</p>
+            <p className="mt-3 text-xs text-blue-300/80">{t("footer.disclaimer")}</p>
           </div>
 
           <div>
@@ -64,7 +80,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-10 border-t border-slate-800 pt-6 text-xs text-slate-400">
+        <div className="mt-12 border-t border-white/10 pt-6 text-xs text-blue-200">
           © {year} Bhat Overseas Pvt Ltd. {t("footer.rights")}
         </div>
       </div>
