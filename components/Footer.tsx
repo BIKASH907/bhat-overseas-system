@@ -32,8 +32,8 @@ export default function Footer() {
               <img
                 src="/logo.jpg"
                 alt="Bhat Overseas"
-                className="h-24 w-auto transition duration-300 group-hover:scale-105 sm:h-28 lg:h-32"
-                style={{ imageRendering: "crisp-edges" }}
+                className="h-28 w-auto transition duration-300 group-hover:scale-110 sm:h-32 lg:h-40"
+                style={{ filter: "drop-shadow(0 6px 16px rgba(10, 61, 145, 0.18))" }}
               />
             </Link>
             <p className="mt-4 text-sm font-bold italic" style={{ color: "#FF6B00" }}>
