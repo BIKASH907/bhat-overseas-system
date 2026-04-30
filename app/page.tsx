@@ -12,27 +12,36 @@ const countries = [
   { name: "Austria", flag: "🇦🇹", code: "AT", desc: "Factory, Hospitality, Agriculture" }
 ];
 
-// Verified partner employers across all destination countries — shown on home page for credibility
-type PartnerCard = { name: string; country: string; sector?: string };
+// Verified partner employers across all destination countries — shown on home page for credibility.
+// Featured = internationally recognized brand (gets a special highlight on the card).
+type PartnerCard = {
+  name: string;
+  countryFlag: string;
+  countryName: string;
+  sector: string;
+  icon: string;
+  featured?: boolean;
+};
+
 const featuredPartners: PartnerCard[] = [
   // Turkey
-  { name: "DOĞA GALVANİZ METAL", country: "🇹🇷 Turkey", sector: "Metal & Construction" },
-  { name: "BAHA GRUP ORMAN ÜRÜNLERİ", country: "🇹🇷 Turkey", sector: "Forestry" },
-  { name: "DLN KALIP VE İNŞAAT", country: "🇹🇷 Turkey", sector: "Construction" },
-  { name: "MNC PİGMENT", country: "🇹🇷 Turkey", sector: "Industrial" },
-  { name: "OYTUN YUMURTA YARKA", country: "🇹🇷 Turkey", sector: "Agriculture & Food" },
-  { name: "NUR SEM ELEKTRİK", country: "🇹🇷 Turkey", sector: "Electrical & Textile" },
-  { name: "KÖKSAN PET VE PLASTİK", country: "🇹🇷 Turkey", sector: "Packaging" },
-  { name: "TEKKELİ GIDA", country: "🇹🇷 Turkey", sector: "Food Industry" },
-  { name: "RIOS BEACH OTEL (Seneta)", country: "🇹🇷 Turkey", sector: "Hospitality" },
-  { name: "KUTLUSAN KAFES", country: "🇹🇷 Turkey", sector: "Agriculture" },
-  { name: "AHŞAP URUN SANAYI", country: "🇹🇷 Turkey", sector: "Wood Products" },
-  { name: "ALANYA ÖZKAYMAK TURIZM", country: "🇹🇷 Turkey", sector: "Tourism" },
-  { name: "EMMİDAĞ MERMER", country: "🇹🇷 Turkey", sector: "Marble & Mining" },
-  { name: "GRANİTSAN MADENCİLİK", country: "🇹🇷 Turkey", sector: "Mining" },
-  { name: "CROWNE PLAZA (Marti Termal)", country: "🇹🇷 Turkey", sector: "Hotel" },
+  { name: "DOĞA GALVANİZ METAL", countryFlag: "🇹🇷", countryName: "Turkey", sector: "Metal & Construction", icon: "🔩" },
+  { name: "BAHA GRUP ORMAN ÜRÜNLERİ", countryFlag: "🇹🇷", countryName: "Turkey", sector: "Forestry", icon: "🌲" },
+  { name: "DLN KALIP VE İNŞAAT", countryFlag: "🇹🇷", countryName: "Turkey", sector: "Construction", icon: "🏗️" },
+  { name: "MNC PİGMENT", countryFlag: "🇹🇷", countryName: "Turkey", sector: "Industrial", icon: "🏭" },
+  { name: "OYTUN YUMURTA YARKA", countryFlag: "🇹🇷", countryName: "Turkey", sector: "Agriculture & Food", icon: "🌾" },
+  { name: "NUR SEM ELEKTRİK", countryFlag: "🇹🇷", countryName: "Turkey", sector: "Electrical & Textile", icon: "⚡" },
+  { name: "KÖKSAN PET VE PLASTİK", countryFlag: "🇹🇷", countryName: "Turkey", sector: "Packaging", icon: "📦" },
+  { name: "TEKKELİ GIDA", countryFlag: "🇹🇷", countryName: "Turkey", sector: "Food Industry", icon: "🍞" },
+  { name: "RIOS BEACH OTEL", countryFlag: "🇹🇷", countryName: "Turkey", sector: "Hospitality (Seneta Group)", icon: "🏖️", featured: true },
+  { name: "KUTLUSAN KAFES", countryFlag: "🇹🇷", countryName: "Turkey", sector: "Agriculture", icon: "🌱" },
+  { name: "AHŞAP URUN SANAYI", countryFlag: "🇹🇷", countryName: "Turkey", sector: "Wood Products", icon: "🪵" },
+  { name: "ALANYA ÖZKAYMAK TURIZM", countryFlag: "🇹🇷", countryName: "Turkey", sector: "Tourism", icon: "🌊" },
+  { name: "EMMİDAĞ MERMER", countryFlag: "🇹🇷", countryName: "Turkey", sector: "Marble & Mining", icon: "⛏️" },
+  { name: "GRANİTSAN MADENCİLİK", countryFlag: "🇹🇷", countryName: "Turkey", sector: "Mining", icon: "⛰️" },
+  { name: "CROWNE PLAZA", countryFlag: "🇹🇷", countryName: "Turkey", sector: "5★ Hotel (Marti Termal)", icon: "🏨", featured: true },
   // Romania
-  { name: "Prime Link Human Capital", country: "🇷🇴 Romania", sector: "Recruitment Partner" }
+  { name: "Prime Link Human Capital", countryFlag: "🇷🇴", countryName: "Romania", sector: "Recruitment Partner", icon: "🤝", featured: true }
 ];
 
 export default function HomePage() {
@@ -95,24 +104,50 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* FEATURED JOBS */}
-      <section className="section">
-        <div className="mx-auto max-w-7xl container-px">
-          <div className="flex items-end justify-between">
-            <div>
-              <h2 className="heading-2">{t("home.featured.title")}</h2>
-              <p className="mt-2 text-slate-600">{t("home.featured.subtitle")}</p>
+      {/* FEATURED JOBS — only render when we actually have jobs */}
+      {showJobs.length > 0 ? (
+        <section className="section">
+          <div className="mx-auto max-w-7xl container-px">
+            <div className="flex items-end justify-between">
+              <div>
+                <h2 className="heading-2">{t("home.featured.title")}</h2>
+                <p className="mt-2 text-slate-600">{t("home.featured.subtitle")}</p>
+              </div>
+              <Link href="/jobs" className="hidden sm:inline-block text-sm font-semibold text-brand-700 hover:text-brand-800">
+                {t("home.featured.viewAll")} →
+              </Link>
             </div>
-            <Link href="/jobs" className="hidden sm:inline-block text-sm font-semibold text-brand-700 hover:text-brand-800">
-              {t("home.featured.viewAll")} →
-            </Link>
-          </div>
 
-          <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {showJobs.map((job) => <JobCard key={job.id} job={job} />)}
+            <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              {showJobs.map((job) => <JobCard key={job.id} job={job} />)}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      ) : (
+        // Empty-state CTA: shown when no real jobs are posted yet
+        <section className="section">
+          <div className="mx-auto max-w-7xl container-px">
+            <div className="rounded-2xl border-2 border-dashed border-brand-200 bg-brand-50 px-8 py-12 text-center sm:px-16">
+              <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-brand-100 text-3xl">
+                📋
+              </div>
+              <h2 className="mt-6 heading-3">New Openings Coming Soon</h2>
+              <p className="mx-auto mt-3 max-w-xl text-slate-600">
+                We are currently verifying fresh openings with our partner employers in Turkey, Romania, and Austria.
+                Submit your application now and we'll match you with the right opportunity as soon as it opens.
+              </p>
+              <div className="mt-7 flex flex-wrap justify-center gap-4">
+                <Link href="/apply" className="btn-accent">
+                  {t("common.applyNow")} →
+                </Link>
+                <Link href="/contact" className="btn-outline">
+                  Contact Us
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* COUNTRIES */}
       <section className="section bg-slate-50">
@@ -136,38 +171,83 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* PARTNER EMPLOYERS — credibility-builder, all 16 verified partners */}
-      <section className="section">
-        <div className="mx-auto max-w-7xl container-px">
+      {/* PARTNER EMPLOYERS — credibility-builder, all verified partners */}
+      <section className="relative section overflow-hidden bg-gradient-to-br from-white via-blue-50/40 to-white">
+        {/* Subtle dotted texture */}
+        <div className="pointer-events-none absolute inset-0 opacity-[0.04]" style={{
+          backgroundImage: "radial-gradient(circle, #1d4ed8 1px, transparent 1px)",
+          backgroundSize: "24px 24px"
+        }} />
+
+        <div className="relative mx-auto max-w-7xl container-px">
+          {/* Section header */}
           <div className="text-center">
-            <span className="inline-flex items-center gap-2 rounded-full bg-brand-50 px-4 py-1.5 text-sm font-semibold text-brand-700">
-              🤝 Verified Partnerships
+            <span className="inline-flex items-center gap-2 rounded-full bg-brand-700 px-4 py-1.5 text-sm font-semibold text-white shadow-sm">
+              <span>🤝</span> Verified Partnerships
             </span>
-            <h2 className="mt-4 heading-2">Our Trusted Partner Employers</h2>
-            <p className="mt-2 text-slate-600">
-              Bhat Overseas works directly with these verified employers across our destination countries
+            <h2 className="mt-5 heading-2">Our Trusted Partner Employers</h2>
+            <p className="mx-auto mt-3 max-w-2xl text-slate-600">
+              Bhat Overseas works <strong className="text-slate-900">directly</strong> with these verified employers across our destination countries — no middlemen, no surprises.
             </p>
           </div>
 
-          <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          {/* Stat counters */}
+          <div className="mx-auto mt-10 grid max-w-3xl grid-cols-3 gap-4 sm:gap-8">
+            <div className="rounded-xl border border-slate-200 bg-white p-5 text-center shadow-sm">
+              <div className="text-3xl font-extrabold text-brand-700 sm:text-4xl">{featuredPartners.length}+</div>
+              <div className="mt-1 text-xs font-medium uppercase tracking-wider text-slate-500">Verified Employers</div>
+            </div>
+            <div className="rounded-xl border border-slate-200 bg-white p-5 text-center shadow-sm">
+              <div className="text-3xl font-extrabold text-brand-700 sm:text-4xl">3</div>
+              <div className="mt-1 text-xs font-medium uppercase tracking-wider text-slate-500">Countries</div>
+            </div>
+            <div className="rounded-xl border border-slate-200 bg-white p-5 text-center shadow-sm">
+              <div className="text-3xl font-extrabold text-brand-700 sm:text-4xl">100%</div>
+              <div className="mt-1 text-xs font-medium uppercase tracking-wider text-slate-500">Direct Contracts</div>
+            </div>
+          </div>
+
+          {/* Partner cards */}
+          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {featuredPartners.map((p, i) => (
               <div
                 key={i}
-                className="rounded-lg border border-slate-200 bg-white px-4 py-3 shadow-sm transition hover:border-brand-300 hover:shadow-md"
+                className={`group relative overflow-hidden rounded-xl border bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg ${
+                  p.featured
+                    ? "border-accent-500/40 ring-1 ring-accent-500/20"
+                    : "border-slate-200 hover:border-brand-300"
+                }`}
               >
-                <div className="text-xs font-medium text-slate-500">{p.country}</div>
-                <div className="mt-0.5 font-semibold text-slate-900 leading-tight">{p.name}</div>
-                {p.sector && (
-                  <div className="mt-1 text-xs text-slate-500">{p.sector}</div>
+                {p.featured && (
+                  <span className="absolute right-3 top-3 inline-flex items-center gap-1 rounded-full bg-accent-500 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-white">
+                    ★ Featured
+                  </span>
                 )}
+
+                <div className="flex items-start gap-3">
+                  <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg bg-brand-50 text-2xl transition-colors group-hover:bg-brand-100">
+                    {p.icon}
+                  </div>
+                  <div className="min-w-0 flex-1">
+                    <div className="flex items-center gap-1.5 text-xs font-medium text-slate-500">
+                      <span>{p.countryFlag}</span>
+                      <span>{p.countryName}</span>
+                    </div>
+                    <div className="mt-1 font-bold leading-tight text-slate-900">{p.name}</div>
+                  </div>
+                </div>
+
+                <div className="mt-3 inline-flex items-center rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-700">
+                  {p.sector}
+                </div>
               </div>
             ))}
           </div>
 
-          <div className="mt-10 text-center">
+          <div className="mt-12 text-center">
             <Link
               href="/countries"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-brand-700 hover:text-brand-800"
+              className="inline-flex items-center gap-2 rounded-lg border-2 border-brand-700 px-5 py-2.5 text-sm font-semibold text-brand-700 transition hover:bg-brand-700 hover:text-white"
             >
               See full partner details on Countries page →
             </Link>

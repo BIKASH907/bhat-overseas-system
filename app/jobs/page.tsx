@@ -104,8 +104,23 @@ export default function JobsPage() {
             {loading ? (
               <div className="text-center py-20 text-slate-500">{t("common.loading")}</div>
             ) : filtered.length === 0 ? (
-              <div className="rounded-xl border border-slate-200 bg-slate-50 p-12 text-center text-slate-500">
-                {t("common.noJobs")}
+              <div className="rounded-2xl border-2 border-dashed border-brand-200 bg-brand-50 px-8 py-16 text-center">
+                <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-brand-100 text-3xl">
+                  📋
+                </div>
+                <h2 className="mt-6 heading-3">New Openings Coming Soon</h2>
+                <p className="mx-auto mt-3 max-w-xl text-slate-600">
+                  We are currently verifying fresh openings with our partner employers in Turkey, Romania, and Austria.
+                  Submit your application now and we'll match you as soon as the next opportunity opens.
+                </p>
+                <div className="mt-7 flex flex-wrap justify-center gap-4">
+                  <a href="/apply" className="btn-accent">
+                    {t("common.applyNow")} →
+                  </a>
+                  <a href="/contact" className="btn-outline">
+                    Contact Us
+                  </a>
+                </div>
               </div>
             ) : (
               <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
