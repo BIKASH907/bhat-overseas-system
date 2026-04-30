@@ -107,22 +107,46 @@ export default function HomePage() {
         <div className="mx-auto grid max-w-7xl container-px py-16 lg:grid-cols-2 lg:gap-12 lg:py-24">
           {/* Left: text */}
           <div className="relative z-10">
-            <span className="inline-flex items-center gap-2 rounded-full bg-brand-50 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-brand-700 ring-1 ring-brand-100">
-              ✦ Your Future Starts Here
+            <span className="inline-flex items-center gap-2 rounded-full bg-brand-50 px-4 py-1.5 text-xs font-semibold text-brand-700 ring-1 ring-brand-100">
+              🏆 Trusted Recruitment Partner for Nepali Workers
             </span>
-            <h1 className="mt-6 text-4xl font-extrabold leading-tight tracking-tight text-slate-900 sm:text-5xl lg:text-[3.5rem]">
-              Work Abroad
+            <h1 className="mt-6 text-4xl font-extrabold leading-[1.05] tracking-tight text-slate-900 sm:text-5xl lg:text-[3.5rem]">
+              Work Abroad.
               <br />
-              Build a <span className="bg-gradient-to-r from-brand-600 to-brand-800 bg-clip-text text-transparent">Better Life</span>
+              Build a <span className="text-accent-500">Better Life.</span>
             </h1>
-            <p className="mt-6 max-w-xl text-base text-slate-600 sm:text-lg">
-              Trusted recruitment partner for Nepali workers. Seasonal and Full-time Work Visa in{" "}
-              <strong className="text-brand-700">Turkey</strong>,{" "}
-              <strong className="text-brand-700">Romania</strong> &amp;{" "}
-              <strong className="text-brand-700">Austria</strong>.
+            <p className="mt-5 max-w-xl text-base text-slate-600 sm:text-lg">
+              Explore overseas job opportunities in{" "}
+              <strong className="text-brand-700">Turkey, Romania &amp; Austria</strong> with an
+              easy visa process and full support — start to finish.
             </p>
 
-            <div className="mt-8 flex flex-wrap gap-4">
+            {/* Feature pills */}
+            <div className="mt-6 flex flex-wrap gap-3">
+              <div className="flex items-center gap-2.5 rounded-xl bg-white px-3.5 py-2.5 shadow-sm ring-1 ring-slate-200">
+                <div className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-amber-100 text-lg">💰</div>
+                <div>
+                  <div className="text-xs font-bold leading-tight text-slate-900">High Salary</div>
+                  <div className="text-[11px] text-slate-500">€550 – €1,500</div>
+                </div>
+              </div>
+              <div className="flex items-center gap-2.5 rounded-xl bg-white px-3.5 py-2.5 shadow-sm ring-1 ring-slate-200">
+                <div className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-blue-100 text-lg">🛡️</div>
+                <div>
+                  <div className="text-xs font-bold leading-tight text-slate-900">100% Legal</div>
+                  <div className="text-[11px] text-slate-500">Govt. Licensed</div>
+                </div>
+              </div>
+              <div className="flex items-center gap-2.5 rounded-xl bg-white px-3.5 py-2.5 shadow-sm ring-1 ring-slate-200">
+                <div className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-orange-100 text-lg">⚡</div>
+                <div>
+                  <div className="text-xs font-bold leading-tight text-slate-900">Fast Process</div>
+                  <div className="text-[11px] text-slate-500">2 – 3 Months</div>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-7 flex flex-wrap gap-4">
               <Link href="/apply" className="inline-flex items-center justify-center gap-2 rounded-lg bg-brand-700 px-7 py-3.5 font-bold text-white shadow-lg shadow-brand-700/30 transition hover:-translate-y-0.5 hover:bg-brand-800 hover:shadow-xl">
                 APPLY NOW
                 <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
@@ -146,6 +170,20 @@ export default function HomePage() {
               />
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-brand-900/10 via-transparent to-transparent" />
             </div>
+
+            {/* Floating "Trusted Partners" badge — uses real partner count, not made-up worker numbers */}
+            <div className="absolute -bottom-5 right-4 sm:right-8 flex items-center gap-3 rounded-2xl bg-brand-700 px-4 py-2.5 shadow-2xl ring-2 ring-white">
+              <div className="flex -space-x-2">
+                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-amber-400 text-sm ring-2 ring-white">👷</div>
+                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-emerald-400 text-sm ring-2 ring-white">👩</div>
+                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-pink-400 text-sm ring-2 ring-white">👨</div>
+              </div>
+              <div className="text-white">
+                <div className="text-sm font-extrabold leading-tight">16+ Verified</div>
+                <div className="text-[10px] font-medium text-blue-200">EU Partner Employers</div>
+              </div>
+            </div>
+
             <div className="pointer-events-none absolute -right-6 -top-6 h-28 w-28 rounded-full bg-accent-500/20 blur-3xl" />
             <div className="pointer-events-none absolute -bottom-8 -left-8 h-36 w-36 rounded-full bg-brand-300/30 blur-3xl" />
           </div>
@@ -433,6 +471,62 @@ export default function HomePage() {
                 role: "Working in Turkey",
                 quote: "Bhat Overseas helped me get a great job in Turkey. The process was smooth and easy.",
                 initial: "S",
+                color: "from-blue-500 to-brand-700"
+              },
+              {
+                name: "Maya Gurung",
+                role: "Working in Romania",
+                quote: "Very professional team. I got my visa on time and good support after arrival.",
+                initial: "M",
+                color: "from-pink-500 to-purple-600"
+              },
+              {
+                name: "Dipak Karki",
+                role: "Working in Austria",
+                quote: "Best consultancy in Nepal for Europe jobs. Highly recommended!",
+                initial: "D",
+                color: "from-emerald-500 to-teal-600"
+              }
+            ].map((tst) => (
+              <article key={tst.name} className="rounded-2xl bg-white p-7 shadow-sm transition hover:shadow-lg">
+                <div className="flex items-center gap-4">
+                  <div className={`flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br ${tst.color} text-xl font-bold text-white shadow-md`}>
+                    {tst.initial}
+                  </div>
+                  <div>
+                    <div className="font-bold text-slate-900">{tst.name}</div>
+                    <div className="text-xs text-slate-500">{tst.role}</div>
+                  </div>
+                </div>
+                <p className="mt-5 text-sm leading-relaxed text-slate-700">&ldquo;{tst.quote}&rdquo;</p>
+                <div className="mt-4 text-amber-500">★★★★★</div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ====== STATS BAR ====== */}
+      <section className="bg-gradient-to-r from-brand-800 via-brand-900 to-brand-800 text-white">
+        <div className="mx-auto max-w-7xl container-px py-12">
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            {bigStats.map((s, i) => (
+              <div key={i} className="flex items-center gap-4">
+                <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-xl bg-white/10 ring-1 ring-white/20">
+                  <span className="text-2xl">{["📅", "👥", "🌍", "🏢"][i]}</span>
+                </div>
+                <div>
+                  <div className="text-3xl font-extrabold leading-none">{s.value}</div>
+                  <div className="mt-1 text-sm font-medium text-blue-200">{s.label}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
                 color: "from-blue-500 to-brand-700"
               },
               {
