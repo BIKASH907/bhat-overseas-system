@@ -102,126 +102,99 @@ export default function HomePage() {
 
   return (
     <>
-      {/* ====== HERO — premium two-column with brand colors ====== */}
-      <section
-        className="relative overflow-hidden"
-        style={{ background: "linear-gradient(135deg, #F5F8FF 0%, #FFFFFF 100%)" }}
-      >
-        <div className="mx-auto max-w-7xl container-px py-20 sm:py-24 lg:py-28">
-          <div className="grid items-center gap-12 lg:grid-cols-[45fr_55fr] lg:gap-10">
-            {/* LEFT — text content */}
-            <div className="relative z-10">
-              <span
-                className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-semibold sm:text-sm"
-                style={{ background: "rgba(10, 61, 145, 0.1)", color: "#0A3D91" }}
-              >
-                🏆 Trusted Recruitment Partner for Nepali Workers
-              </span>
+      {/* ====== HERO — full-bleed worker photo background, text overlaid on left ====== */}
+      <section className="relative overflow-hidden min-h-[600px] lg:min-h-[680px]">
+        {/* Full background image — Turkish flag, Istanbul skyline, all 4 workers visible */}
+        <div className="absolute inset-0">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/hero-workers.png"
+            alt="Nepali workers placed by Bhat Overseas — construction, hospitality, factory, chef — in front of Istanbul skyline with Turkish flag"
+            className="absolute inset-0 h-full w-full object-cover"
+            style={{ objectPosition: "center center" }}
+            loading="eager"
+          />
+          {/* Left-side dark scrim — fades quickly so workers stay visible */}
+          <div
+            className="absolute inset-0"
+            style={{
+              backgroundImage:
+                "linear-gradient(to right, rgba(10,61,145,0.88) 0%, rgba(10,61,145,0.65) 22%, rgba(10,61,145,0.25) 38%, transparent 55%)"
+            }}
+            aria-hidden
+          />
+          {/* Soft global tint for overall readability without darkening workers much */}
+          <div className="absolute inset-0 bg-black/10" aria-hidden />
+        </div>
 
-              <h1
-                className="mt-6 font-extrabold tracking-tight"
-                style={{ color: "#1A1A1A", fontSize: "clamp(2.25rem, 5vw, 3.25rem)", lineHeight: 1.05 }}
-              >
-                Work Abroad.
-                <br />
-                Build a <span style={{ color: "#FF6B00" }}>Better Life.</span>
-              </h1>
+        {/* Foreground content */}
+        <div className="relative mx-auto max-w-7xl container-px py-20 lg:py-28">
+          <div className="max-w-xl text-white">
+            <span
+              className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-semibold ring-1 ring-white/30 backdrop-blur sm:text-sm"
+              style={{ background: "rgba(255,255,255,0.15)" }}
+            >
+              🏆 Trusted Recruitment Partner for Nepali Workers
+            </span>
 
-              <p className="mt-5 max-w-xl text-base sm:text-lg" style={{ color: "#6B7280", lineHeight: 1.6 }}>
-                Government-licensed recruitment for Nepali workers in{" "}
-                <strong style={{ color: "#0A3D91" }}>Turkey, Romania &amp; Austria</strong>. We{" "}
-                <strong style={{ color: "#1A1A1A" }}>screen, verify, and interview</strong> every candidate
-                before submission to employers — no shortcuts, no false promises.
-              </p>
+            <h1
+              className="mt-6 font-extrabold tracking-tight"
+              style={{ fontSize: "clamp(2.25rem, 5vw, 3.5rem)", lineHeight: 1.05, textShadow: "0 2px 12px rgba(0,0,0,0.25)" }}
+            >
+              Work Abroad.
+              <br />
+              Build a <span style={{ color: "#FFAB5C" }}>Better Life.</span>
+            </h1>
 
-              {/* Feature icons row */}
-              <div className="mt-7 flex flex-wrap gap-x-6 gap-y-4">
-                {[
-                  { icon: "💰", label: "High Salary", sub: "€550 – €1,500" },
-                  { icon: "🛡️", label: "100% Legal", sub: "Govt. Licensed" },
-                  { icon: "⚡", label: "Fast Process", sub: "2 – 3 Months" }
-                ].map((f, i) => (
-                  <div key={i} className="flex items-center gap-2.5">
-                    <div
-                      className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full"
-                      style={{ background: "rgba(10, 61, 145, 0.1)" }}
-                    >
-                      <span className="text-xl">{f.icon}</span>
-                    </div>
-                    <div>
-                      <div className="text-sm font-bold leading-tight" style={{ color: "#1A1A1A" }}>{f.label}</div>
-                      <div className="mt-0.5 text-xs" style={{ color: "#6B7280" }}>{f.sub}</div>
-                    </div>
+            <p
+              className="mt-5 max-w-lg text-base sm:text-lg"
+              style={{ color: "#E5EAF5", lineHeight: 1.6, textShadow: "0 1px 6px rgba(0,0,0,0.2)" }}
+            >
+              Government-licensed recruitment for Nepali workers in{" "}
+              <strong className="text-white">Turkey, Romania &amp; Austria</strong>. We{" "}
+              <strong className="text-white">screen, verify, and interview</strong> every candidate
+              before submission to employers — no shortcuts, no false promises.
+            </p>
+
+            {/* Feature pills with glass effect */}
+            <div className="mt-7 flex flex-wrap gap-x-6 gap-y-4">
+              {[
+                { icon: "💰", label: "High Salary", sub: "€550 – €1,500" },
+                { icon: "🛡️", label: "100% Legal", sub: "Govt. Licensed" },
+                { icon: "⚡", label: "Fast Process", sub: "2 – 3 Months" }
+              ].map((f, i) => (
+                <div key={i} className="flex items-center gap-2.5">
+                  <div
+                    className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full ring-1 ring-white/30 backdrop-blur"
+                    style={{ background: "rgba(255,255,255,0.15)" }}
+                  >
+                    <span className="text-xl">{f.icon}</span>
                   </div>
-                ))}
-              </div>
-
-              {/* Buttons */}
-              <div className="mt-9 flex flex-wrap gap-4">
-                <Link
-                  href="/apply"
-                  className="inline-flex items-center justify-center gap-2 rounded-[10px] px-7 py-3.5 text-sm font-bold uppercase tracking-wide text-white transition hover:-translate-y-0.5 hover:shadow-xl"
-                  style={{ background: "#0A3D91", boxShadow: "0 10px 30px rgba(10, 61, 145, 0.25)" }}
-                >
-                  Apply Now
-                  <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-                </Link>
-                <Link
-                  href="/jobs"
-                  className="group inline-flex items-center justify-center gap-2 rounded-[10px] border-2 bg-transparent px-7 py-3.5 text-sm font-bold uppercase tracking-wide transition hover:text-white"
-                  style={{ borderColor: "#FF6B00", color: "#FF6B00" }}
-                  onMouseEnter={(e) => (e.currentTarget.style.background = "#FF6B00")}
-                  onMouseLeave={(e) => (e.currentTarget.style.background = "transparent")}
-                >
-                  View Jobs
-                  <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20 6h-4V4c0-1.1-.9-2-2-2h-4c-1.1 0-2 .9-2 2v2H4c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zM10 4h4v2h-4V4z" /></svg>
-                </Link>
-              </div>
+                  <div>
+                    <div className="text-sm font-bold leading-tight text-white">{f.label}</div>
+                    <div className="mt-0.5 text-xs text-blue-100">{f.sub}</div>
+                  </div>
+                </div>
+              ))}
             </div>
 
-            {/* RIGHT — cinematic hero image with depth + left-edge gradient overlay */}
-            <div className="relative">
-              {/* Soft brand-color glow halo behind image (depth) */}
-              <div
-                className="absolute -inset-6 rounded-[2rem] blur-3xl opacity-50"
-                style={{ background: "linear-gradient(135deg, rgba(10,61,145,0.22) 0%, rgba(255,107,0,0.14) 100%)" }}
-                aria-hidden
-              />
-
-              {/* Image container — 24px rounded corners, soft cinematic shadow */}
-              <div
-                className="group relative overflow-hidden rounded-3xl ring-1 ring-slate-200/60"
-                style={{ boxShadow: "0 25px 60px rgba(10, 61, 145, 0.18)" }}
+            {/* Buttons */}
+            <div className="mt-9 flex flex-wrap gap-4">
+              <Link
+                href="/apply"
+                className="inline-flex items-center justify-center gap-2 rounded-[10px] px-7 py-3.5 text-sm font-bold uppercase tracking-wide text-white shadow-lg transition hover:-translate-y-0.5 hover:shadow-xl"
+                style={{ background: "#FF6B00", boxShadow: "0 10px 30px rgba(255, 107, 0, 0.35)" }}
               >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="/hero-workers.png"
-                  alt="Nepali workers placed by Bhat Overseas — construction, hospitality, factory, chef"
-                  className="block h-full w-full object-cover transition duration-700 group-hover:scale-105"
-                  style={{ transform: "scale(1.03)" }}
-                  loading="eager"
-                />
-
-                {/* Cinematic left-edge dark gradient — adds depth, no text on image */}
-                <div
-                  className="pointer-events-none absolute inset-0"
-                  style={{
-                    backgroundImage:
-                      "linear-gradient(to right, rgba(10,61,145,0.28) 0%, rgba(10,61,145,0.10) 18%, transparent 38%)"
-                  }}
-                  aria-hidden
-                />
-
-                {/* Subtle bottom shadow vignette under workers (grounding effect) */}
-                <div
-                  className="pointer-events-none absolute inset-x-0 bottom-0 h-1/4"
-                  style={{
-                    backgroundImage:
-                      "linear-gradient(to top, rgba(0,0,0,0.18) 0%, transparent 100%)"
-                  }}
-                  aria-hidden
-                />
-              </div>
+                Apply Now
+                <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+              </Link>
+              <Link
+                href="/jobs"
+                className="inline-flex items-center justify-center gap-2 rounded-[10px] border-2 border-white/60 bg-white/10 px-7 py-3.5 text-sm font-bold uppercase tracking-wide text-white backdrop-blur transition hover:bg-white hover:text-brand-800"
+              >
+                View Jobs
+                <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20 6h-4V4c0-1.1-.9-2-2-2h-4c-1.1 0-2 .9-2 2v2H4c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zM10 4h4v2h-4V4z" /></svg>
+              </Link>
             </div>
           </div>
         </div>
