@@ -30,7 +30,7 @@ export default function Footer() {
             <Link href="/" className="group inline-block">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/logo.svg"
+                src="/logo.jpg"
                 alt="Bhat Overseas"
                 className="h-28 w-auto transition duration-300 group-hover:scale-110 sm:h-32 lg:h-40"
                 style={{ filter: "drop-shadow(0 6px 16px rgba(10, 61, 145, 0.18))" }}
