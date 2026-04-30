@@ -103,14 +103,15 @@ export default function HomePage() {
   return (
     <>
       {/* ====== HERO — worker photo as full background, text overlay on left ====== */}
-      <section className="relative overflow-hidden bg-white">
-        {/* Background image — covers entire hero, anchored to right */}
+      <section className="relative overflow-hidden bg-white min-h-[560px] sm:min-h-[600px] lg:min-h-[640px]">
+        {/* Background image — covers entire hero, all 4 workers stay in view */}
         <div className="absolute inset-0">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/hero-workers.png"
             alt="Happy Nepali workers placed by Bhat Overseas in front of Istanbul skyline"
-            className="absolute inset-0 h-full w-full object-cover object-right"
+            className="absolute inset-0 h-full w-full object-cover"
+            style={{ objectPosition: "65% center" }}
             loading="eager"
           />
           {/* White-to-transparent gradient fade so left-side text stays readable */}
@@ -118,13 +119,13 @@ export default function HomePage() {
             className="absolute inset-0"
             style={{
               backgroundImage:
-                "linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,0.96) 30%, rgba(255,255,255,0.65) 50%, rgba(255,255,255,0) 70%)"
+                "linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,0.94) 25%, rgba(255,255,255,0.55) 45%, rgba(255,255,255,0) 60%)"
             }}
           />
         </div>
 
         {/* Foreground text content */}
-        <div className="relative mx-auto max-w-7xl container-px py-16 sm:py-20 lg:py-28">
+        <div className="relative mx-auto max-w-7xl container-px py-14 sm:py-18 lg:py-24">
           <div className="max-w-2xl">
             <span className="inline-flex items-center gap-2 rounded-full bg-brand-50 px-4 py-1.5 text-xs font-semibold text-brand-700 ring-1 ring-brand-100 shadow-sm">
               🏆 Trusted Recruitment Partner for Nepali Workers
@@ -174,6 +175,20 @@ export default function HomePage() {
                 VIEW JOBS
                 <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20 6h-4V4c0-1.1-.9-2-2-2h-4c-1.1 0-2 .9-2 2v2H4c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zM10 4h4v2h-4V4z" /></svg>
               </Link>
+            </div>
+          </div>
+
+          {/* "10,000+ Workers Placed" badge — bottom right of hero, over the photo */}
+          <div className="hidden sm:flex absolute bottom-6 right-6 lg:bottom-10 lg:right-10 items-center gap-3 rounded-2xl bg-brand-800/95 px-5 py-3 shadow-2xl ring-2 ring-white/30 backdrop-blur">
+            <div className="text-white">
+              <div className="text-2xl font-extrabold leading-none">10,000+</div>
+              <div className="mt-1 text-xs font-medium text-blue-200">Workers Placed</div>
+            </div>
+            <div className="flex -space-x-2">
+              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-amber-400 text-sm ring-2 ring-white">👷</div>
+              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-emerald-400 text-sm ring-2 ring-white">👩</div>
+              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-pink-400 text-sm ring-2 ring-white">👨</div>
+              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-accent-500 text-xs font-bold text-white ring-2 ring-white">+</div>
             </div>
           </div>
         </div>
@@ -487,7 +502,7 @@ export default function HomePage() {
                   <div>
                     <div className="font-bold text-slate-900">{tst.name}</div>
                     <div className="text-xs text-slate-500">{tst.role}</div>
-                  </div>
+                   </div>
                 </div>
                 <p className="mt-5 text-sm leading-relaxed text-slate-700">&ldquo;{tst.quote}&rdquo;</p>
                 <div className="mt-4 text-amber-500">★★★★★</div>
