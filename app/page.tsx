@@ -12,6 +12,29 @@ const countries = [
   { name: "Austria", flag: "🇦🇹", code: "AT", desc: "Factory, Hospitality, Agriculture" }
 ];
 
+// Verified partner employers across all destination countries — shown on home page for credibility
+type PartnerCard = { name: string; country: string; sector?: string };
+const featuredPartners: PartnerCard[] = [
+  // Turkey
+  { name: "DOĞA GALVANİZ METAL", country: "🇹🇷 Turkey", sector: "Metal & Construction" },
+  { name: "BAHA GRUP ORMAN ÜRÜNLERİ", country: "🇹🇷 Turkey", sector: "Forestry" },
+  { name: "DLN KALIP VE İNŞAAT", country: "🇹🇷 Turkey", sector: "Construction" },
+  { name: "MNC PİGMENT", country: "🇹🇷 Turkey", sector: "Industrial" },
+  { name: "OYTUN YUMURTA YARKA", country: "🇹🇷 Turkey", sector: "Agriculture & Food" },
+  { name: "NUR SEM ELEKTRİK", country: "🇹🇷 Turkey", sector: "Electrical & Textile" },
+  { name: "KÖKSAN PET VE PLASTİK", country: "🇹🇷 Turkey", sector: "Packaging" },
+  { name: "TEKKELİ GIDA", country: "🇹🇷 Turkey", sector: "Food Industry" },
+  { name: "RIOS BEACH OTEL (Seneta)", country: "🇹🇷 Turkey", sector: "Hospitality" },
+  { name: "KUTLUSAN KAFES", country: "🇹🇷 Turkey", sector: "Agriculture" },
+  { name: "AHŞAP URUN SANAYI", country: "🇹🇷 Turkey", sector: "Wood Products" },
+  { name: "ALANYA ÖZKAYMAK TURIZM", country: "🇹🇷 Turkey", sector: "Tourism" },
+  { name: "EMMİDAĞ MERMER", country: "🇹🇷 Turkey", sector: "Marble & Mining" },
+  { name: "GRANİTSAN MADENCİLİK", country: "🇹🇷 Turkey", sector: "Mining" },
+  { name: "CROWNE PLAZA (Marti Termal)", country: "🇹🇷 Turkey", sector: "Hotel" },
+  // Romania
+  { name: "Prime Link Human Capital", country: "🇷🇴 Romania", sector: "Recruitment Partner" }
+];
+
 export default function HomePage() {
   const { t } = useI18n();
   const [jobs, setJobs] = useState<Job[]>(seedJobs);
@@ -109,6 +132,45 @@ export default function HomePage() {
                 </div>
               </Link>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* PARTNER EMPLOYERS — credibility-builder, all 16 verified partners */}
+      <section className="section">
+        <div className="mx-auto max-w-7xl container-px">
+          <div className="text-center">
+            <span className="inline-flex items-center gap-2 rounded-full bg-brand-50 px-4 py-1.5 text-sm font-semibold text-brand-700">
+              🤝 Verified Partnerships
+            </span>
+            <h2 className="mt-4 heading-2">Our Trusted Partner Employers</h2>
+            <p className="mt-2 text-slate-600">
+              Bhat Overseas works directly with these verified employers across our destination countries
+            </p>
+          </div>
+
+          <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            {featuredPartners.map((p, i) => (
+              <div
+                key={i}
+                className="rounded-lg border border-slate-200 bg-white px-4 py-3 shadow-sm transition hover:border-brand-300 hover:shadow-md"
+              >
+                <div className="text-xs font-medium text-slate-500">{p.country}</div>
+                <div className="mt-0.5 font-semibold text-slate-900 leading-tight">{p.name}</div>
+                {p.sector && (
+                  <div className="mt-1 text-xs text-slate-500">{p.sector}</div>
+                )}
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-10 text-center">
+            <Link
+              href="/countries"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-brand-700 hover:text-brand-800"
+            >
+              See full partner details on Countries page →
+            </Link>
           </div>
         </div>
       </section>
