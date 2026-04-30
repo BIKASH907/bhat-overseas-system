@@ -202,6 +202,37 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ====== ETHICAL RECRUITMENT BANNER ====== */}
+      <section className="section !py-10 sm:!py-12">
+        <div className="mx-auto max-w-7xl container-px">
+          <div className="overflow-hidden rounded-2xl bg-gradient-to-r from-amber-50 via-white to-emerald-50 p-6 ring-2 ring-amber-200 sm:p-8">
+            <div className="grid items-center gap-6 lg:grid-cols-[auto,1fr,auto]">
+              <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-amber-100 text-3xl ring-1 ring-amber-200">
+                🛡️
+              </div>
+              <div>
+                <div className="text-xs font-bold uppercase tracking-[0.2em] text-amber-700">
+                  Ethical Recruitment Policy
+                </div>
+                <p className="mt-2 text-base font-semibold text-slate-900 sm:text-lg">
+                  We do <span className="text-amber-700">NOT</span> collect documents from every applicant.
+                  Only shortlisted candidates — after interview &amp; screening — are processed.
+                </p>
+                <p className="mt-1 text-sm text-slate-600">
+                  No upfront paperwork. No false promises. A safe recruitment journey for every Nepali worker.
+                </p>
+              </div>
+              <Link
+                href="/process"
+                className="inline-flex flex-shrink-0 items-center justify-center gap-2 rounded-lg border-2 border-brand-700 px-5 py-2.5 text-sm font-bold text-brand-700 transition hover:bg-brand-700 hover:text-white"
+              >
+                See Our Process →
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ====== COUNTRIES WE SERVE ====== */}
       <section className="section">
         <div className="mx-auto max-w-7xl container-px">

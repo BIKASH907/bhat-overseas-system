@@ -29,6 +29,9 @@ export default function Footer() {
               Building Bridges, Empowering Nations
             </p>
             <p className="mt-3 text-sm leading-relaxed">{t("footer.tagline")}</p>
+            <p className="mt-3 rounded-lg border border-emerald-700/40 bg-emerald-900/30 px-3 py-2 text-xs font-medium leading-relaxed text-emerald-100">
+              ✓ A trusted and ethical manpower company ensuring safe recruitment for Nepali workers.
+            </p>
             <p className="mt-3 text-xs text-slate-400">{t("footer.disclaimer")}</p>
           </div>
 

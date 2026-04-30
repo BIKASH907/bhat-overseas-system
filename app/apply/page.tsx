@@ -61,6 +61,24 @@ function ApplyForm() {
 
       <section className="section">
         <div className="mx-auto max-w-2xl container-px">
+          {/* IMPORTANT — document policy notice (ethical recruitment positioning) */}
+          <div className="mb-6 rounded-xl border-2 border-amber-300 bg-amber-50 p-5">
+            <div className="flex items-start gap-4">
+              <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-amber-200 text-xl">
+                ⚠️
+              </div>
+              <div>
+                <div className="text-sm font-bold uppercase tracking-wider text-amber-800">
+                  Important Notice — Document Policy
+                </div>
+                <p className="mt-1.5 text-sm font-semibold text-amber-900">
+                  We do NOT collect original documents at this initial stage. Only candidates
+                  selected after interview &amp; screening are asked to submit documents.
+                </p>
+              </div>
+            </div>
+          </div>
+
           <form
             onSubmit={handleSubmit}
             encType="multipart/form-data"
