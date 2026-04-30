@@ -27,12 +27,13 @@ export default function Footer() {
         <div className="grid gap-10 md:grid-cols-3">
           <div>
             {/* Logo — large, clean (logo has white background so no card needed) */}
-            <Link href="/" className="inline-block">
+            <Link href="/" className="group inline-block">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/logo.jpg"
                 alt="Bhat Overseas"
-                className="h-20 w-auto"
+                className="h-24 w-auto transition duration-300 group-hover:scale-105 sm:h-28 lg:h-32"
+                style={{ imageRendering: "crisp-edges" }}
               />
             </Link>
             <p className="mt-4 text-sm font-bold italic" style={{ color: "#FF6B00" }}>

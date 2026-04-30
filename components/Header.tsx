@@ -32,7 +32,7 @@ export default function Header() {
           <img
             src="/logo.jpg"
             alt="Bhat Overseas — Building Bridges, Empowering Nations"
-            className="h-16 w-auto transition duration-300 group-hover:scale-105 sm:h-20"
+            className="h-20 w-auto transition duration-300 group-hover:scale-105 sm:h-24 lg:h-28"
           />
         </Link>
 
