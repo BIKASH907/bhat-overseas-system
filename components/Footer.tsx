@@ -3,8 +3,8 @@
 import Link from "next/link";
 import { useI18n } from "@/lib/i18n";
 
-const phone = process.env.NEXT_PUBLIC_PHONE || "+977 9800000000";
-const email = process.env.NEXT_PUBLIC_EMAIL || "info@bhatoverseas.com";
+const phone = process.env.NEXT_PUBLIC_PHONE || "+977 9764274854";
+const email = process.env.NEXT_PUBLIC_EMAIL || "bhatoverseas36@gmail.com";
 const address = process.env.NEXT_PUBLIC_ADDRESS || "Kathmandu, Nepal";
 
 export default function Footer() {

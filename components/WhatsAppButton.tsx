@@ -1,6 +1,6 @@
 "use client";
 
-const phone = process.env.NEXT_PUBLIC_WHATSAPP || "9779800000000";
+const phone = process.env.NEXT_PUBLIC_WHATSAPP || "9779764274854";
 
 export default function WhatsAppButton() {
   const link = `https://wa.me/${phone}?text=${encodeURIComponent(

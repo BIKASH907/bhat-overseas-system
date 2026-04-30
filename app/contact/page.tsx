@@ -7,10 +7,10 @@ export default function ContactPage() {
   const { t } = useI18n();
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
 
-  const phone = process.env.NEXT_PUBLIC_PHONE || "+977 9800000000";
-  const email = process.env.NEXT_PUBLIC_EMAIL || "info@bhatoverseas.com";
+  const phone = process.env.NEXT_PUBLIC_PHONE || "+977 9764274854";
+  const email = process.env.NEXT_PUBLIC_EMAIL || "bhatoverseas36@gmail.com";
   const address = process.env.NEXT_PUBLIC_ADDRESS || "Kathmandu, Nepal";
-  const whatsapp = process.env.NEXT_PUBLIC_WHATSAPP || "9779800000000";
+  const whatsapp = process.env.NEXT_PUBLIC_WHATSAPP || "9779764274854";
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
