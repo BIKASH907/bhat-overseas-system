@@ -7,6 +7,25 @@ import { useI18n } from "@/lib/i18n";
 const order: Array<keyof typeof countryInfo> = ["Turkey", "Romania", "Austria"];
 const flag: Record<string, string> = { Turkey: "🇹🇷", Romania: "🇷🇴", Austria: "🇦🇹" };
 
+// Bhat Overseas's verified Turkish partner companies (workers placed via these employers)
+const turkeyPartners: string[] = [
+  "DOĞA GALVANİZ METAL MAKİNE İNŞAAT NAKLİYE SANAYİ VE TİCARET LİMİTED ŞİRKETİ",
+  "BAHA GRUP ORMAN ÜRÜNLERİ SANAYİ VE TİCARET LİMİTED ŞİRKETİ",
+  "DLN KALIP VE İNŞAAT SANAYI TİCARET LİMİTED ŞİRKETİ",
+  "MNC PİGMENT AV SANAYI TİCARET ANONİM ŞİRKETİ",
+  "OYTUN YUMURTA YARKA HAYVANCILIK YEM GIDA İNŞAAT NAKLİYAT SANAYİ VE TİCARET LİMİTED ŞİRKETİ",
+  "NUR SEM ELEKTRİK İMALAT NAKLİYE İNŞAAT TEKSTİL SANAYİ TİCARET LİMİTED ŞİRKET",
+  "KÖKSAN PET VE PLASTİK AMBALAJ SAN. VE TİC. A.Ş.",
+  "TEKKELİ GIDA SANAYİ TİCARET ANONİM ŞİRKETİ",
+  "SENETA TURIZM İNŞAAT EMLAK TAŞIMACILIK TİCARET LTD. ŞTİ. / RIOS BEACH OTEL",
+  "KUTLUSAN KAFES EKİPMAN VE HAYVANCILIK SAN. VE TİC. A.Ş.",
+  "AHŞAP URUN SANAYI ANONİM ŞİRKETİ",
+  "ALANYA ÖZKAYMAK TURIZM İŞLETMECİLİĞİ ANONİM ŞİRKETİ",
+  "EMMİDAĞ MERMER VE MADENCİLİK SANAYİ TİCARET LİMİTED ŞİRKETİ",
+  "GRANİTSAN MADENCİLİK İNŞAAT SANAYİ VE TİCARET ANONİM ŞİRKETİ",
+  "MARTI TERMAL TURIZM İNŞAAT SANAYİ VE TİCARET ANONİM ŞİRKETİ / CROWNE PLAZA"
+];
+
 export default function CountriesPage() {
   const { t } = useI18n();
 
@@ -68,6 +87,31 @@ export default function CountriesPage() {
                     ))}
                   </ul>
                 </div>
+
+                {/* Partner companies — currently only for Turkey */}
+                {c === "Turkey" && (
+                  <div className="mt-8 rounded-xl bg-brand-50 p-6">
+                    <div className="flex items-center gap-2">
+                      <span className="text-xl">🤝</span>
+                      <h3 className="text-lg font-bold text-slate-900">
+                        Our Partner Companies in Turkey
+                      </h3>
+                    </div>
+                    <p className="mt-2 text-sm text-slate-600">
+                      Bhat Overseas works directly with the following verified Turkish employers:
+                    </p>
+                    <ol className="mt-4 grid gap-2 text-sm text-slate-800 sm:grid-cols-1">
+                      {turkeyPartners.map((name, i) => (
+                        <li key={i} className="flex items-start gap-3 rounded-lg bg-white px-3 py-2 shadow-sm">
+                          <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-brand-700 text-xs font-bold text-white">
+                            {i + 1}
+                          </span>
+                          <span className="leading-snug">{name}</span>
+                        </li>
+                      ))}
+                    </ol>
+                  </div>
+                )}
 
                 <div className="mt-8 flex gap-3">
                   <Link href={`/jobs?country=${c}`} className="btn-primary">
