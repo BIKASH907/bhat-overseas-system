@@ -15,8 +15,8 @@ const meta: Record<string, { flag: string; image: string; gradient: string; tagl
   },
   Romania: {
     flag: "🇷🇴",
-    image: "https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?auto=format&fit=crop&w=1200&q=70",
-    gradient: "from-blue-600 via-amber-500 to-red-600",
+    image: "/romania.png",
+    gradient: "from-blue-700 via-amber-500 to-red-700",
     tagline: "Construction · Agriculture · Manufacturing"
   },
   Austria: {
