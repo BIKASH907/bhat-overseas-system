@@ -15,7 +15,7 @@ const meta: Record<string, { flag: string; image: string; gradient: string; tagl
   },
   Romania: {
     flag: "🇷🇴",
-    image: "",
+    image: "/romania.png",
     gradient: "from-blue-700 via-amber-500 to-red-700",
     tagline: "Construction · Agriculture · Manufacturing"
   },

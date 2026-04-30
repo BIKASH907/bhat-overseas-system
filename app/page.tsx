@@ -19,7 +19,7 @@ const countries = [
     name: "Romania",
     flag: "🇷🇴",
     code: "RO",
-    image: "",
+    image: "/romania.png",
     benefits: ["Work Permit Visa", "Good Salary & Benefits", "Multiple Job Sectors"]
   },
   {
