@@ -17,7 +17,10 @@ export default function AboutPage() {
 
       <section className="section">
         <div className="mx-auto max-w-4xl container-px">
-          <p className="lead">{t("about.intro")}</p>
+          <span className="inline-flex items-center gap-2 rounded-full bg-brand-50 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-brand-700 ring-1 ring-brand-100">
+            📅 Established 2023 · Government-Licensed
+          </span>
+          <p className="lead mt-5">{t("about.intro")}</p>
 
           <div className="mt-12 grid gap-8 md:grid-cols-2">
             <div className="card">

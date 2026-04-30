@@ -70,7 +70,7 @@ const trustItems = [
 
 // Stats — bottom strip of the home page
 const bigStats = [
-  { value: "Govt.", label: "Licensed Agency" },
+  { value: "Since 2023", label: "Recruiting Nepali Talent" },
   { value: "1,000+", label: "Workers Placed" },
   { value: "16+", label: "Verified Employers" },
   { value: "3", label: "Countries Served" }
@@ -562,7 +562,7 @@ export default function HomePage() {
             {bigStats.map((s, i) => (
               <div key={i} className="flex items-center gap-4">
                 <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-xl bg-white/10 ring-1 ring-white/20">
-                  <span className="text-2xl">{["🛡️", "👥", "🤝", "🌍"][i]}</span>
+                  <span className="text-2xl">{["📅", "👥", "🤝", "🌍"][i]}</span>
                 </div>
                 <div>
                   <div className="text-3xl font-extrabold leading-none">{s.value}</div>
