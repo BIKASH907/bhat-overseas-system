@@ -179,24 +179,47 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* RIGHT — hero image with soft blur backdrop */}
+            {/* RIGHT — cinematic hero image with depth + left-edge gradient overlay */}
             <div className="relative">
-              {/* Soft glow behind image */}
+              {/* Soft brand-color glow halo behind image (depth) */}
               <div
-                className="absolute -inset-4 rounded-[2rem] blur-2xl opacity-50"
-                style={{ background: "linear-gradient(135deg, rgba(10,61,145,0.18) 0%, rgba(255,107,0,0.12) 100%)" }}
+                className="absolute -inset-6 rounded-[2rem] blur-3xl opacity-50"
+                style={{ background: "linear-gradient(135deg, rgba(10,61,145,0.22) 0%, rgba(255,107,0,0.14) 100%)" }}
                 aria-hidden
               />
+
+              {/* Image container — 24px rounded corners, soft cinematic shadow */}
               <div
-                className="relative overflow-hidden rounded-2xl ring-1 ring-slate-200/60"
-                style={{ boxShadow: "0 20px 50px rgba(10, 61, 145, 0.15)" }}
+                className="group relative overflow-hidden rounded-3xl ring-1 ring-slate-200/60"
+                style={{ boxShadow: "0 25px 60px rgba(10, 61, 145, 0.18)" }}
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src="/hero-workers.png"
-                  alt="Happy Nepali workers placed by Bhat Overseas in front of Istanbul skyline"
-                  className="block h-full w-full object-cover transition duration-700 hover:scale-[1.02]"
+                  alt="Nepali workers placed by Bhat Overseas — construction, hospitality, factory, chef"
+                  className="block h-full w-full object-cover transition duration-700 group-hover:scale-105"
+                  style={{ transform: "scale(1.03)" }}
                   loading="eager"
+                />
+
+                {/* Cinematic left-edge dark gradient — adds depth, no text on image */}
+                <div
+                  className="pointer-events-none absolute inset-0"
+                  style={{
+                    backgroundImage:
+                      "linear-gradient(to right, rgba(10,61,145,0.28) 0%, rgba(10,61,145,0.10) 18%, transparent 38%)"
+                  }}
+                  aria-hidden
+                />
+
+                {/* Subtle bottom shadow vignette under workers (grounding effect) */}
+                <div
+                  className="pointer-events-none absolute inset-x-0 bottom-0 h-1/4"
+                  style={{
+                    backgroundImage:
+                      "linear-gradient(to top, rgba(0,0,0,0.18) 0%, transparent 100%)"
+                  }}
+                  aria-hidden
                 />
               </div>
             </div>
