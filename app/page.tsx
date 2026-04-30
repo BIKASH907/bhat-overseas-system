@@ -6,14 +6,32 @@ import { useI18n } from "@/lib/i18n";
 import { Job, seedJobs } from "@/lib/seed-jobs";
 import JobCard from "@/components/JobCard";
 
+// Country cards on the home page — image background + benefits + CTA
 const countries = [
-  { name: "Turkey", flag: "🇹🇷", code: "TR", desc: "Factory, Hotel, Construction" },
-  { name: "Romania", flag: "🇷🇴", code: "RO", desc: "Construction, Agriculture" },
-  { name: "Austria", flag: "🇦🇹", code: "AT", desc: "Factory, Hospitality, Agriculture" }
+  {
+    name: "Turkey",
+    flag: "🇹🇷",
+    code: "TR",
+    image: "https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?auto=format&fit=crop&w=900&q=70",
+    benefits: ["Seasonal & Full-time Jobs", "High Demand for Workers", "Easy Process"]
+  },
+  {
+    name: "Romania",
+    flag: "🇷🇴",
+    code: "RO",
+    image: "https://images.unsplash.com/photo-1601999530484-15bf6f4f8b46?auto=format&fit=crop&w=900&q=70",
+    benefits: ["Work Permit Visa", "Good Salary & Benefits", "Multiple Job Sectors"]
+  },
+  {
+    name: "Austria",
+    flag: "🇦🇹",
+    code: "AT",
+    image: "https://images.unsplash.com/photo-1516550893923-42d28e5677af?auto=format&fit=crop&w=900&q=70",
+    benefits: ["Seasonal Jobs", "Attractive Salary", "Schengen Country"]
+  }
 ];
 
-// Verified partner employers across all destination countries — shown on home page for credibility.
-// Featured = internationally recognized brand (gets a special highlight on the card).
+// Verified partner employers — all real partners
 type PartnerCard = {
   name: string;
   countryFlag: string;
@@ -24,7 +42,6 @@ type PartnerCard = {
 };
 
 const featuredPartners: PartnerCard[] = [
-  // Turkey
   { name: "DOĞA GALVANİZ METAL", countryFlag: "🇹🇷", countryName: "Turkey", sector: "Metal & Construction", icon: "🔩" },
   { name: "BAHA GRUP ORMAN ÜRÜNLERİ", countryFlag: "🇹🇷", countryName: "Turkey", sector: "Forestry", icon: "🌲" },
   { name: "DLN KALIP VE İNŞAAT", countryFlag: "🇹🇷", countryName: "Turkey", sector: "Construction", icon: "🏗️" },
@@ -40,8 +57,31 @@ const featuredPartners: PartnerCard[] = [
   { name: "EMMİDAĞ MERMER", countryFlag: "🇹🇷", countryName: "Turkey", sector: "Marble & Mining", icon: "⛏️" },
   { name: "GRANİTSAN MADENCİLİK", countryFlag: "🇹🇷", countryName: "Turkey", sector: "Mining", icon: "⛰️" },
   { name: "CROWNE PLAZA", countryFlag: "🇹🇷", countryName: "Turkey", sector: "5★ Hotel (Marti Termal)", icon: "🏨", featured: true },
-  // Romania
   { name: "Prime Link Human Capital", countryFlag: "🇷🇴", countryName: "Romania", sector: "Recruitment Partner", icon: "🤝", featured: true }
+];
+
+// Trust bar — 4 items shown immediately under the hero (matches reference)
+const trustItems = [
+  { icon: "🛡️", title: "100% Trusted", subtitle: "Govt. Licensed Company" },
+  { icon: "👥", title: "Thousands Placed", subtitle: "Successful Candidates" },
+  { icon: "🌍", title: "Best Opportunities", subtitle: "In Europe & Turkey" },
+  { icon: "🤝", title: "Complete Support", subtitle: "From Application to Visa" }
+];
+
+// Stats — bottom strip of the home page
+const bigStats = [
+  { value: "10+", label: "Years of Experience" },
+  { value: "15,000+", label: "Workers Placed" },
+  { value: "3+", label: "Countries" },
+  { value: "500+", label: "Trusted Employers" }
+];
+
+// Why-choose-us features
+const whyFeatures = [
+  { icon: "🛡️", title: "Govt. Licensed", body: "Authorized Recruitment Agency" },
+  { icon: "💰", title: "No Hidden Charge", body: "Transparent Process and Fees" },
+  { icon: "👥", title: "End-to-End Support", body: "From Application to Departure" },
+  { icon: "🎯", title: "Visa Success Rate", body: "High Visa Success Record" }
 ];
 
 export default function HomePage() {
@@ -58,135 +98,268 @@ export default function HomePage() {
   }, []);
 
   const featured = jobs.filter((j) => j.featured).slice(0, 3);
-  const showJobs = featured.length ? featured : jobs.slice(0, 3);
+  const showJobs = featured.length ? featured : jobs.slice(0, 4);
 
   return (
     <>
-      {/* HERO */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-brand-800 via-brand-700 to-brand-900 text-white">
-        <div className="absolute inset-0 opacity-20" style={{
-          backgroundImage: "radial-gradient(circle at 20% 50%, white 1px, transparent 1px), radial-gradient(circle at 80% 80%, white 1px, transparent 1px)",
-          backgroundSize: "50px 50px"
-        }} />
-        <div className="relative mx-auto max-w-7xl container-px py-20 sm:py-28 lg:py-32">
-          <div className="max-w-3xl">
-            <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-sm font-medium ring-1 ring-white/20">
-              🇳🇵 Government-licensed Nepali recruitment agency
+      {/* ====== HERO ====== */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-white via-blue-50/60 to-white">
+        <div className="mx-auto grid max-w-7xl container-px py-16 lg:grid-cols-2 lg:gap-12 lg:py-24">
+          {/* Left: text */}
+          <div className="relative z-10">
+            <span className="inline-flex items-center gap-2 rounded-full bg-brand-50 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-brand-700 ring-1 ring-brand-100">
+              ✦ Your Future Starts Here
             </span>
-            <p className="mt-4 text-base font-semibold uppercase tracking-[0.25em] text-accent-500/90">
-              Building Bridges · Empowering Nations
-            </p>
-            <h1 className="mt-3 text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
-              {t("hero.title")}
+            <h1 className="mt-6 text-4xl font-extrabold leading-tight tracking-tight text-slate-900 sm:text-5xl lg:text-[3.5rem]">
+              Work Abroad
+              <br />
+              Build a <span className="bg-gradient-to-r from-brand-600 to-brand-800 bg-clip-text text-transparent">Better Life</span>
             </h1>
-            <p className="mt-5 text-lg text-blue-100 sm:text-xl">{t("hero.subtitle")}</p>
-            <p className="mt-2 text-sm text-blue-200">{t("hero.tagline")}</p>
+            <p className="mt-6 max-w-xl text-base text-slate-600 sm:text-lg">
+              Trusted recruitment partner for Nepali workers. Seasonal and Full-time Work Visa in{" "}
+              <strong className="text-brand-700">Turkey</strong>,{" "}
+              <strong className="text-brand-700">Romania</strong> &amp;{" "}
+              <strong className="text-brand-700">Austria</strong>.
+            </p>
+
             <div className="mt-8 flex flex-wrap gap-4">
-              <Link href="/apply" className="btn-accent">
-                {t("common.applyNow")} →
+              <Link href="/apply" className="inline-flex items-center justify-center gap-2 rounded-lg bg-brand-700 px-7 py-3.5 font-bold text-white shadow-lg shadow-brand-700/30 transition hover:-translate-y-0.5 hover:bg-brand-800 hover:shadow-xl">
+                APPLY NOW
+                <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
               </Link>
-              <Link href="/jobs" className="inline-flex items-center justify-center gap-2 rounded-lg border-2 border-white/30 bg-white/10 px-6 py-3 font-semibold text-white backdrop-blur transition hover:bg-white/20">
-                {t("common.viewJobs")}
+              <Link href="/jobs" className="inline-flex items-center justify-center gap-2 rounded-lg border-2 border-accent-500 px-7 py-3.5 font-bold text-accent-600 transition hover:bg-accent-500 hover:text-white">
+                VIEW JOBS
+                <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20 6h-4V4c0-1.1-.9-2-2-2h-4c-1.1 0-2 .9-2 2v2H4c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zM10 4h4v2h-4V4z" /></svg>
               </Link>
             </div>
-            <div className="mt-10 grid max-w-xl grid-cols-3 gap-4 text-center sm:gap-8">
-              <div>
-                <div className="text-3xl font-bold">500+</div>
-                <div className="text-xs text-blue-200">Workers placed</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold">3</div>
-                <div className="text-xs text-blue-200">Countries</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold">48h</div>
-                <div className="text-xs text-blue-200">Avg. response</div>
-              </div>
+          </div>
+
+          {/* Right: visual — collage of role cards */}
+          <div className="relative mt-12 hidden lg:mt-0 lg:block">
+            <div className="absolute inset-0 -z-10 rounded-3xl bg-gradient-to-br from-brand-100 to-brand-50" />
+            <div className="grid h-full grid-cols-2 gap-4 p-6">
+              {[
+                { emoji: "👷", role: "Construction", color: "from-amber-400 to-orange-500" },
+                { emoji: "👩‍🍳", role: "Hospitality", color: "from-emerald-400 to-teal-500" },
+                { emoji: "🏭", role: "Factory", color: "from-blue-500 to-brand-700" },
+                { emoji: "🌾", role: "Agriculture", color: "from-lime-500 to-green-600" }
+              ].map((item, i) => (
+                <div
+                  key={i}
+                  className={`group relative overflow-hidden rounded-2xl bg-gradient-to-br ${item.color} p-6 text-white shadow-xl transition hover:-translate-y-1 hover:shadow-2xl ${
+                    i === 1 ? "translate-y-6" : ""
+                  } ${i === 2 ? "-translate-y-6" : ""}`}
+                >
+                  <div className="text-5xl drop-shadow-lg">{item.emoji}</div>
+                  <div className="mt-4 text-lg font-bold tracking-tight">{item.role}</div>
+                  <div className="mt-1 text-xs font-medium text-white/80">EU Opportunities</div>
+                </div>
+              ))}
             </div>
+            <div className="absolute -right-4 -top-4 h-24 w-24 rounded-full bg-accent-500/30 blur-2xl" />
+            <div className="absolute -bottom-6 -left-6 h-32 w-32 rounded-full bg-brand-300/40 blur-3xl" />
           </div>
         </div>
       </section>
 
-      {/* FEATURED JOBS — only render when we actually have jobs */}
-      {showJobs.length > 0 ? (
-        <section className="section">
-          <div className="mx-auto max-w-7xl container-px">
-            <div className="flex items-end justify-between">
-              <div>
-                <h2 className="heading-2">{t("home.featured.title")}</h2>
-                <p className="mt-2 text-slate-600">{t("home.featured.subtitle")}</p>
+      {/* ====== TRUST BAR ====== */}
+      <section className="relative -mt-px bg-gradient-to-r from-brand-800 via-brand-900 to-brand-800 text-white">
+        <div className="mx-auto max-w-7xl container-px py-6">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {trustItems.map((item, i) => (
+              <div key={i} className="flex items-center gap-4">
+                <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-white/10 text-2xl">
+                  {item.icon}
+                </div>
+                <div>
+                  <div className="font-bold leading-tight">{item.title}</div>
+                  <div className="text-xs text-blue-200">{item.subtitle}</div>
+                </div>
               </div>
-              <Link href="/jobs" className="hidden sm:inline-block text-sm font-semibold text-brand-700 hover:text-brand-800">
-                {t("home.featured.viewAll")} →
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ====== COUNTRIES WE SERVE ====== */}
+      <section className="section">
+        <div className="mx-auto max-w-7xl container-px">
+          <div className="flex flex-wrap items-end justify-between gap-4">
+            <div>
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-accent-500">Popular Destinations</p>
+              <h2 className="mt-2 heading-2">Countries We Serve</h2>
+              <div className="mt-2 h-1 w-16 rounded-full bg-accent-500" />
+            </div>
+            <Link href="/countries" className="inline-flex items-center gap-2 rounded-lg border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-brand-700 hover:text-brand-700">
+              VIEW ALL COUNTRIES
+              <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2A10 10 0 002 12a10 10 0 0010 10 10 10 0 0010-10A10 10 0 0012 2zm0 18a8 8 0 110-16 8 8 0 010 16zm-1-13l5 5-5 5v-3H7v-4h4z" /></svg>
+            </Link>
+          </div>
+
+          <div className="mt-10 grid gap-6 md:grid-cols-3">
+            {countries.map((c) => (
+              <article
+                key={c.code}
+                className="group relative overflow-hidden rounded-2xl shadow-lg transition hover:-translate-y-1 hover:shadow-2xl"
+                style={{ minHeight: "380px" }}
+              >
+                {/* Background image */}
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={c.image}
+                  alt={c.name}
+                  className="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                  onError={(e) => {
+                    (e.target as HTMLImageElement).style.display = "none";
+                  }}
+                />
+                {/* Brand-color fallback gradient (visible behind image, also on image-fail) */}
+                <div className="absolute inset-0 bg-gradient-to-br from-brand-700 to-brand-900 -z-10" />
+                {/* Dark overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-brand-900/95 via-brand-900/60 to-transparent" />
+
+                {/* Top: flag + popular */}
+                <div className="relative p-5 flex justify-between items-start">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white/95 text-2xl shadow-md">
+                    {c.flag}
+                  </div>
+                  <span className="inline-flex items-center rounded-md bg-accent-500 px-2.5 py-1 text-[11px] font-bold uppercase tracking-wider text-white shadow">
+                    Popular
+                  </span>
+                </div>
+
+                {/* Bottom: name + benefits + CTA */}
+                <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                  <h3 className="text-3xl font-extrabold uppercase tracking-tight">{c.name}</h3>
+                  <ul className="mt-4 space-y-1.5 text-sm">
+                    {c.benefits.map((b) => (
+                      <li key={b} className="flex items-center gap-2">
+                        <span className="flex h-4 w-4 items-center justify-center rounded-full bg-accent-500 text-[10px] font-bold">✓</span>
+                        {b}
+                      </li>
+                    ))}
+                  </ul>
+                  <Link href="/jobs" className="mt-5 inline-flex items-center gap-2 rounded-lg bg-white/10 px-5 py-2.5 text-sm font-bold text-white backdrop-blur transition hover:bg-white hover:text-brand-700">
+                    VIEW JOBS →
+                  </Link>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ====== FEATURED JOBS / COMING SOON ====== */}
+      {showJobs.length > 0 ? (
+        <section className="section bg-slate-50">
+          <div className="mx-auto max-w-7xl container-px">
+            <div className="flex flex-wrap items-end justify-between gap-4">
+              <div>
+                <p className="text-xs font-bold uppercase tracking-[0.2em] text-accent-500">Featured Jobs</p>
+                <h2 className="mt-2 heading-2">Latest Job Opportunities</h2>
+                <div className="mt-2 h-1 w-16 rounded-full bg-accent-500" />
+              </div>
+              <Link href="/jobs" className="inline-flex items-center gap-2 rounded-lg border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-brand-700 hover:text-brand-700">
+                VIEW ALL JOBS
               </Link>
             </div>
 
-            <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
               {showJobs.map((job) => <JobCard key={job.id} job={job} />)}
             </div>
           </div>
         </section>
       ) : (
-        // Empty-state CTA: shown when no real jobs are posted yet
-        <section className="section">
+        <section className="section bg-slate-50">
           <div className="mx-auto max-w-7xl container-px">
-            <div className="rounded-2xl border-2 border-dashed border-brand-200 bg-brand-50 px-8 py-12 text-center sm:px-16">
-              <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-brand-100 text-3xl">
-                📋
+            <div className="flex flex-wrap items-end justify-between gap-4">
+              <div>
+                <p className="text-xs font-bold uppercase tracking-[0.2em] text-accent-500">Featured Jobs</p>
+                <h2 className="mt-2 heading-2">Latest Job Opportunities</h2>
+                <div className="mt-2 h-1 w-16 rounded-full bg-accent-500" />
               </div>
-              <h2 className="mt-6 heading-3">New Openings Coming Soon</h2>
+            </div>
+            <div className="mt-8 rounded-2xl border-2 border-dashed border-brand-200 bg-white px-8 py-12 text-center sm:px-16">
+              <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-brand-100 text-3xl">📋</div>
+              <h3 className="mt-6 heading-3">New Openings Coming Soon</h3>
               <p className="mx-auto mt-3 max-w-xl text-slate-600">
                 We are currently verifying fresh openings with our partner employers in Turkey, Romania, and Austria.
-                Submit your application now and we'll match you with the right opportunity as soon as it opens.
+                Apply now and we'll match you with the right opportunity as soon as it opens.
               </p>
               <div className="mt-7 flex flex-wrap justify-center gap-4">
-                <Link href="/apply" className="btn-accent">
-                  {t("common.applyNow")} →
-                </Link>
-                <Link href="/contact" className="btn-outline">
-                  Contact Us
-                </Link>
+                <Link href="/apply" className="btn-accent">Apply Now →</Link>
+                <Link href="/contact" className="btn-outline">Contact Us</Link>
               </div>
             </div>
           </div>
         </section>
       )}
 
-      {/* COUNTRIES */}
-      <section className="section bg-slate-50">
+      {/* ====== WHY CHOOSE US + JOURNEY CTA ====== */}
+      <section className="section">
         <div className="mx-auto max-w-7xl container-px">
-          <div className="text-center">
-            <h2 className="heading-2">{t("home.countries.title")}</h2>
-            <p className="mt-2 text-slate-600">{t("home.countries.subtitle")}</p>
-          </div>
-          <div className="mt-12 grid gap-6 md:grid-cols-3">
-            {countries.map((c) => (
-              <Link key={c.code} href="/countries" className="card group text-center">
-                <div className="text-6xl">{c.flag}</div>
-                <h3 className="mt-4 text-xl font-bold text-slate-900">{c.name}</h3>
-                <p className="mt-2 text-sm text-slate-600">{c.desc}</p>
-                <div className="mt-4 inline-flex items-center text-sm font-semibold text-brand-700 group-hover:text-brand-800">
-                  {t("common.learnMore")} →
-                </div>
-              </Link>
-            ))}
+          <div className="grid gap-10 lg:grid-cols-5">
+            {/* Left: features (3 cols) */}
+            <div className="lg:col-span-3">
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-accent-500">Why Choose Bhat Overseas?</p>
+              <h2 className="mt-2 heading-2">
+                We Make Your Dream<br />
+                <span className="text-brand-700">Come True</span>
+              </h2>
+              <div className="mt-2 h-1 w-16 rounded-full bg-accent-500" />
+
+              <div className="mt-10 grid gap-6 sm:grid-cols-2">
+                {whyFeatures.map((f) => (
+                  <div key={f.title} className="flex items-start gap-4">
+                    <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-brand-50 text-2xl ring-1 ring-brand-100">
+                      {f.icon}
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-slate-900">{f.title}</h3>
+                      <p className="mt-1 text-sm text-slate-600">{f.body}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Right: journey CTA (2 cols) */}
+            <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-brand-700 to-brand-900 p-8 text-white shadow-xl lg:col-span-2">
+              <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-accent-500/20 blur-3xl" />
+              <div className="absolute -bottom-10 -left-10 h-40 w-40 rounded-full bg-brand-400/20 blur-3xl" />
+
+              <div className="relative">
+                <div className="text-5xl">🧳</div>
+                <h3 className="mt-4 text-2xl font-extrabold leading-tight">
+                  Ready to Start Your Journey?
+                </h3>
+                <p className="mt-3 text-blue-100">
+                  Apply now and our team will guide you at every step — from paperwork to airport.
+                </p>
+                <Link
+                  href="/apply"
+                  className="mt-6 inline-flex items-center gap-2 rounded-lg bg-white px-6 py-3 font-bold text-brand-800 shadow-lg transition hover:-translate-y-0.5 hover:bg-blue-50"
+                >
+                  APPLY NOW
+                  <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* PARTNER EMPLOYERS — credibility-builder, all verified partners */}
+      {/* ====== PARTNER EMPLOYERS ====== */}
       <section className="relative section overflow-hidden bg-gradient-to-br from-white via-blue-50/40 to-white">
-        {/* Subtle dotted texture */}
         <div className="pointer-events-none absolute inset-0 opacity-[0.04]" style={{
           backgroundImage: "radial-gradient(circle, #1d4ed8 1px, transparent 1px)",
           backgroundSize: "24px 24px"
         }} />
 
         <div className="relative mx-auto max-w-7xl container-px">
-          {/* Section header */}
           <div className="text-center">
             <span className="inline-flex items-center gap-2 rounded-full bg-brand-700 px-4 py-1.5 text-sm font-semibold text-white shadow-sm">
-              <span>🤝</span> Verified Partnerships
+              🤝 Verified Partnerships
             </span>
             <h2 className="mt-5 heading-2">Our Trusted Partner Employers</h2>
             <p className="mx-auto mt-3 max-w-2xl text-slate-600">
@@ -194,7 +367,6 @@ export default function HomePage() {
             </p>
           </div>
 
-          {/* Stat counters */}
           <div className="mx-auto mt-10 grid max-w-3xl grid-cols-3 gap-4 sm:gap-8">
             <div className="rounded-xl border border-slate-200 bg-white p-5 text-center shadow-sm">
               <div className="text-3xl font-extrabold text-brand-700 sm:text-4xl">{featuredPartners.length}+</div>
@@ -210,7 +382,6 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Partner cards */}
           <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {featuredPartners.map((p, i) => (
               <div
@@ -226,7 +397,6 @@ export default function HomePage() {
                     ★ Featured
                   </span>
                 )}
-
                 <div className="flex items-start gap-3">
                   <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg bg-brand-50 text-2xl transition-colors group-hover:bg-brand-100">
                     {p.icon}
@@ -239,7 +409,6 @@ export default function HomePage() {
                     <div className="mt-1 font-bold leading-tight text-slate-900">{p.name}</div>
                   </div>
                 </div>
-
                 <div className="mt-3 inline-flex items-center rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-700">
                   {p.sector}
                 </div>
@@ -258,89 +427,72 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* WHY CHOOSE US */}
-      <section className="section">
-        <div className="mx-auto max-w-7xl container-px">
-          <div className="text-center">
-            <h2 className="heading-2">{t("home.why.title")}</h2>
-            <p className="mt-2 text-slate-600">{t("home.why.subtitle")}</p>
-          </div>
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {[
-              { icon: "🏛️", k: "licensed" },
-              { icon: "📋", k: "transparent" },
-              { icon: "🤝", k: "support" },
-              { icon: "⚡", k: "fast" }
-            ].map((f) => (
-              <div key={f.k} className="card">
-                <div className="text-4xl">{f.icon}</div>
-                <h3 className="mt-4 text-lg font-bold text-slate-900">
-                  {t(`home.why.${f.k}.title`)}
-                </h3>
-                <p className="mt-2 text-sm text-slate-600">{t(`home.why.${f.k}.body`)}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* TESTIMONIALS */}
+      {/* ====== TESTIMONIALS ====== */}
       <section className="section bg-slate-50">
         <div className="mx-auto max-w-7xl container-px">
           <div className="text-center">
-            <h2 className="heading-2">{t("home.testimonials.title")}</h2>
-            <p className="mt-2 text-slate-600">{t("home.testimonials.subtitle")}</p>
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-accent-500">What Our Clients Say</p>
+            <h2 className="mt-2 heading-2">Trusted by Thousands of<br />Happy Workers</h2>
+            <div className="mx-auto mt-2 h-1 w-16 rounded-full bg-accent-500" />
           </div>
+
           <div className="mt-12 grid gap-6 md:grid-cols-3">
             {[
               {
-                name: "Ramesh K.",
-                role: "Factory Worker, Istanbul",
-                quote: "Bhat Overseas handled my paperwork in 6 weeks. Now I send money home every month."
+                name: "Suresh Tamang",
+                role: "Working in Turkey",
+                quote: "Bhat Overseas helped me get a great job in Turkey. The process was smooth and easy.",
+                initial: "S",
+                color: "from-blue-500 to-brand-700"
               },
               {
-                name: "Sita M.",
-                role: "Hotel Staff, Antalya",
-                quote: "Clear contract, no hidden fees. They prepared me well for the interview."
+                name: "Maya Gurung",
+                role: "Working in Romania",
+                quote: "Very professional team. I got my visa on time and good support after arrival.",
+                initial: "M",
+                color: "from-pink-500 to-purple-600"
               },
               {
-                name: "Bishnu T.",
-                role: "Construction, Bucharest",
-                quote: "Good salary, fair employer. I extended my contract for another year."
+                name: "Dipak Karki",
+                role: "Working in Austria",
+                quote: "Best consultancy in Nepal for Europe jobs. Highly recommended!",
+                initial: "D",
+                color: "from-emerald-500 to-teal-600"
               }
             ].map((tst) => (
-              <div key={tst.name} className="card">
-                <div className="flex items-center gap-3">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-brand-100 text-lg font-bold text-brand-700">
-                    {tst.name.charAt(0)}
+              <article key={tst.name} className="rounded-2xl bg-white p-7 shadow-sm transition hover:shadow-lg">
+                <div className="flex items-center gap-4">
+                  <div className={`flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br ${tst.color} text-xl font-bold text-white shadow-md`}>
+                    {tst.initial}
                   </div>
                   <div>
-                    <div className="font-semibold text-slate-900">{tst.name}</div>
+                    <div className="font-bold text-slate-900">{tst.name}</div>
                     <div className="text-xs text-slate-500">{tst.role}</div>
                   </div>
                 </div>
-                <p className="mt-4 text-sm text-slate-700">&ldquo;{tst.quote}&rdquo;</p>
-                <div className="mt-3 text-amber-500">★★★★★</div>
-              </div>
+                <p className="mt-5 text-sm leading-relaxed text-slate-700">&ldquo;{tst.quote}&rdquo;</p>
+                <div className="mt-4 text-amber-500">★★★★★</div>
+              </article>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA BANNER */}
-      <section className="section">
-        <div className="mx-auto max-w-7xl container-px">
-          <div className="rounded-2xl bg-gradient-to-r from-brand-700 to-brand-900 px-8 py-12 text-center text-white shadow-xl sm:px-16 sm:py-16">
-            <h2 className="text-3xl font-bold sm:text-4xl">{t("home.cta.title")}</h2>
-            <p className="mt-3 text-lg text-blue-100">{t("home.cta.subtitle")}</p>
-            <div className="mt-8 flex flex-wrap justify-center gap-4">
-              <Link href="/apply" className="btn-accent">
-                {t("common.applyNow")} →
-              </Link>
-              <Link href="/jobs" className="inline-flex items-center justify-center gap-2 rounded-lg border-2 border-white/30 bg-white/10 px-6 py-3 font-semibold text-white backdrop-blur transition hover:bg-white/20">
-                {t("common.viewJobs")}
-              </Link>
-            </div>
+      {/* ====== STATS BAR ====== */}
+      <section className="bg-gradient-to-r from-brand-800 via-brand-900 to-brand-800 text-white">
+        <div className="mx-auto max-w-7xl container-px py-12">
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            {bigStats.map((s, i) => (
+              <div key={i} className="flex items-center gap-4">
+                <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-xl bg-white/10 ring-1 ring-white/20">
+                  <span className="text-2xl">{["📅", "👥", "🌍", "🏢"][i]}</span>
+                </div>
+                <div>
+                  <div className="text-3xl font-extrabold leading-none">{s.value}</div>
+                  <div className="mt-1 text-sm font-medium text-blue-200">{s.label}</div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>

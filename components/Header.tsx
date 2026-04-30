@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { useI18n } from "@/lib/i18n";
 import { LANGS, Lang } from "@/lib/translations";
+import TopBar from "@/components/TopBar";
 
 export default function Header() {
   const { t, lang, setLang } = useI18n();
@@ -18,7 +19,8 @@ export default function Header() {
   ];
 
   return (
-    <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/95 backdrop-blur">
+    <header className="sticky top-0 z-40 bg-white/95 shadow-sm backdrop-blur">
+      <TopBar />
       <div className="mx-auto flex max-w-7xl items-center justify-between container-px py-4">
         <Link href="/" className="flex items-center" aria-label="Bhat Overseas — Home">
           {/* eslint-disable-next-line @next/next/no-img-element */}
