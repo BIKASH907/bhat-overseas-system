@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --brand: #1d4ed8;
+  --accent: #f97316;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-white text-slate-800 antialiased;
+  font-family: Inter, system-ui, -apple-system, sans-serif;
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-brand-700 px-6 py-3 font-semibold text-white shadow-md transition hover:bg-brand-800 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2;
+  }
+  .btn-accent {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-accent-500 px-6 py-3 font-semibold text-white shadow-md transition hover:bg-accent-600 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2;
+  }
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg border-2 border-brand-700 px-6 py-3 font-semibold text-brand-700 transition hover:bg-brand-50;
+  }
+  .container-px {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+  .section {
+    @apply py-12 sm:py-16 lg:py-20;
+  }
+  .heading-1 {
+    @apply text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl;
+  }
+  .heading-2 {
+    @apply text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl;
+  }
+  .heading-3 {
+    @apply text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl;
+  }
+  .lead {
+    @apply text-lg text-slate-600 sm:text-xl;
+  }
+  .card {
+    @apply rounded-xl border border-slate-200 bg-white p-6 shadow-sm transition hover:shadow-md;
+  }
+  .input {
+    @apply block w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-slate-900 placeholder-slate-400 shadow-sm focus:border-brand-600 focus:outline-none focus:ring-1 focus:ring-brand-600;
+  }
+  .label {
+    @apply mb-1.5 block text-sm font-medium text-slate-700;
+  }
+}
