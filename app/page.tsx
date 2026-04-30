@@ -19,7 +19,7 @@ const countries = [
     name: "Romania",
     flag: "🇷🇴",
     code: "RO",
-    image: "https://images.unsplash.com/photo-1601999530484-15bf6f4f8b46?auto=format&fit=crop&w=900&q=70",
+    image: "https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?auto=format&fit=crop&w=900&q=70",
     benefits: ["Work Permit Visa", "Good Salary & Benefits", "Multiple Job Sectors"]
   },
   {
@@ -134,30 +134,20 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Right: visual — collage of role cards */}
-          <div className="relative mt-12 hidden lg:mt-0 lg:block">
-            <div className="absolute inset-0 -z-10 rounded-3xl bg-gradient-to-br from-brand-100 to-brand-50" />
-            <div className="grid h-full grid-cols-2 gap-4 p-6">
-              {[
-                { emoji: "👷", role: "Construction", color: "from-amber-400 to-orange-500" },
-                { emoji: "👩‍🍳", role: "Hospitality", color: "from-emerald-400 to-teal-500" },
-                { emoji: "🏭", role: "Factory", color: "from-blue-500 to-brand-700" },
-                { emoji: "🌾", role: "Agriculture", color: "from-lime-500 to-green-600" }
-              ].map((item, i) => (
-                <div
-                  key={i}
-                  className={`group relative overflow-hidden rounded-2xl bg-gradient-to-br ${item.color} p-6 text-white shadow-xl transition hover:-translate-y-1 hover:shadow-2xl ${
-                    i === 1 ? "translate-y-6" : ""
-                  } ${i === 2 ? "-translate-y-6" : ""}`}
-                >
-                  <div className="text-5xl drop-shadow-lg">{item.emoji}</div>
-                  <div className="mt-4 text-lg font-bold tracking-tight">{item.role}</div>
-                  <div className="mt-1 text-xs font-medium text-white/80">EU Opportunities</div>
-                </div>
-              ))}
+          {/* Right: hero image — happy workers in front of Istanbul skyline */}
+          <div className="relative mt-10 lg:mt-0">
+            <div className="relative overflow-hidden rounded-3xl shadow-2xl ring-1 ring-slate-200">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/hero-workers.png"
+                alt="Happy Nepali workers placed by Bhat Overseas — construction, hospitality, factory, and chef roles in Turkey"
+                className="block h-full w-full object-cover"
+                loading="eager"
+              />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-brand-900/10 via-transparent to-transparent" />
             </div>
-            <div className="absolute -right-4 -top-4 h-24 w-24 rounded-full bg-accent-500/30 blur-2xl" />
-            <div className="absolute -bottom-6 -left-6 h-32 w-32 rounded-full bg-brand-300/40 blur-3xl" />
+            <div className="pointer-events-none absolute -right-6 -top-6 h-28 w-28 rounded-full bg-accent-500/20 blur-3xl" />
+            <div className="pointer-events-none absolute -bottom-8 -left-8 h-36 w-36 rounded-full bg-brand-300/30 blur-3xl" />
           </div>
         </div>
       </section>
