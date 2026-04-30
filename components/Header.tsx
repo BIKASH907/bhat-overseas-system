@@ -25,14 +25,14 @@ export default function Header() {
       <div className="mx-auto flex max-w-7xl items-center justify-between container-px py-4">
         <Link
           href="/"
-          className="group flex items-center rounded-xl bg-gradient-to-br from-blue-50 to-white px-3 py-2 ring-1 ring-blue-100 transition hover:ring-brand-300 hover:shadow-md"
+          className="group flex items-center transition"
           aria-label="Bhat Overseas — Home"
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/logo.jpg"
             alt="Bhat Overseas — Building Bridges, Empowering Nations"
-            className="h-12 w-auto transition group-hover:scale-[1.02] sm:h-14"
+            className="h-16 w-auto transition duration-300 group-hover:scale-105 sm:h-20"
           />
         </Link>
 
