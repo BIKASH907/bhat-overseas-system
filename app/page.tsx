@@ -19,7 +19,7 @@ const countries = [
     name: "Romania",
     flag: "🇷🇴",
     code: "RO",
-    image: "https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?auto=format&fit=crop&w=900&q=70",
+    image: "",
     benefits: ["Work Permit Visa", "Good Salary & Benefits", "Multiple Job Sectors"]
   },
   {
@@ -253,18 +253,34 @@ export default function HomePage() {
                 className="group relative overflow-hidden rounded-2xl shadow-lg transition hover:-translate-y-1 hover:shadow-2xl"
                 style={{ minHeight: "380px" }}
               >
-                {/* Background image */}
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={c.image}
-                  alt={c.name}
-                  className="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105"
-                  onError={(e) => {
-                    (e.target as HTMLImageElement).style.display = "none";
-                  }}
-                />
-                {/* Brand-color fallback gradient (visible behind image, also on image-fail) */}
-                <div className="absolute inset-0 bg-gradient-to-br from-brand-700 to-brand-900 -z-10" />
+                {/* Background image OR flag-color gradient when no image */}
+                {c.image ? (
+                  <>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={c.image}
+                      alt={c.name}
+                      className="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                      onError={(e) => {
+                        (e.target as HTMLImageElement).style.display = "none";
+                      }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-br from-brand-700 to-brand-900 -z-10" />
+                  </>
+                ) : (
+                  <>
+                    {/* Romanian-flag tricolor gradient fallback */}
+                    <div className={`absolute inset-0 bg-gradient-to-br ${
+                      c.code === "RO" ? "from-blue-700 via-amber-500 to-red-700" :
+                      c.code === "TR" ? "from-red-700 to-red-900" :
+                      "from-red-700 via-white to-red-700"
+                    }`} />
+                    <div className="absolute inset-0 opacity-15" style={{
+                      backgroundImage: "radial-gradient(circle at 30% 30%, white 1.5px, transparent 1.5px)",
+                      backgroundSize: "32px 32px"
+                    }} />
+                  </>
+                )}
                 {/* Dark overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-brand-900/95 via-brand-900/60 to-transparent" />
 
