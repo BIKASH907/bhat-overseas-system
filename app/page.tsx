@@ -102,24 +102,24 @@ export default function HomePage() {
 
   return (
     <>
-      {/* ====== HERO — worker photo as full background, text overlay on left ====== */}
-      <section className="relative overflow-hidden bg-white min-h-[560px] sm:min-h-[600px] lg:min-h-[640px]">
-        {/* Background image — covers entire hero, all 4 workers stay in view */}
-        <div className="absolute inset-0">
+      {/* ====== HERO — worker photo on right, text panel on left ====== */}
+      <section className="relative overflow-hidden bg-white min-h-[520px] lg:min-h-[560px]">
+        {/* Image: right-anchored, takes ~60% of width on desktop so all 4 workers stay fully visible */}
+        <div className="absolute inset-y-0 right-0 w-full sm:w-[80%] lg:w-[62%]">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/hero-workers.png"
             alt="Happy Nepali workers placed by Bhat Overseas in front of Istanbul skyline"
-            className="absolute inset-0 h-full w-full object-cover"
-            style={{ objectPosition: "65% center" }}
+            className="h-full w-full object-cover"
+            style={{ objectPosition: "center center" }}
             loading="eager"
           />
-          {/* White-to-transparent gradient fade so left-side text stays readable */}
+          {/* Soft fade on the LEFT edge of the image so it blends into the white text panel */}
           <div
-            className="absolute inset-0"
+            className="absolute inset-y-0 left-0 w-1/3"
             style={{
               backgroundImage:
-                "linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,0.94) 25%, rgba(255,255,255,0.55) 45%, rgba(255,255,255,0) 60%)"
+                "linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,0.6) 50%, rgba(255,255,255,0) 100%)"
             }}
           />
         </div>
@@ -516,7 +516,6 @@ export default function HomePage() {
             ))}
           </div>
         </div>
-      </section>
-    </>
+      </section>    </>
   );
 }
