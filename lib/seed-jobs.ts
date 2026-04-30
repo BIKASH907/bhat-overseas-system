@@ -191,7 +191,7 @@ export const countryInfo = {
   Turkey: {
     flag: "TR",
     visaType: "Work Permit / Seasonal Worker Visa",
-    salaryRange: "EUR 600 – 1,000 / month",
+    salaryRange: "From EUR 550 / month",
     sectors: ["Factory", "Hospitality", "Construction", "Agriculture"],
     requirements: [
       "Valid passport (minimum 2 years validity)",
@@ -199,7 +199,7 @@ export const countryInfo = {
       "Medical fitness certificate",
       "Police clearance"
     ],
-    processingTime: "4–6 weeks",
+    processingTime: "2–3 months",
     description:
       "Turkey offers strong demand for workers in textile factories, tourism, and construction. Lower cost of living means more savings."
   },
@@ -215,7 +215,7 @@ export const countryInfo = {
       "Police clearance",
       "Employment contract from Romanian employer"
     ],
-    processingTime: "6–8 weeks",
+    processingTime: "6–8 months",
     description:
       "EU member state offering strong wages and a clear pathway to long-term residency. Construction and agriculture demand is high."
   },
@@ -232,7 +232,7 @@ export const countryInfo = {
       "Police clearance",
       "Employment contract from Austrian employer"
     ],
-    processingTime: "8–12 weeks",
+    processingTime: "2–3 months",
     description:
       "EU member state with the highest wages of the three. Strong worker protections, mandatory health insurance, and pension contributions."
   }
