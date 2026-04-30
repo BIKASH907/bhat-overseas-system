@@ -102,12 +102,31 @@ export default function HomePage() {
 
   return (
     <>
-      {/* ====== HERO ====== */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-white via-blue-50/60 to-white">
-        <div className="mx-auto grid max-w-7xl container-px py-16 lg:grid-cols-2 lg:gap-12 lg:py-24">
-          {/* Left: text */}
-          <div className="relative z-10">
-            <span className="inline-flex items-center gap-2 rounded-full bg-brand-50 px-4 py-1.5 text-xs font-semibold text-brand-700 ring-1 ring-brand-100">
+      {/* ====== HERO — worker photo as full background, text overlay on left ====== */}
+      <section className="relative overflow-hidden bg-white">
+        {/* Background image — covers entire hero, anchored to right */}
+        <div className="absolute inset-0">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/hero-workers.png"
+            alt="Happy Nepali workers placed by Bhat Overseas in front of Istanbul skyline"
+            className="absolute inset-0 h-full w-full object-cover object-right"
+            loading="eager"
+          />
+          {/* White-to-transparent gradient fade so left-side text stays readable */}
+          <div
+            className="absolute inset-0"
+            style={{
+              backgroundImage:
+                "linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,0.96) 30%, rgba(255,255,255,0.65) 50%, rgba(255,255,255,0) 70%)"
+            }}
+          />
+        </div>
+
+        {/* Foreground text content */}
+        <div className="relative mx-auto max-w-7xl container-px py-16 sm:py-20 lg:py-28">
+          <div className="max-w-2xl">
+            <span className="inline-flex items-center gap-2 rounded-full bg-brand-50 px-4 py-1.5 text-xs font-semibold text-brand-700 ring-1 ring-brand-100 shadow-sm">
               🏆 Trusted Recruitment Partner for Nepali Workers
             </span>
             <h1 className="mt-6 text-4xl font-extrabold leading-[1.05] tracking-tight text-slate-900 sm:text-5xl lg:text-[3.5rem]">
@@ -115,7 +134,7 @@ export default function HomePage() {
               <br />
               Build a <span className="text-accent-500">Better Life.</span>
             </h1>
-            <p className="mt-5 max-w-xl text-base text-slate-600 sm:text-lg">
+            <p className="mt-5 max-w-xl text-base font-medium text-slate-700 sm:text-lg">
               Explore overseas job opportunities in{" "}
               <strong className="text-brand-700">Turkey, Romania &amp; Austria</strong> with an
               easy visa process and full support — start to finish.
@@ -123,21 +142,21 @@ export default function HomePage() {
 
             {/* Feature pills */}
             <div className="mt-6 flex flex-wrap gap-3">
-              <div className="flex items-center gap-2.5 rounded-xl bg-white px-3.5 py-2.5 shadow-sm ring-1 ring-slate-200">
+              <div className="flex items-center gap-2.5 rounded-xl bg-white px-3.5 py-2.5 shadow-md ring-1 ring-slate-200">
                 <div className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-amber-100 text-lg">💰</div>
                 <div>
                   <div className="text-xs font-bold leading-tight text-slate-900">High Salary</div>
                   <div className="text-[11px] text-slate-500">€550 – €1,500</div>
                 </div>
               </div>
-              <div className="flex items-center gap-2.5 rounded-xl bg-white px-3.5 py-2.5 shadow-sm ring-1 ring-slate-200">
+              <div className="flex items-center gap-2.5 rounded-xl bg-white px-3.5 py-2.5 shadow-md ring-1 ring-slate-200">
                 <div className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-blue-100 text-lg">🛡️</div>
                 <div>
                   <div className="text-xs font-bold leading-tight text-slate-900">100% Legal</div>
                   <div className="text-[11px] text-slate-500">Govt. Licensed</div>
                 </div>
               </div>
-              <div className="flex items-center gap-2.5 rounded-xl bg-white px-3.5 py-2.5 shadow-sm ring-1 ring-slate-200">
+              <div className="flex items-center gap-2.5 rounded-xl bg-white px-3.5 py-2.5 shadow-md ring-1 ring-slate-200">
                 <div className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-orange-100 text-lg">⚡</div>
                 <div>
                   <div className="text-xs font-bold leading-tight text-slate-900">Fast Process</div>
@@ -151,39 +170,11 @@ export default function HomePage() {
                 APPLY NOW
                 <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
               </Link>
-              <Link href="/jobs" className="inline-flex items-center justify-center gap-2 rounded-lg border-2 border-accent-500 px-7 py-3.5 font-bold text-accent-600 transition hover:bg-accent-500 hover:text-white">
+              <Link href="/jobs" className="inline-flex items-center justify-center gap-2 rounded-lg border-2 border-accent-500 bg-white/95 px-7 py-3.5 font-bold text-accent-600 backdrop-blur transition hover:bg-accent-500 hover:text-white">
                 VIEW JOBS
                 <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20 6h-4V4c0-1.1-.9-2-2-2h-4c-1.1 0-2 .9-2 2v2H4c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zM10 4h4v2h-4V4z" /></svg>
               </Link>
             </div>
-          </div>
-
-          {/* Right: hero image — bleeds naturally into the page, no heavy card */}
-          <div className="relative mt-10 lg:mt-0 lg:-mr-8 xl:-mr-16">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/hero-workers.png"
-              alt="Happy Nepali workers placed by Bhat Overseas — construction, hospitality, factory, and chef roles in Turkey"
-              className="relative z-10 block h-full w-full object-cover"
-              loading="eager"
-            />
-
-            {/* Floating "16+ Verified Partners" badge */}
-            <div className="absolute z-20 bottom-6 right-2 sm:right-8 flex items-center gap-3 rounded-2xl bg-brand-700 px-4 py-2.5 shadow-2xl ring-2 ring-white">
-              <div className="flex -space-x-2">
-                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-amber-400 text-sm ring-2 ring-white">👷</div>
-                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-emerald-400 text-sm ring-2 ring-white">👩</div>
-                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-pink-400 text-sm ring-2 ring-white">👨</div>
-                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-accent-500 text-xs font-bold text-white ring-2 ring-white">+</div>
-              </div>
-              <div className="text-white">
-                <div className="text-base font-extrabold leading-tight">16+ Verified</div>
-                <div className="text-[10px] font-medium text-blue-200">EU Partner Employers</div>
-              </div>
-            </div>
-
-            {/* Soft glow background */}
-            <div className="pointer-events-none absolute inset-0 -z-0 bg-gradient-to-tr from-brand-200/40 via-transparent to-accent-100/30 blur-2xl" />
           </div>
         </div>
       </section>
