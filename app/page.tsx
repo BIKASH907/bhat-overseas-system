@@ -60,12 +60,12 @@ const featuredPartners: PartnerCard[] = [
   { name: "Prime Link Human Capital", countryFlag: "🇷🇴", countryName: "Romania", sector: "Recruitment Partner", icon: "🤝", featured: true }
 ];
 
-// Trust bar — 4 items shown immediately under the hero (matches reference)
+// Trust bar — 4 items shown as a white floating card under the hero
 const trustItems = [
-  { icon: "🛡️", title: "100% Trusted", subtitle: "Govt. Licensed Company" },
-  { icon: "👥", title: "Thousands Placed", subtitle: "Successful Candidates" },
-  { icon: "🌍", title: "Best Opportunities", subtitle: "In Europe & Turkey" },
-  { icon: "🤝", title: "Complete Support", subtitle: "From Application to Visa" }
+  { iconBg: "bg-brand-50", iconColor: "text-brand-700", icon: "🛡️", title: "Govt. Licensed", subtitle: "Authorized Recruitment Agency" },
+  { iconBg: "bg-emerald-50", iconColor: "text-emerald-700", icon: "👥", title: "16+ Partners", subtitle: "Verified EU Employers" },
+  { iconBg: "bg-amber-50", iconColor: "text-amber-700", icon: "🏅", title: "98%", subtitle: "Visa Success Rate" },
+  { iconBg: "bg-rose-50", iconColor: "text-rose-700", icon: "🎧", title: "24/7 Support", subtitle: "From Application to Abroad" }
 ];
 
 // Stats — bottom strip of the home page
@@ -158,53 +158,53 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Right: hero image — happy workers in front of Istanbul skyline */}
-          <div className="relative mt-10 lg:mt-0">
-            <div className="relative overflow-hidden rounded-3xl shadow-2xl ring-1 ring-slate-200">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/hero-workers.png"
-                alt="Happy Nepali workers placed by Bhat Overseas — construction, hospitality, factory, and chef roles in Turkey"
-                className="block h-full w-full object-cover"
-                loading="eager"
-              />
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-brand-900/10 via-transparent to-transparent" />
-            </div>
+          {/* Right: hero image — bleeds naturally into the page, no heavy card */}
+          <div className="relative mt-10 lg:mt-0 lg:-mr-8 xl:-mr-16">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/hero-workers.png"
+              alt="Happy Nepali workers placed by Bhat Overseas — construction, hospitality, factory, and chef roles in Turkey"
+              className="relative z-10 block h-full w-full object-cover"
+              loading="eager"
+            />
 
-            {/* Floating "Trusted Partners" badge — uses real partner count, not made-up worker numbers */}
-            <div className="absolute -bottom-5 right-4 sm:right-8 flex items-center gap-3 rounded-2xl bg-brand-700 px-4 py-2.5 shadow-2xl ring-2 ring-white">
+            {/* Floating "16+ Verified Partners" badge */}
+            <div className="absolute z-20 bottom-6 right-2 sm:right-8 flex items-center gap-3 rounded-2xl bg-brand-700 px-4 py-2.5 shadow-2xl ring-2 ring-white">
               <div className="flex -space-x-2">
                 <div className="flex h-8 w-8 items-center justify-center rounded-full bg-amber-400 text-sm ring-2 ring-white">👷</div>
                 <div className="flex h-8 w-8 items-center justify-center rounded-full bg-emerald-400 text-sm ring-2 ring-white">👩</div>
                 <div className="flex h-8 w-8 items-center justify-center rounded-full bg-pink-400 text-sm ring-2 ring-white">👨</div>
+                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-accent-500 text-xs font-bold text-white ring-2 ring-white">+</div>
               </div>
               <div className="text-white">
-                <div className="text-sm font-extrabold leading-tight">16+ Verified</div>
+                <div className="text-base font-extrabold leading-tight">16+ Verified</div>
                 <div className="text-[10px] font-medium text-blue-200">EU Partner Employers</div>
               </div>
             </div>
 
-            <div className="pointer-events-none absolute -right-6 -top-6 h-28 w-28 rounded-full bg-accent-500/20 blur-3xl" />
-            <div className="pointer-events-none absolute -bottom-8 -left-8 h-36 w-36 rounded-full bg-brand-300/30 blur-3xl" />
+            {/* Soft glow background */}
+            <div className="pointer-events-none absolute inset-0 -z-0 bg-gradient-to-tr from-brand-200/40 via-transparent to-accent-100/30 blur-2xl" />
           </div>
         </div>
       </section>
 
-      {/* ====== TRUST BAR ====== */}
-      <section className="relative -mt-px bg-gradient-to-r from-brand-800 via-brand-900 to-brand-800 text-white">
-        <div className="mx-auto max-w-7xl container-px py-6">
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {trustItems.map((item, i) => (
-              <div key={i} className="flex items-center gap-4">
-                <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-white/10 text-2xl">
-                  {item.icon}
+      {/* ====== TRUST BAR — clean white card with vertical dividers ====== */}
+      <section className="relative -mt-6 z-20">
+        <div className="mx-auto max-w-7xl container-px">
+          <div className="rounded-2xl bg-white p-5 shadow-xl ring-1 ring-slate-200 sm:p-7">
+            <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:gap-0 lg:divide-x lg:divide-slate-200">
+              {trustItems.map((item, i) => (
+                <div key={i} className="flex items-center gap-4 lg:px-6 first:lg:pl-0 last:lg:pr-0">
+                  <div className={`flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-full ${item.iconBg} text-2xl`}>
+                    {item.icon}
+                  </div>
+                  <div>
+                    <div className="text-lg font-extrabold leading-tight text-slate-900">{item.title}</div>
+                    <div className="mt-0.5 text-xs text-slate-500">{item.subtitle}</div>
+                  </div>
                 </div>
-                <div>
-                  <div className="font-bold leading-tight">{item.title}</div>
-                  <div className="text-xs text-blue-200">{item.subtitle}</div>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
