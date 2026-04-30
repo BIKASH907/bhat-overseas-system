@@ -30,10 +30,10 @@ export default function Header() {
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/logo.jpg"
+            src="/logo.png"
             alt="Bhat Overseas — Building Bridges, Empowering Nations"
             className="h-24 w-auto transition duration-300 group-hover:scale-110 sm:h-28 lg:h-32"
-            style={{ mixBlendMode: "multiply", filter: "drop-shadow(0 4px 12px rgba(10, 61, 145, 0.15))" }}
+            style={{ filter: "drop-shadow(0 4px 12px rgba(10, 61, 145, 0.15))" }}
           />
         </Link>
 
