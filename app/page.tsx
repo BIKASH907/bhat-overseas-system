@@ -102,101 +102,102 @@ export default function HomePage() {
 
   return (
     <>
-      {/* ====== HERO — worker photo on right, text panel on left ====== */}
-      <section className="relative overflow-hidden bg-white min-h-[520px] lg:min-h-[560px]">
-        {/* Image: right-anchored, takes ~60% of width on desktop so all 4 workers stay fully visible */}
-        <div className="absolute inset-y-0 right-0 w-full sm:w-[80%] lg:w-[62%]">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/hero-workers.png"
-            alt="Happy Nepali workers placed by Bhat Overseas in front of Istanbul skyline"
-            className="h-full w-full object-cover"
-            style={{ objectPosition: "center center" }}
-            loading="eager"
-          />
-          {/* Soft fade on the LEFT edge of the image so it blends into the white text panel */}
-          <div
-            className="absolute inset-y-0 left-0 w-1/3"
-            style={{
-              backgroundImage:
-                "linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,0.6) 50%, rgba(255,255,255,0) 100%)"
-            }}
-          />
-        </div>
+      {/* ====== HERO — premium two-column with brand colors ====== */}
+      <section
+        className="relative overflow-hidden"
+        style={{ background: "linear-gradient(135deg, #F5F8FF 0%, #FFFFFF 100%)" }}
+      >
+        <div className="mx-auto max-w-7xl container-px py-20 sm:py-24 lg:py-28">
+          <div className="grid items-center gap-12 lg:grid-cols-[45fr_55fr] lg:gap-10">
+            {/* LEFT — text content */}
+            <div className="relative z-10">
+              <span
+                className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-semibold sm:text-sm"
+                style={{ background: "rgba(10, 61, 145, 0.1)", color: "#0A3D91" }}
+              >
+                🏆 Trusted Recruitment Partner for Nepali Workers
+              </span>
 
-        {/* Foreground text content */}
-        <div className="relative mx-auto max-w-7xl container-px py-14 sm:py-18 lg:py-24">
-          <div className="max-w-2xl">
-            <span className="inline-flex items-center gap-2 rounded-full bg-brand-50 px-4 py-1.5 text-xs font-semibold text-brand-700 ring-1 ring-brand-100 shadow-sm">
-              🏆 Trusted Recruitment Partner for Nepali Workers
-            </span>
-            <h1 className="mt-6 text-4xl font-extrabold leading-[1.05] tracking-tight text-slate-900 sm:text-5xl lg:text-[3.5rem]">
-              Work Abroad.
-              <br />
-              Build a <span className="text-accent-500">Better Life.</span>
-            </h1>
-            <p className="mt-5 max-w-xl text-base font-medium text-slate-700 sm:text-lg">
-              Explore overseas job opportunities in{" "}
-              <strong className="text-brand-700">Turkey, Romania &amp; Austria</strong> with an
-              easy visa process and full support — start to finish.
-            </p>
+              <h1
+                className="mt-6 font-extrabold tracking-tight"
+                style={{ color: "#1A1A1A", fontSize: "clamp(2.25rem, 5vw, 3.25rem)", lineHeight: 1.05 }}
+              >
+                Work Abroad.
+                <br />
+                Build a <span style={{ color: "#FF6B00" }}>Better Life.</span>
+              </h1>
 
-            {/* Feature pills */}
-            <div className="mt-6 flex flex-wrap gap-3">
-              <div className="flex items-center gap-2.5 rounded-xl bg-white px-3.5 py-2.5 shadow-md ring-1 ring-slate-200">
-                <div className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-amber-100 text-lg">💰</div>
-                <div>
-                  <div className="text-xs font-bold leading-tight text-slate-900">High Salary</div>
-                  <div className="text-[11px] text-slate-500">€550 – €1,500</div>
-                </div>
+              <p className="mt-5 max-w-xl text-base sm:text-lg" style={{ color: "#6B7280", lineHeight: 1.6 }}>
+                Explore overseas job opportunities in{" "}
+                <strong style={{ color: "#0A3D91" }}>Turkey, Romania &amp; Austria</strong> with an
+                easy visa process and full support — start to finish.
+              </p>
+
+              {/* Feature icons row */}
+              <div className="mt-7 flex flex-wrap gap-x-6 gap-y-4">
+                {[
+                  { icon: "💰", label: "High Salary", sub: "€550 – €1,500" },
+                  { icon: "🛡️", label: "100% Legal", sub: "Govt. Licensed" },
+                  { icon: "⚡", label: "Fast Process", sub: "2 – 3 Months" }
+                ].map((f, i) => (
+                  <div key={i} className="flex items-center gap-2.5">
+                    <div
+                      className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full"
+                      style={{ background: "rgba(10, 61, 145, 0.1)" }}
+                    >
+                      <span className="text-xl">{f.icon}</span>
+                    </div>
+                    <div>
+                      <div className="text-sm font-bold leading-tight" style={{ color: "#1A1A1A" }}>{f.label}</div>
+                      <div className="mt-0.5 text-xs" style={{ color: "#6B7280" }}>{f.sub}</div>
+                    </div>
+                  </div>
+                ))}
               </div>
-              <div className="flex items-center gap-2.5 rounded-xl bg-white px-3.5 py-2.5 shadow-md ring-1 ring-slate-200">
-                <div className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-blue-100 text-lg">🛡️</div>
-                <div>
-                  <div className="text-xs font-bold leading-tight text-slate-900">100% Legal</div>
-                  <div className="text-[11px] text-slate-500">Govt. Licensed</div>
-                </div>
-              </div>
-              <div className="flex items-center gap-2.5 rounded-xl bg-white px-3.5 py-2.5 shadow-md ring-1 ring-slate-200">
-                <div className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-orange-100 text-lg">⚡</div>
-                <div>
-                  <div className="text-xs font-bold leading-tight text-slate-900">Fast Process</div>
-                  <div className="text-[11px] text-slate-500">2 – 3 Months</div>
-                </div>
+
+              {/* Buttons */}
+              <div className="mt-9 flex flex-wrap gap-4">
+                <Link
+                  href="/apply"
+                  className="inline-flex items-center justify-center gap-2 rounded-[10px] px-7 py-3.5 text-sm font-bold uppercase tracking-wide text-white transition hover:-translate-y-0.5 hover:shadow-xl"
+                  style={{ background: "#0A3D91", boxShadow: "0 10px 30px rgba(10, 61, 145, 0.25)" }}
+                >
+                  Apply Now
+                  <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                </Link>
+                <Link
+                  href="/jobs"
+                  className="group inline-flex items-center justify-center gap-2 rounded-[10px] border-2 bg-transparent px-7 py-3.5 text-sm font-bold uppercase tracking-wide transition hover:text-white"
+                  style={{ borderColor: "#FF6B00", color: "#FF6B00" }}
+                  onMouseEnter={(e) => (e.currentTarget.style.background = "#FF6B00")}
+                  onMouseLeave={(e) => (e.currentTarget.style.background = "transparent")}
+                >
+                  View Jobs
+                  <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20 6h-4V4c0-1.1-.9-2-2-2h-4c-1.1 0-2 .9-2 2v2H4c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zM10 4h4v2h-4V4z" /></svg>
+                </Link>
               </div>
             </div>
 
-            <div className="mt-7 flex flex-wrap gap-4">
-              <Link href="/apply" className="inline-flex items-center justify-center gap-2 rounded-lg bg-brand-700 px-7 py-3.5 font-bold text-white shadow-lg shadow-brand-700/30 transition hover:-translate-y-0.5 hover:bg-brand-800 hover:shadow-xl">
-                APPLY NOW
-                <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-              </Link>
-              <Link href="/jobs" className="inline-flex items-center justify-center gap-2 rounded-lg border-2 border-accent-500 bg-white/95 px-7 py-3.5 font-bold text-accent-600 backdrop-blur transition hover:bg-accent-500 hover:text-white">
-                VIEW JOBS
-                <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20 6h-4V4c0-1.1-.9-2-2-2h-4c-1.1 0-2 .9-2 2v2H4c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zM10 4h4v2h-4V4z" /></svg>
-              </Link>
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-      {/* ====== TRUST BAR — clean white card with vertical dividers ====== */}
-      <section className="relative -mt-6 z-20">
-        <div className="mx-auto max-w-7xl container-px">
-          <div className="rounded-2xl bg-white p-5 shadow-xl ring-1 ring-slate-200 sm:p-7">
-            <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:gap-0 lg:divide-x lg:divide-slate-200">
-              {trustItems.map((item, i) => (
-                <div key={i} className="flex items-center gap-4 lg:px-6 first:lg:pl-0 last:lg:pr-0">
-                  <div className={`flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-full ${item.iconBg} text-2xl`}>
-                    {item.icon}
-                  </div>
-                  <div>
-                    <div className="text-lg font-extrabold leading-tight text-slate-900">{item.title}</div>
-                    <div className="mt-0.5 text-xs text-slate-500">{item.subtitle}</div>
-                  </div>
-                </div>
-              ))}
+            {/* RIGHT — hero image with soft blur backdrop */}
+            <div className="relative">
+              {/* Soft glow behind image */}
+              <div
+                className="absolute -inset-4 rounded-[2rem] blur-2xl opacity-50"
+                style={{ background: "linear-gradient(135deg, rgba(10,61,145,0.18) 0%, rgba(255,107,0,0.12) 100%)" }}
+                aria-hidden
+              />
+              <div
+                className="relative overflow-hidden rounded-2xl ring-1 ring-slate-200/60"
+                style={{ boxShadow: "0 20px 50px rgba(10, 61, 145, 0.15)" }}
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/hero-workers.png"
+                  alt="Happy Nepali workers placed by Bhat Overseas in front of Istanbul skyline"
+                  className="block h-full w-full object-cover transition duration-700 hover:scale-[1.02]"
+                  loading="eager"
+                />
+              </div>
             </div>
           </div>
         </div>
