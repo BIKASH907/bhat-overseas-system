@@ -178,19 +178,6 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* "10,000+ Workers Placed" badge — bottom right of hero, over the photo */}
-          <div className="hidden sm:flex absolute bottom-6 right-6 lg:bottom-10 lg:right-10 items-center gap-3 rounded-2xl bg-brand-800/95 px-5 py-3 shadow-2xl ring-2 ring-white/30 backdrop-blur">
-            <div className="text-white">
-              <div className="text-2xl font-extrabold leading-none">10,000+</div>
-              <div className="mt-1 text-xs font-medium text-blue-200">Workers Placed</div>
-            </div>
-            <div className="flex -space-x-2">
-              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-amber-400 text-sm ring-2 ring-white">👷</div>
-              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-emerald-400 text-sm ring-2 ring-white">👩</div>
-              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-pink-400 text-sm ring-2 ring-white">👨</div>
-              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-accent-500 text-xs font-bold text-white ring-2 ring-white">+</div>
-            </div>
-          </div>
         </div>
       </section>
 
