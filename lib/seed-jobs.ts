@@ -22,53 +22,62 @@ export type Job = {
 // The site shows a "Coming soon" empty state on Jobs and Home pages when this is empty.
 export const seedJobs: Job[] = [];
 
-export const countryInfo = {
+// Country info — uses translation keys instead of literal strings so the
+// /countries page renders in the user's selected language.
+export type CountryInfo = {
+  flag: string;
+  visaTypeKey: string;
+  salaryRangeKey: string;
+  sectorKeys: string[];
+  requirementKeys: string[];
+  processingTimeKey: string;
+  descriptionKey: string;
+};
+
+export const countryInfo: Record<Country, CountryInfo> = {
   Turkey: {
     flag: "TR",
-    visaType: "Work Permit Visa",
-    salaryRange: "From EUR 550 / month",
-    sectors: ["Factory", "Hospitality", "Construction", "Agriculture"],
-    requirements: [
-      "Valid passport (minimum 2 years validity)",
-      "Age 21–45",
-      "Medical fitness certificate",
-      "Police clearance"
+    visaTypeKey: "country.turkey.visaType",
+    salaryRangeKey: "country.turkey.salaryRange",
+    sectorKeys: ["sector.factory", "sector.hospitality", "sector.construction", "sector.agriculture"],
+    requirementKeys: [
+      "req.passport2y",
+      "req.age2145",
+      "req.medicalCert",
+      "req.policeClearance"
     ],
-    processingTime: "2–3 months",
-    description:
-      "Turkey offers strong demand for workers in textile factories, tourism, and construction. Lower cost of living means more savings."
+    processingTimeKey: "country.turkey.processingTime",
+    descriptionKey: "country.turkey.description"
   },
   Romania: {
     flag: "RO",
-    visaType: "Long-stay Work Visa (D/AM) / Seasonal Visa",
-    salaryRange: "EUR 700 – 1,200 / month",
-    sectors: ["Construction", "Agriculture", "Hospitality", "Factory"],
-    requirements: [
-      "Valid passport (minimum 1 year validity beyond contract)",
-      "Age 20–50",
-      "Medical fitness certificate",
-      "Police clearance",
-      "Employment contract from Romanian employer"
+    visaTypeKey: "country.romania.visaType",
+    salaryRangeKey: "country.romania.salaryRange",
+    sectorKeys: ["sector.construction", "sector.agriculture", "sector.hospitality", "sector.factory"],
+    requirementKeys: [
+      "req.passport1y",
+      "req.age2050",
+      "req.medicalCert",
+      "req.policeClearance",
+      "req.romanianContract"
     ],
-    processingTime: "6–8 months",
-    description:
-      "EU member state offering strong wages and a clear pathway to long-term residency. Construction and agriculture demand is high."
+    processingTimeKey: "country.romania.processingTime",
+    descriptionKey: "country.romania.description"
   },
   Austria: {
     flag: "AT",
-    visaType: "Red-White-Red Card / Seasonal Worker Permit",
-    salaryRange: "EUR 1,500 – 2,200 / month",
-    sectors: ["Factory", "Hospitality", "Agriculture", "Healthcare support"],
-    requirements: [
-      "Valid passport (minimum 2 years validity)",
-      "Age 21–40",
-      "Basic German or English",
-      "Medical fitness",
-      "Police clearance",
-      "Employment contract from Austrian employer"
+    visaTypeKey: "country.austria.visaType",
+    salaryRangeKey: "country.austria.salaryRange",
+    sectorKeys: ["sector.factory", "sector.hospitality", "sector.agriculture", "sector.healthcareSupport"],
+    requirementKeys: [
+      "req.passport2y",
+      "req.age2140",
+      "req.basicGermanEnglish",
+      "req.medicalFitness",
+      "req.policeClearance",
+      "req.austrianContract"
     ],
-    processingTime: "2–3 months",
-    description:
-      "EU member state with the highest wages of the three. Strong worker protections, mandatory health insurance, and pension contributions."
+    processingTimeKey: "country.austria.processingTime",
+    descriptionKey: "country.austria.description"
   }
 };

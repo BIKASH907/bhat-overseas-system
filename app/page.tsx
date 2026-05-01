@@ -32,32 +32,33 @@ const countries = [
 ];
 
 // Verified partner employers — all real partners
+// `sectorKey` references a translation key so sectors render in the user's language.
 type PartnerCard = {
   name: string;
   countryFlag: string;
   countryName: string;
-  sector: string;
+  sectorKey: string;
   icon: string;
   featured?: boolean;
 };
 
 const featuredPartners: PartnerCard[] = [
-  { name: "DOĞA GALVANİZ METAL", countryFlag: "🇹🇷", countryName: "Turkey", sector: "Metal & Construction", icon: "🔩" },
-  { name: "BAHA GRUP ORMAN ÜRÜNLERİ", countryFlag: "🇹🇷", countryName: "Turkey", sector: "Forestry", icon: "🌲" },
-  { name: "DLN KALIP VE İNŞAAT", countryFlag: "🇹🇷", countryName: "Turkey", sector: "Construction", icon: "🏗️" },
-  { name: "MNC PİGMENT", countryFlag: "🇹🇷", countryName: "Turkey", sector: "Industrial", icon: "🏭" },
-  { name: "OYTUN YUMURTA YARKA", countryFlag: "🇹🇷", countryName: "Turkey", sector: "Agriculture & Food", icon: "🌾" },
-  { name: "NUR SEM ELEKTRİK", countryFlag: "🇹🇷", countryName: "Turkey", sector: "Electrical & Textile", icon: "⚡" },
-  { name: "KÖKSAN PET VE PLASTİK", countryFlag: "🇹🇷", countryName: "Turkey", sector: "Packaging", icon: "📦" },
-  { name: "TEKKELİ GIDA", countryFlag: "🇹🇷", countryName: "Turkey", sector: "Food Industry", icon: "🍞" },
-  { name: "RIOS BEACH OTEL", countryFlag: "🇹🇷", countryName: "Turkey", sector: "Hospitality (Seneta Group)", icon: "🏖️", featured: true },
-  { name: "KUTLUSAN KAFES", countryFlag: "🇹🇷", countryName: "Turkey", sector: "Agriculture", icon: "🌱" },
-  { name: "AHŞAP URUN SANAYI", countryFlag: "🇹🇷", countryName: "Turkey", sector: "Wood Products", icon: "🪵" },
-  { name: "ALANYA ÖZKAYMAK TURIZM", countryFlag: "🇹🇷", countryName: "Turkey", sector: "Tourism", icon: "🌊" },
-  { name: "EMMİDAĞ MERMER", countryFlag: "🇹🇷", countryName: "Turkey", sector: "Marble & Mining", icon: "⛏️" },
-  { name: "GRANİTSAN MADENCİLİK", countryFlag: "🇹🇷", countryName: "Turkey", sector: "Mining", icon: "⛰️" },
-  { name: "CROWNE PLAZA", countryFlag: "🇹🇷", countryName: "Turkey", sector: "5★ Hotel (Marti Termal)", icon: "🏨", featured: true },
-  { name: "Prime Link Human Capital", countryFlag: "🇷🇴", countryName: "Romania", sector: "Recruitment Partner", icon: "🤝", featured: true }
+  { name: "DOĞA GALVANİZ METAL", countryFlag: "🇹🇷", countryName: "Turkey", sectorKey: "sector.metalConstruction", icon: "🔩" },
+  { name: "BAHA GRUP ORMAN ÜRÜNLERİ", countryFlag: "🇹🇷", countryName: "Turkey", sectorKey: "sector.forestry", icon: "🌲" },
+  { name: "DLN KALIP VE İNŞAAT", countryFlag: "🇹🇷", countryName: "Turkey", sectorKey: "sector.construction", icon: "🏗️" },
+  { name: "MNC PİGMENT", countryFlag: "🇹🇷", countryName: "Turkey", sectorKey: "sector.industrial", icon: "🏭" },
+  { name: "OYTUN YUMURTA YARKA", countryFlag: "🇹🇷", countryName: "Turkey", sectorKey: "sector.agricultureFood", icon: "🌾" },
+  { name: "NUR SEM ELEKTRİK", countryFlag: "🇹🇷", countryName: "Turkey", sectorKey: "sector.electricalTextile", icon: "⚡" },
+  { name: "KÖKSAN PET VE PLASTİK", countryFlag: "🇹🇷", countryName: "Turkey", sectorKey: "sector.packaging", icon: "📦" },
+  { name: "TEKKELİ GIDA", countryFlag: "🇹🇷", countryName: "Turkey", sectorKey: "sector.foodIndustry", icon: "🍞" },
+  { name: "RIOS BEACH OTEL", countryFlag: "🇹🇷", countryName: "Turkey", sectorKey: "sector.hospitalitySeneta", icon: "🏖️", featured: true },
+  { name: "KUTLUSAN KAFES", countryFlag: "🇹🇷", countryName: "Turkey", sectorKey: "sector.agriculture", icon: "🌱" },
+  { name: "AHŞAP URUN SANAYI", countryFlag: "🇹🇷", countryName: "Turkey", sectorKey: "sector.woodProducts", icon: "🪵" },
+  { name: "ALANYA ÖZKAYMAK TURIZM", countryFlag: "🇹🇷", countryName: "Turkey", sectorKey: "sector.tourism", icon: "🌊" },
+  { name: "EMMİDAĞ MERMER", countryFlag: "🇹🇷", countryName: "Turkey", sectorKey: "sector.marbleMining", icon: "⛏️" },
+  { name: "GRANİTSAN MADENCİLİK", countryFlag: "🇹🇷", countryName: "Turkey", sectorKey: "sector.mining", icon: "⛰️" },
+  { name: "CROWNE PLAZA", countryFlag: "🇹🇷", countryName: "Turkey", sectorKey: "sector.hotelMartiTermal", icon: "🏨", featured: true },
+  { name: "Prime Link Human Capital", countryFlag: "🇷🇴", countryName: "Romania", sectorKey: "sector.recruitmentPartner", icon: "🤝", featured: true }
 ];
 
 // Why-choose-us features
@@ -297,7 +298,7 @@ export default function HomePage() {
                     {c.flag}
                   </div>
                   <span className="inline-flex items-center rounded-md bg-accent-500 px-2.5 py-1 text-[11px] font-bold uppercase tracking-wider text-white shadow">
-                    Popular
+                    {t("home.popular")}
                   </span>
                 </div>
 
@@ -313,7 +314,7 @@ export default function HomePage() {
                     ))}
                   </ul>
                   <Link href="/jobs" className="mt-5 inline-flex items-center gap-2 rounded-lg bg-white/10 px-5 py-2.5 text-sm font-bold text-white backdrop-blur transition hover:bg-white hover:text-brand-700">
-                    VIEW JOBS →
+                    {t("home.viewJobsArrow")}
                   </Link>
                 </div>
               </article>
@@ -468,7 +469,7 @@ export default function HomePage() {
                   href="/apply"
                   className="mt-6 inline-flex items-center gap-2 rounded-lg bg-white px-6 py-3 font-bold text-brand-800 shadow-lg transition hover:-translate-y-0.5 hover:bg-blue-50"
                 >
-                  APPLY NOW
+                  {t("home.applyNowUpper")}
                   <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
                 </Link>
               </div>
@@ -538,7 +539,7 @@ export default function HomePage() {
                   </div>
                 </div>
                 <div className="mt-3 inline-flex items-center rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-700">
-                  {p.sector}
+                  {t(p.sectorKey)}
                 </div>
               </div>
             ))}

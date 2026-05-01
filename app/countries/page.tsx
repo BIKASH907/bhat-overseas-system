@@ -6,24 +6,24 @@ import { useI18n } from "@/lib/i18n";
 
 const order: Array<keyof typeof countryInfo> = ["Turkey", "Romania", "Austria"];
 
-const meta: Record<string, { flag: string; image: string; gradient: string; tagline: string }> = {
+const meta: Record<string, { flag: string; image: string; gradient: string; taglineKey: string }> = {
   Turkey: {
     flag: "🇹🇷",
     image: "https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?auto=format&fit=crop&w=1200&q=70",
     gradient: "from-red-600 via-red-700 to-red-900",
-    tagline: "Factory · Hospitality · Construction"
+    taglineKey: "countriesPage.tagline.turkey"
   },
   Romania: {
     flag: "🇷🇴",
     image: "/romania.png",
     gradient: "from-blue-700 via-amber-500 to-red-700",
-    tagline: "Construction · Agriculture · Manufacturing"
+    taglineKey: "countriesPage.tagline.romania"
   },
   Austria: {
     flag: "🇦🇹",
     image: "https://images.unsplash.com/photo-1516550893923-42d28e5677af?auto=format&fit=crop&w=1200&q=70",
     gradient: "from-red-700 via-white to-red-700",
-    tagline: "Hospitality · Agriculture · Factory"
+    taglineKey: "countriesPage.tagline.austria"
   }
 };
 
@@ -69,7 +69,7 @@ export default function CountriesPage() {
         }} />
         <div className="relative mx-auto max-w-7xl container-px">
           <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-xs font-bold uppercase tracking-wider ring-1 ring-white/20">
-            🌍 Destination Countries
+            {t("countriesPage.heroBadge")}
           </span>
           <h1 className="mt-5 heading-1 !text-white">{t("countries.title")}</h1>
           <p className="mt-4 max-w-2xl text-lg text-blue-100">{t("countries.subtitle")}</p>
@@ -135,7 +135,7 @@ export default function CountriesPage() {
                       </div>
                       <div>
                         <h2 className="text-3xl font-extrabold uppercase tracking-tight sm:text-4xl">{c}</h2>
-                        <p className="text-sm font-medium text-blue-100 sm:text-base">{m.tagline}</p>
+                        <p className="text-sm font-medium text-blue-100 sm:text-base">{t(m.taglineKey)}</p>
                       </div>
                     </div>
                   </div>
@@ -143,14 +143,14 @@ export default function CountriesPage() {
 
                 {/* Body */}
                 <div className="p-6 sm:p-8">
-                  <p className="text-base leading-relaxed text-slate-700">{info.description}</p>
+                  <p className="text-base leading-relaxed text-slate-700">{t(info.descriptionKey)}</p>
 
                   {/* 4-cell stat grid */}
                   <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-                    <StatCell icon="📋" label={t("countries.visaType")} value={info.visaType} />
-                    <StatCell icon="💰" label={t("countries.salaryRange")} value={info.salaryRange} accent />
-                    <StatCell icon="⏱️" label={t("countries.processingTime")} value={info.processingTime} />
-                    <StatCell icon="🏭" label={t("countries.sectors")} value={info.sectors.join(", ")} />
+                    <StatCell icon="📋" label={t("countries.visaType")} value={t(info.visaTypeKey)} />
+                    <StatCell icon="💰" label={t("countries.salaryRange")} value={t(info.salaryRangeKey)} accent />
+                    <StatCell icon="⏱️" label={t("countries.processingTime")} value={t(info.processingTimeKey)} />
+                    <StatCell icon="🏭" label={t("countries.sectors")} value={info.sectorKeys.map((k) => t(k)).join(", ")} />
                   </div>
 
                   {/* Requirements */}
@@ -162,10 +162,10 @@ export default function CountriesPage() {
                       </h3>
                     </div>
                     <ul className="mt-3 grid gap-2 sm:grid-cols-2">
-                      {info.requirements.map((r, i) => (
+                      {info.requirementKeys.map((rk, i) => (
                         <li key={i} className="flex items-start gap-2 text-sm text-slate-700">
                           <span className="mt-0.5 flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-full bg-emerald-100 text-[10px] text-emerald-700">✓</span>
-                          {r}
+                          {t(rk)}
                         </li>
                       ))}
                     </ul>
@@ -178,14 +178,14 @@ export default function CountriesPage() {
                         <div className="flex items-center justify-between gap-2">
                           <div>
                             <div className="text-xs font-bold uppercase tracking-wider text-brand-700">
-                              🤝 Verified Partner Employers
+                              {t("countriesPage.verifiedPartners")}
                             </div>
                             <h3 className="mt-1 text-lg font-bold text-slate-900">
-                              Our Partners in {c}
+                              {t("countriesPage.ourPartnersIn")} {c}
                             </h3>
                           </div>
                           <span className="rounded-full bg-brand-700 px-3 py-1 text-xs font-bold text-white">
-                            {partners.length} {partners.length === 1 ? "Partner" : "Partners"}
+                            {partners.length} {partners.length === 1 ? t("countriesPage.partnerSingular") : t("countriesPage.partnerPlural")}
                           </span>
                         </div>
                       </div>
