@@ -423,6 +423,18 @@ const en: Dict = {
   "turkeyRep.whatsappCta": "Chat on WhatsApp",
   "turkeyRep.note": "Candidates and employers in Türkiye can reach our local representative directly.",
 
+  // === Our Team section ===
+  "team.label": "Leadership",
+  "team.title": "Our Team",
+  "team.subtitle": "Trusted people on both ends of every placement.",
+  "team.bikash.role": "Founder & CEO",
+  "team.bikash.location": "Kathmandu, Nepal",
+  "team.bikash.bio": "Bikash leads Bhat Overseas's recruitment operations from Nepal, working directly with employers in Türkiye, Romania, and Austria to verify openings and match the right candidates.",
+  "team.ebubekir.role": "Türkiye Representative",
+  "team.ebubekir.location": "Türkiye",
+  "team.ebubekir.bio": "Ebubekir is our local representative in Türkiye, coordinating directly with partner employers and supporting candidates on the ground after deployment.",
+  "team.contactCta": "Contact",
+
 };
 
 const tr: Dict = {
@@ -806,6 +818,18 @@ const tr: Dict = {
   "turkeyRep.whatsappCta": "WhatsApp'tan Yaz",
   "turkeyRep.note": "Türkiye'deki adaylar ve işverenler yerel temsilcimize doğrudan ulaşabilir.",
 
+  // === Ekibimiz ===
+  "team.label": "Liderlik",
+  "team.title": "Ekibimiz",
+  "team.subtitle": "Her yerleştirmenin iki tarafında güvenilir kişiler.",
+  "team.bikash.role": "Kurucu ve CEO",
+  "team.bikash.location": "Katmandu, Nepal",
+  "team.bikash.bio": "Bikash, Bhat Overseas'ın işe alım operasyonlarını Nepal'den yönetiyor; Türkiye, Romanya ve Avusturya'daki işverenlerle doğrudan çalışarak açık pozisyonları doğrular ve doğru adayları eşleştirir.",
+  "team.ebubekir.role": "Türkiye Temsilcisi",
+  "team.ebubekir.location": "Türkiye",
+  "team.ebubekir.bio": "Ebubekir, Türkiye'deki yerel temsilcimizdir; ortak işverenlerle doğrudan koordinasyon kurar ve adaylara yerleştirme sonrası sahada destek olur.",
+  "team.contactCta": "İletişim",
+
 };
 
 const de: Dict = {
@@ -1188,6 +1212,18 @@ const de: Dict = {
   "turkeyRep.phone": "0534 230 78 32",
   "turkeyRep.whatsappCta": "Auf WhatsApp Schreiben",
   "turkeyRep.note": "Kandidaten und Arbeitgeber in der Türkei können unseren lokalen Vertreter direkt erreichen.",
+
+  // === Unser Team ===
+  "team.label": "Führung",
+  "team.title": "Unser Team",
+  "team.subtitle": "Vertrauenswürdige Menschen auf beiden Seiten jeder Vermittlung.",
+  "team.bikash.role": "Gründer & CEO",
+  "team.bikash.location": "Kathmandu, Nepal",
+  "team.bikash.bio": "Bikash leitet die Vermittlungstätigkeit von Bhat Overseas aus Nepal und arbeitet direkt mit Arbeitgebern in der Türkei, Rumänien und Österreich zusammen, um Stellen zu verifizieren und passende Kandidaten zu vermitteln.",
+  "team.ebubekir.role": "Türkei-Vertreter",
+  "team.ebubekir.location": "Türkei",
+  "team.ebubekir.bio": "Ebubekir ist unser lokaler Vertreter in der Türkei. Er koordiniert direkt mit Partner-Arbeitgebern und unterstützt Kandidaten vor Ort nach der Vermittlung.",
+  "team.contactCta": "Kontakt",
 
 };
 
