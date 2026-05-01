@@ -44,7 +44,7 @@ export default function JobDetailPage() {
   if (!job) {
     return (
       <div className="mx-auto max-w-3xl container-px py-20 text-center">
-        <h1 className="heading-2">Job not found</h1>
+        <h1 className="heading-2">{t("job.notFound")}</h1>
         <Link href="/jobs" className="mt-4 inline-block text-brand-700 hover:underline">
           ← Back to jobs
         </Link>
@@ -97,7 +97,7 @@ export default function JobDetailPage() {
       </div>
 
       <section className="mt-10">
-        <h2 className="heading-3">About this job</h2>
+        <h2 className="heading-3">{t("job.aboutThis")}</h2>
         <p className="mt-3 text-lg leading-relaxed text-slate-700">{job.description}</p>
       </section>
 

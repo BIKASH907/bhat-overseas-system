@@ -53,7 +53,7 @@ export default function Footer() {
             <ul className="mt-4 space-y-2 text-sm">
               <li><Link href="/jobs" className="text-slate-600 transition hover:text-brand-700">{t("nav.jobs")}</Link></li>
               <li><Link href="/countries" className="text-slate-600 transition hover:text-brand-700">{t("nav.countries")}</Link></li>
-              <li><Link href="/process" className="text-slate-600 transition hover:text-brand-700">Process</Link></li>
+              <li><Link href="/process" className="text-slate-600 transition hover:text-brand-700">{t("nav.process")}</Link></li>
               <li><Link href="/apply" className="text-slate-600 transition hover:text-brand-700">{t("nav.apply")}</Link></li>
               <li><Link href="/about" className="text-slate-600 transition hover:text-brand-700">{t("nav.about")}</Link></li>
               <li><Link href="/contact" className="text-slate-600 transition hover:text-brand-700">{t("nav.contact")}</Link></li>

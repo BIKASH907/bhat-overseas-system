@@ -93,15 +93,15 @@ export default function AboutPage() {
           <div className="mt-12 grid gap-6 sm:grid-cols-3 text-center">
             <div className="rounded-xl bg-brand-50 p-6">
               <div className="text-4xl font-extrabold text-brand-700">1,000+</div>
-              <div className="mt-1 text-sm text-slate-600">Workers placed abroad</div>
+              <div className="mt-1 text-sm text-slate-600">{t("about.stat.workers")}</div>
             </div>
             <div className="rounded-xl bg-brand-50 p-6">
               <div className="text-4xl font-extrabold text-brand-700">3</div>
-              <div className="mt-1 text-sm text-slate-600">Destination countries</div>
+              <div className="mt-1 text-sm text-slate-600">{t("about.stat.countries")}</div>
             </div>
             <div className="rounded-xl bg-brand-50 p-6">
               <div className="text-4xl font-extrabold text-brand-700">16+</div>
-              <div className="mt-1 text-sm text-slate-600">Verified partner employers</div>
+              <div className="mt-1 text-sm text-slate-600">{t("about.stat.partners")}</div>
             </div>
           </div>
 

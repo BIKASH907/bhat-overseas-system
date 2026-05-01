@@ -72,7 +72,7 @@ export default function Header() {
           <button
             className="lg:hidden rounded-lg border border-slate-200 p-2"
             onClick={() => setOpen(!open)}
-            aria-label="Toggle menu"
+            aria-label={t("a11y.toggleMenu")}
           >
             <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />

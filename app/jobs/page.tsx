@@ -110,15 +110,14 @@ export default function JobsPage() {
                 </div>
                 <h2 className="mt-6 heading-3">{t("jobs.empty.title")}</h2>
                 <p className="mx-auto mt-3 max-w-xl text-slate-600">
-                  We are currently verifying fresh openings with our partner employers in Turkey, Romania, and Austria.
-                  Submit your application now and we'll match you as soon as the next opportunity opens.
+                  {t("jobs.empty.body")}
                 </p>
                 <div className="mt-7 flex flex-wrap justify-center gap-4">
                   <a href="/apply" className="btn-accent">
                     {t("common.applyNow")} →
                   </a>
                   <a href="/contact" className="btn-outline">
-                    Contact Us
+                    {t("common.contactUs")}
                   </a>
                 </div>
               </div>

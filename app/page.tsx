@@ -346,7 +346,7 @@ export default function HomePage() {
           <div className="grid gap-10 lg:grid-cols-5">
             {/* Left: features (3 cols) */}
             <div className="lg:col-span-3">
-              <p className="text-xs font-bold uppercase tracking-[0.2em] text-accent-500">Why Choose Bhat Overseas?</p>
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-accent-500">{t("home.whyChoose.label")}</p>
               <h2 className="mt-2 heading-2">
                 {t("why.headline1")}<br />
                 <span className="text-brand-700">{t("why.headline2")}</span>

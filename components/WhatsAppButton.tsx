@@ -1,8 +1,11 @@
 "use client";
 
+import { useI18n } from "@/lib/i18n";
+
 const phone = process.env.NEXT_PUBLIC_WHATSAPP || "9779764274854";
 
 export default function WhatsAppButton() {
+  const { t } = useI18n();
   const link = `https://wa.me/${phone}?text=${encodeURIComponent(
     "Hello Bhat Overseas, I'm interested in working abroad."
   )}`;
@@ -12,7 +15,7 @@ export default function WhatsAppButton() {
       href={link}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="Chat with us on WhatsApp"
+      aria-label={t("a11y.whatsapp")}
       className="fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg transition hover:scale-105 hover:shadow-xl"
     >
       <svg className="h-7 w-7" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
