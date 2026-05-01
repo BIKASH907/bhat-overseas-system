@@ -68,14 +68,13 @@ export const countryInfo: Record<Country, CountryInfo> = {
     flag: "AT",
     visaTypeKey: "country.austria.visaType",
     salaryRangeKey: "country.austria.salaryRange",
-    sectorKeys: ["sector.factory", "sector.hospitality", "sector.agriculture", "sector.healthcareSupport"],
+    sectorKeys: ["sector.factory", "sector.hospitality", "sector.agriculture"],
     requirementKeys: [
       "req.passport2y",
       "req.age2140",
       "req.basicGermanEnglish",
       "req.medicalFitness",
-      "req.policeClearance",
-      "req.austrianContract"
+      "req.policeClearance"
     ],
     processingTimeKey: "country.austria.processingTime",
     descriptionKey: "country.austria.description"
