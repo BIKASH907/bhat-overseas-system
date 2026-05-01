@@ -18,6 +18,7 @@ const en: Dict = {
   "nav.countries": "Countries",
   "nav.apply": "Apply Now",
   "nav.about": "About",
+  "nav.process": "Process",
   "nav.contact": "Contact",
   "nav.admin": "Admin",
 
@@ -289,6 +290,7 @@ const tr: Dict = {
   "nav.countries": "Ülkeler",
   "nav.apply": "Şimdi Başvur",
   "nav.about": "Hakkımızda",
+  "nav.process": "Süreç",
   "nav.contact": "İletişim",
   "nav.admin": "Yönetici",
 
@@ -541,6 +543,7 @@ const de: Dict = {
   "nav.countries": "Länder",
   "nav.apply": "Jetzt Bewerben",
   "nav.about": "Über Uns",
+  "nav.process": "Prozess",
   "nav.contact": "Kontakt",
   "nav.admin": "Admin",
 
