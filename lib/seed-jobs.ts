@@ -25,7 +25,7 @@ export const seedJobs: Job[] = [];
 export const countryInfo = {
   Turkey: {
     flag: "TR",
-    visaType: "Work Permit / Seasonal Worker Visa",
+    visaType: "Work Permit Visa",
     salaryRange: "From EUR 550 / month",
     sectors: ["Factory", "Hospitality", "Construction", "Agriculture"],
     requirements: [
