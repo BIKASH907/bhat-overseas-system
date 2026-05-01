@@ -351,7 +351,7 @@ const en: Dict = {
   "process.step6.body": "We guide you through travel and onboarding preparation — flight booking, orientation briefing, and on-arrival contacts in your destination country.",
   // Contact page additions
   "contact.workingHours": "Working Hours",
-  "contact.hoursValue": "Sunday – Friday: 10 AM – 6 PM",
+  "contact.hoursValue": "Sunday – Friday: 10 AM – 18 PM",
   "contact.officeNotice": "We encourage all candidates to visit our office or contact us directly for verification before proceeding with any application.",
 };
 
@@ -669,7 +669,7 @@ const tr: Dict = {
   "process.step6.title": "Kalkış Öncesi Destek",
   "process.step6.body": "Seyahat ve göreve başlama hazırlığı boyunca size rehberlik ediyoruz — uçak rezervasyonu, oryantasyon ve hedef ülkedeki varış kişileri.",
   "contact.workingHours": "Çalışma Saatleri",
-  "contact.hoursValue": "Pazar – Cuma: 10:00 – 18:00",
+  "contact.hoursValue": "Sunday – Friday: 10 AM – 18 PM",
   "contact.officeNotice": "Tüm adayların başvuru yapmadan önce ofisimizi ziyaret etmelerini veya doğrulama için bizimle doğrudan iletişime geçmelerini öneriyoruz.",
 };
 
@@ -987,7 +987,7 @@ const de: Dict = {
   "process.step6.title": "Unterstützung Vor der Abreise",
   "process.step6.body": "Wir begleiten Sie durch Reise- und Einarbeitungsvorbereitung — Flugbuchung, Orientierungsbriefing und Ankunftskontakte im Zielland.",
   "contact.workingHours": "Öffnungszeiten",
-  "contact.hoursValue": "Sonntag – Freitag: 10:00 – 18:00 Uhr",
+  "contact.hoursValue": "Sunday – Friday: 10 AM – 18 PM",
   "contact.officeNotice": "Wir empfehlen allen Kandidaten, vor jeder Bewerbung unser Büro zu besuchen oder uns direkt zur Verifizierung zu kontaktieren.",
 };
 
