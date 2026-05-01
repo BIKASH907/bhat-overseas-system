@@ -267,6 +267,19 @@ const en: Dict = {
   "test.m.quote": "Very professional team. I got my visa on time and good support after arrival.",
   "test.d.role": "Working in Austria",
   "test.d.quote": "Best consultancy in Nepal for Europe jobs. Highly recommended!",
+  // === About page ===
+  "about.estBadge": "📅 Established 2023 · Government-Licensed",
+  "about.leadershipLabel": "Leadership",
+  "about.meetFounder": "Meet Our Founder",
+  "about.founderRole": "Founder & CEO",
+  "about.founderName": "Bikash Bhat",
+  "about.founderBio": "Bikash founded Bhat Overseas in 2023 with a clear mission — build a recruitment agency Nepali workers can actually trust. He personally oversees every screening and verification step, ensuring no candidate is sent abroad without a real interview, transparent contract, and a partner employer Bhat Overseas has worked with directly.",
+  "about.founderQuote": "We do not collect documents from every applicant. Only shortlisted candidates — after interview & screening — are processed. That is our promise to every Nepali worker who comes to us.",
+  // === Jobs page ===
+  "jobs.empty.title": "New Openings Coming Soon",
+  // === Home Why Choose Us heading ===
+  "why.headline1": "We Make Your Dream",
+  "why.headline2": "Come True",
 };
 
 const tr: Dict = {
@@ -509,6 +522,16 @@ const tr: Dict = {
   "test.m.quote": "Çok profesyonel bir ekip. Vizemi zamanında aldım ve varışta da iyi destek gördüm.",
   "test.d.role": "Avusturya'da Çalışıyor",
   "test.d.quote": "Avrupa işleri için Nepal'deki en iyi danışmanlık. Şiddetle tavsiye ederim!",
+  "about.estBadge": "📅 2023 Kuruldu · Devlet Lisanslı",
+  "about.leadershipLabel": "Liderlik",
+  "about.meetFounder": "Kurucumuzla Tanışın",
+  "about.founderRole": "Kurucu ve CEO",
+  "about.founderName": "Bikash Bhat",
+  "about.founderBio": "Bikash, Bhat Overseas'i 2023'te net bir misyonla kurdu — Nepalli işçilerin gerçekten güvenebileceği bir işe alım acentesi inşa etmek. Her tarama ve doğrulama adımını kişisel olarak denetliyor; hiçbir adayın gerçek görüşme, şeffaf sözleşme ve Bhat Overseas'in doğrudan çalıştığı bir ortak işveren olmadan yurt dışına gönderilmemesini sağlıyor.",
+  "about.founderQuote": "Her başvurandan belge toplamıyoruz. Yalnızca görüşme ve tarama sonrası seçilen adaylar işleme alınır. Bu, bize gelen her Nepalli işçiye verdiğimiz sözdür.",
+  "jobs.empty.title": "Yeni İlanlar Yakında",
+  "why.headline1": "Hayalini",
+  "why.headline2": "Gerçek Kılıyoruz",
 };
 
 const de: Dict = {
@@ -751,6 +774,16 @@ const de: Dict = {
   "test.m.quote": "Sehr professionelles Team. Ich habe mein Visum pünktlich erhalten und gute Unterstützung nach der Ankunft.",
   "test.d.role": "Arbeitet in Österreich",
   "test.d.quote": "Beste Beratung in Nepal für Europa-Jobs. Sehr empfehlenswert!",
+  "about.estBadge": "📅 Gegründet 2023 · Staatlich lizenziert",
+  "about.leadershipLabel": "Führung",
+  "about.meetFounder": "Lernen Sie unseren Gründer kennen",
+  "about.founderRole": "Gründer & CEO",
+  "about.founderName": "Bikash Bhat",
+  "about.founderBio": "Bikash gründete Bhat Overseas 2023 mit einer klaren Mission — eine Vermittlungsagentur aufzubauen, der nepalesische Arbeiter wirklich vertrauen können. Er überwacht persönlich jeden Prüf- und Verifizierungsschritt und stellt sicher, dass kein Kandidat ohne echtes Interview, transparenten Vertrag und einen Partner-Arbeitgeber, mit dem Bhat Overseas direkt zusammenarbeitet, ins Ausland geschickt wird.",
+  "about.founderQuote": "Wir sammeln keine Dokumente von jedem Bewerber. Nur ausgewählte Kandidaten — nach Interview & Prüfung — werden bearbeitet. Das ist unser Versprechen an jeden nepalesischen Arbeiter, der zu uns kommt.",
+  "jobs.empty.title": "Neue Stellen demnächst",
+  "why.headline1": "Wir machen Ihren Traum",
+  "why.headline2": "wahr",
 };
 
 export const translations: Record<Lang, Dict> = { en, tr, de };

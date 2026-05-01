@@ -348,8 +348,8 @@ export default function HomePage() {
             <div className="lg:col-span-3">
               <p className="text-xs font-bold uppercase tracking-[0.2em] text-accent-500">Why Choose Bhat Overseas?</p>
               <h2 className="mt-2 heading-2">
-                We Make Your Dream<br />
-                <span className="text-brand-700">Come True</span>
+                {t("why.headline1")}<br />
+                <span className="text-brand-700">{t("why.headline2")}</span>
               </h2>
               <div className="mt-2 h-1 w-16 rounded-full bg-accent-500" />
 

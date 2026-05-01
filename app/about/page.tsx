@@ -18,7 +18,7 @@ export default function AboutPage() {
       <section className="section">
         <div className="mx-auto max-w-4xl container-px">
           <span className="inline-flex items-center gap-2 rounded-full bg-brand-50 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-brand-700 ring-1 ring-brand-100">
-            📅 Established 2023 · Government-Licensed
+            {t("about.estBadge")}
           </span>
           <p className="lead mt-5">{t("about.intro")}</p>
 
@@ -38,8 +38,8 @@ export default function AboutPage() {
           {/* ====== FOUNDER & CEO ====== */}
           <div className="mt-16">
             <div className="text-center">
-              <p className="text-xs font-bold uppercase tracking-[0.2em] text-accent-500">Leadership</p>
-              <h2 className="mt-2 heading-3">Meet Our Founder</h2>
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-accent-500">{t("about.leadershipLabel")}</p>
+              <h2 className="mt-2 heading-3">{t("about.meetFounder")}</h2>
               <div className="mx-auto mt-2 h-1 w-16 rounded-full bg-accent-500" />
             </div>
 
@@ -58,22 +58,16 @@ export default function AboutPage() {
               {/* Bio */}
               <div>
                 <span className="inline-flex items-center gap-1.5 rounded-full bg-brand-700 px-3 py-1 text-xs font-bold uppercase tracking-wider text-white">
-                  Founder &amp; CEO
+                  {t("about.founderRole")}
                 </span>
                 <h3 className="mt-3 text-2xl font-extrabold text-slate-900 sm:text-3xl">
-                  Bikash Bhat
+                  {t("about.founderName")}
                 </h3>
                 <p className="mt-4 text-base leading-relaxed text-slate-700">
-                  Bikash founded Bhat Overseas in 2023 with a clear mission — build a recruitment
-                  agency Nepali workers can actually trust. He personally oversees every screening
-                  and verification step, ensuring no candidate is sent abroad without a real
-                  interview, transparent contract, and a partner employer Bhat Overseas has worked
-                  with directly.
+                  {t("about.founderBio")}
                 </p>
                 <blockquote className="mt-5 border-l-4 border-accent-500 pl-4 italic text-slate-700">
-                  &ldquo;We do not collect documents from every applicant. Only shortlisted
-                  candidates — after interview &amp; screening — are processed. That&rsquo;s our
-                  promise to every Nepali worker who comes to us.&rdquo;
+                  &ldquo;{t("about.founderQuote")}&rdquo;
                 </blockquote>
               </div>
             </div>

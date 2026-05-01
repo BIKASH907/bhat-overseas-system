@@ -54,9 +54,9 @@ export default function JobsPage() {
                   onChange={(e) => setCountry(e.target.value)}
                 >
                   <option value="All">{t("common.allCountries")}</option>
-                  <option value="Turkey">Turkey</option>
-                  <option value="Romania">Romania</option>
-                  <option value="Austria">Austria</option>
+                  <option value="Turkey">{t("apply.country.turkey")}</option>
+                  <option value="Romania">{t("apply.country.romania")}</option>
+                  <option value="Austria">{t("apply.country.austria")}</option>
                 </select>
               </div>
               <div>
@@ -108,7 +108,7 @@ export default function JobsPage() {
                 <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-brand-100 text-3xl">
                   📋
                 </div>
-                <h2 className="mt-6 heading-3">New Openings Coming Soon</h2>
+                <h2 className="mt-6 heading-3">{t("jobs.empty.title")}</h2>
                 <p className="mx-auto mt-3 max-w-xl text-slate-600">
                   We are currently verifying fresh openings with our partner employers in Turkey, Romania, and Austria.
                   Submit your application now and we'll match you as soon as the next opportunity opens.
