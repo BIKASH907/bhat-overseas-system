@@ -113,70 +113,97 @@ export default function HomePage() {
 
         {/* Foreground content */}
         <div className="relative mx-auto max-w-7xl container-px py-20 lg:py-28">
-          <div className="max-w-xl text-white">
+          <div className="max-w-2xl text-white">
             <span
               className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-semibold ring-1 ring-white/30 backdrop-blur sm:text-sm"
               style={{ background: "rgba(255,255,255,0.15)" }}
             >
-              {t("hero.badge")}
+              {t("hero.licensedBadge")}
             </span>
 
             <h1
               className="mt-6 font-extrabold tracking-tight"
-              style={{ fontSize: "clamp(2.25rem, 5vw, 3.5rem)", lineHeight: 1.05, textShadow: "0 2px 12px rgba(0,0,0,0.25)" }}
+              style={{ fontSize: "clamp(1.875rem, 4.2vw, 3rem)", lineHeight: 1.1, textShadow: "0 2px 12px rgba(0,0,0,0.3)" }}
             >
-              {t("hero.headline1")}
-              <br />
-              {t("hero.headline2a")}<span style={{ color: "#FFAB5C" }}>{t("hero.headline2b")}</span>
+              {t("hero.headlineNew")}
             </h1>
 
             <p
-              className="mt-5 max-w-lg text-base sm:text-lg"
-              style={{ color: "#E5EAF5", lineHeight: 1.6, textShadow: "0 1px 6px rgba(0,0,0,0.2)" }}
+              className="mt-5 max-w-xl text-base sm:text-lg"
+              style={{ color: "#E5EAF5", lineHeight: 1.6, textShadow: "0 1px 6px rgba(0,0,0,0.25)" }}
             >
-              {t("hero.subtext")}
+              {t("hero.subheadNew")}
             </p>
 
-            {/* Feature pills with glass effect */}
-            <div className="mt-7 flex flex-wrap gap-x-6 gap-y-4">
+            {/* 4 Trust points — checkmark style */}
+            <div className="mt-7 grid gap-3 sm:grid-cols-2">
               {[
-                { icon: "💰", label: t("feature.salary"), sub: t("feature.salary.value") },
-                { icon: "🛡️", label: t("feature.legal"), sub: t("feature.legal.value") },
-                { icon: "⚡", label: t("feature.fast"), sub: t("feature.fast.value") }
-              ].map((f, i) => (
-                <div key={i} className="flex items-center gap-2.5">
-                  <div
-                    className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full ring-1 ring-white/30 backdrop-blur"
-                    style={{ background: "rgba(255,255,255,0.15)" }}
+                t("hero.trust1"),
+                t("hero.trust2"),
+                t("hero.trust3"),
+                t("hero.trust4")
+              ].map((label, i) => (
+                <div key={i} className="flex items-start gap-2.5">
+                  <span
+                    className="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full text-[11px] font-bold"
+                    style={{ background: "#FF6B00", color: "white" }}
                   >
-                    <span className="text-xl">{f.icon}</span>
-                  </div>
-                  <div>
-                    <div className="text-sm font-bold leading-tight text-white">{f.label}</div>
-                    <div className="mt-0.5 text-xs text-blue-100">{f.sub}</div>
-                  </div>
+                    ✓
+                  </span>
+                  <span className="text-sm font-semibold text-white sm:text-base" style={{ textShadow: "0 1px 4px rgba(0,0,0,0.3)" }}>
+                    {label}
+                  </span>
                 </div>
               ))}
             </div>
 
             {/* Buttons */}
-            <div className="mt-9 flex flex-wrap gap-4">
+            <div className="mt-8 flex flex-wrap gap-4">
               <Link
                 href="/apply"
                 className="inline-flex items-center justify-center gap-2 rounded-[10px] px-7 py-3.5 text-sm font-bold uppercase tracking-wide text-white shadow-lg transition hover:-translate-y-0.5 hover:shadow-xl"
                 style={{ background: "#FF6B00", boxShadow: "0 10px 30px rgba(255, 107, 0, 0.35)" }}
               >
-                {t("btn.applyNow")}
+                {t("hero.cta.apply")}
                 <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
               </Link>
-              <Link
-                href="/jobs"
-                className="inline-flex items-center justify-center gap-2 rounded-[10px] border-2 border-white/60 bg-white/10 px-7 py-3.5 text-sm font-bold uppercase tracking-wide text-white backdrop-blur transition hover:bg-white hover:text-brand-800"
+              <a
+                href="https://wa.me/9779764274854?text=Hello%20Bhat%20Overseas%2C%20I%27m%20interested%20in%20working%20abroad."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 rounded-[10px] border-2 border-white/60 bg-white/10 px-7 py-3.5 text-sm font-bold uppercase tracking-wide text-white backdrop-blur transition hover:bg-white hover:text-emerald-700"
               >
-                {t("btn.viewJobs")}
-                <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20 6h-4V4c0-1.1-.9-2-2-2h-4c-1.1 0-2 .9-2 2v2H4c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zM10 4h4v2h-4V4z" /></svg>
-              </Link>
+                <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.52 3.48A11.93 11.93 0 0012.01 0C5.39 0 0 5.39 0 12.01a11.93 11.93 0 001.61 6L0 24l6.18-1.62a11.94 11.94 0 005.83 1.49h.01c6.62 0 12-5.39 12-12.01a11.93 11.93 0 00-3.5-8.38zM17.39 14.45c-.29-.15-1.74-.86-2.01-.95-.27-.1-.47-.15-.66.15-.2.29-.76.95-.93 1.15-.17.2-.34.22-.63.07-.29-.15-1.23-.45-2.34-1.45-.86-.77-1.45-1.72-1.62-2.01-.17-.29-.02-.45.13-.6.13-.13.29-.34.43-.51.15-.17.2-.29.29-.49.1-.2.05-.37-.02-.51-.07-.15-.66-1.6-.91-2.19-.24-.58-.49-.5-.66-.51l-.56-.01c-.2 0-.51.07-.78.37-.27.29-1.03 1-1.03 2.45 0 1.45 1.06 2.85 1.21 3.05.15.2 2.09 3.19 5.06 4.47.71.31 1.26.49 1.69.62.71.22 1.36.19 1.87.12.57-.08 1.74-.71 1.99-1.4.25-.69.25-1.28.17-1.4-.07-.12-.27-.2-.56-.34z"/></svg>
+                {t("hero.cta.whatsapp")}
+              </a>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ====== TRUST BAR — credibility signals right after hero ====== */}
+      <section className="border-b border-slate-200 bg-white">
+        <div className="mx-auto max-w-7xl container-px py-8 sm:py-10">
+          <div className="text-center">
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-accent-500">{t("trustbar.label")}</p>
+          </div>
+          <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              { icon: "🛡️", title: t("trustbar.govLicense"), desc: t("trustbar.govLicenseDesc") },
+              { icon: "🏢", title: t("trustbar.registered"), desc: t("trustbar.registeredDesc") },
+              { icon: "🤝", title: t("trustbar.partners"), desc: t("trustbar.partnersDesc") },
+              { icon: "🌍", title: t("trustbar.countries"), desc: t("trustbar.countriesDesc") }
+            ].map((b, i) => (
+              <div key={i} className="flex items-center gap-4 rounded-xl border border-slate-200 bg-white p-4 shadow-sm transition hover:border-brand-300 hover:shadow-md">
+                <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg bg-brand-50 text-2xl ring-1 ring-brand-100">
+                  {b.icon}
+                </div>
+                <div className="min-w-0">
+                  <div className="text-sm font-bold text-slate-900">{b.title}</div>
+                  <div className="mt-0.5 truncate text-xs text-slate-500">{b.desc}</div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -340,6 +367,62 @@ export default function HomePage() {
         </section>
       )}
 
+      {/* ====== HOW IT WORKS — 5-step home summary ====== */}
+      <section className="section bg-slate-50">
+        <div className="mx-auto max-w-7xl container-px">
+          <div className="text-center">
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-accent-500">{t("hiw.label")}</p>
+            <h2 className="mt-2 heading-2">{t("hiw.title")}</h2>
+            <div className="mx-auto mt-2 h-1 w-16 rounded-full bg-accent-500" />
+            <p className="mx-auto mt-4 max-w-2xl text-slate-600">{t("hiw.subtitle")}</p>
+          </div>
+
+          {/* Step cards */}
+          <div className="mt-12 grid gap-4 md:grid-cols-3 lg:grid-cols-5">
+            {[
+              { n: 1, icon: "📝", titleKey: "hiw.s1.title", bodyKey: "hiw.s1.body", color: "from-brand-500 to-brand-700" },
+              { n: 2, icon: "🔍", titleKey: "hiw.s2.title", bodyKey: "hiw.s2.body", color: "from-cyan-500 to-blue-600" },
+              { n: 3, icon: "💬", titleKey: "hiw.s3.title", bodyKey: "hiw.s3.body", color: "from-amber-500 to-orange-600" },
+              { n: 4, icon: "📄", titleKey: "hiw.s4.title", bodyKey: "hiw.s4.body", color: "from-emerald-500 to-teal-600" },
+              { n: 5, icon: "✈️", titleKey: "hiw.s5.title", bodyKey: "hiw.s5.body", color: "from-indigo-500 to-purple-600" }
+            ].map((s) => (
+              <article
+                key={s.n}
+                className="relative rounded-2xl bg-white p-5 shadow-sm ring-1 ring-slate-200 transition hover:-translate-y-1 hover:shadow-md"
+              >
+                <div className={`flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br ${s.color} text-2xl text-white shadow-md`}>
+                  {s.icon}
+                </div>
+                <div className="mt-4 text-xs font-bold uppercase tracking-wider text-slate-400">
+                  {t("process.step")} {s.n}
+                </div>
+                <h3 className="mt-1 text-base font-bold text-slate-900">{t(s.titleKey)}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-slate-600">{t(s.bodyKey)}</p>
+              </article>
+            ))}
+          </div>
+
+          {/* Important notice */}
+          <div className="mt-10 overflow-hidden rounded-2xl border-2 border-amber-300 bg-amber-50">
+            <div className="flex flex-col gap-4 p-6 sm:flex-row sm:items-center">
+              <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-amber-200 text-2xl">
+                ⚠️
+              </div>
+              <div className="flex-1">
+                <div className="text-xs font-bold uppercase tracking-wider text-amber-800">{t("hiw.notice.label")}</div>
+                <p className="mt-1 text-base font-semibold text-amber-900">{t("hiw.notice.text")}</p>
+              </div>
+              <Link
+                href="/process"
+                className="inline-flex flex-shrink-0 items-center justify-center gap-2 rounded-lg border-2 border-amber-700 px-4 py-2 text-sm font-bold text-amber-900 transition hover:bg-amber-700 hover:text-white"
+              >
+                {t("hiw.cta")} →
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ====== WHY CHOOSE US + JOURNEY CTA ====== */}
       <section className="section">
         <div className="mx-auto max-w-7xl container-px">
@@ -480,48 +563,61 @@ export default function HomePage() {
             <h2 className="mt-2 heading-2">{t("test.title1")}<br />{t("test.title2")}</h2>
             <div className="mx-auto mt-2 h-1 w-16 rounded-full bg-accent-500" />
           </div>
-
-          <div className="mt-12 grid gap-6 md:grid-cols-3">
-            {[
-              {
-                name: "Suresh Tamang",
-                roleKey: "test.s.role",
-                quoteKey: "test.s.quote",
-                initial: "S",
-                color: "from-blue-500 to-brand-700"
-              },
-              {
-                name: "Maya Gurung",
-                roleKey: "test.m.role",
-                quoteKey: "test.m.quote",
-                initial: "M",
-                color: "from-pink-500 to-purple-600"
-              },
-              {
-                name: "Dipak Karki",
-                roleKey: "test.d.role",
-                quoteKey: "test.d.quote",
-                initial: "D",
-                color: "from-emerald-500 to-teal-600"
-              }
-            ].map((tst) => (
-              <article key={tst.name} className="rounded-2xl bg-white p-7 shadow-sm transition hover:shadow-lg">
-                <div className="flex items-center gap-4">
-                  <div className={`flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br ${tst.color} text-xl font-bold text-white shadow-md`}>
-                    {tst.initial}
-                  </div>
-                  <div>
-                    <div className="font-bold text-slate-900">{tst.name}</div>
-                    <div className="text-xs text-slate-500">{t(tst.roleKey)}</div>
-                   </div>
-                </div>
-                <p className="mt-5 text-sm leading-relaxed text-slate-700">&ldquo;{t(tst.quoteKey)}&rdquo;</p>
-                <div className="mt-4 text-amber-500">★★★★★</div>
-              </article>
-            ))}
-          </div>
         </div>
       </section>)}
+
+      {/* ====== STRONG FINAL CTA ====== */}
+      <section className="relative overflow-hidden">
+        <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, #0A3D91 0%, #06296A 60%, #0A3D91 100%)" }} />
+        <div
+          className="absolute inset-0 opacity-20"
+          style={{
+            backgroundImage: "radial-gradient(circle at 20% 30%, white 1px, transparent 1px), radial-gradient(circle at 80% 70%, white 1px, transparent 1px)",
+            backgroundSize: "60px 60px"
+          }}
+          aria-hidden
+        />
+        <div className="absolute -right-20 top-1/2 -translate-y-1/2 h-80 w-80 rounded-full bg-accent-500/20 blur-3xl" aria-hidden />
+
+        <div className="relative mx-auto max-w-7xl container-px py-16 sm:py-20 text-white text-center">
+          <p className="text-xs font-bold uppercase tracking-[0.2em] text-accent-300">{t("finalCta.label")}</p>
+          <h2 className="mx-auto mt-3 max-w-3xl text-3xl font-extrabold leading-tight sm:text-5xl">
+            {t("finalCta.title")}
+          </h2>
+          <p className="mx-auto mt-5 max-w-2xl text-base text-blue-100 sm:text-lg">
+            {t("finalCta.subtitle")}
+          </p>
+
+          <div className="mx-auto mt-8 flex max-w-2xl flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm">
+            {[t("finalCta.point1"), t("finalCta.point2"), t("finalCta.point3")].map((p, i) => (
+              <div key={i} className="flex items-center gap-2 font-semibold text-white">
+                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-accent-500 text-xs">✓</span>
+                {p}
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-10 flex flex-wrap justify-center gap-4">
+            <Link
+              href="/apply"
+              className="inline-flex items-center justify-center gap-2 rounded-[10px] px-7 py-4 text-sm font-bold uppercase tracking-wide text-white shadow-xl transition hover:-translate-y-0.5"
+              style={{ background: "#FF6B00", boxShadow: "0 12px 35px rgba(255, 107, 0, 0.45)" }}
+            >
+              {t("finalCta.apply")}
+              <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+            </Link>
+            <a
+              href="https://wa.me/9779764274854?text=Hello%20Bhat%20Overseas%2C%20I%27m%20interested%20in%20working%20abroad."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 rounded-[10px] border-2 border-white/60 bg-white/10 px-7 py-4 text-sm font-bold uppercase tracking-wide text-white backdrop-blur transition hover:bg-white hover:text-emerald-700"
+            >
+              <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.52 3.48A11.93 11.93 0 0012.01 0C5.39 0 0 5.39 0 12.01a11.93 11.93 0 001.61 6L0 24l6.18-1.62a11.94 11.94 0 005.83 1.49h.01c6.62 0 12-5.39 12-12.01a11.93 11.93 0 00-3.5-8.38zM17.39 14.45c-.29-.15-1.74-.86-2.01-.95-.27-.1-.47-.15-.66.15-.2.29-.76.95-.93 1.15-.17.2-.34.22-.63.07-.29-.15-1.23-.45-2.34-1.45-.86-.77-1.45-1.72-1.62-2.01-.17-.29-.02-.45.13-.6.13-.13.29-.34.43-.51.15-.17.2-.29.29-.49.1-.2.05-.37-.02-.51-.07-.15-.66-1.6-.91-2.19-.24-.58-.49-.5-.66-.51l-.56-.01c-.2 0-.51.07-.78.37-.27.29-1.03 1-1.03 2.45 0 1.45 1.06 2.85 1.21 3.05.15.2 2.09 3.19 5.06 4.47.71.31 1.26.49 1.69.62.71.22 1.36.19 1.87.12.57-.08 1.74-.71 1.99-1.4.25-.69.25-1.28.17-1.4-.07-.12-.27-.2-.56-.34z"/></svg>
+              {t("finalCta.whatsapp")}
+            </a>
+          </div>
+        </div>
+      </section>
 
       {/* ====== STATS BAR ====== */}
       <section className="bg-gradient-to-r from-brand-800 via-brand-900 to-brand-800 text-white">
@@ -545,6 +641,7 @@ export default function HomePage() {
             ))}
           </div>
         </div>
-      </section>    </>
+      </section>
+    </>
   );
 }

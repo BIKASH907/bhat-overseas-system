@@ -94,6 +94,25 @@ export default function ContactPage() {
               </div>
             </div>
 
+            <div className="card">
+              <div className="flex items-start gap-4">
+                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-amber-50 text-2xl">🕐</div>
+                <div>
+                  <div className="font-semibold text-slate-900">{t("contact.workingHours")}</div>
+                  <div className="mt-1 text-slate-700">{t("contact.hoursValue")}</div>
+                </div>
+              </div>
+            </div>
+
+            <div className="rounded-xl border-2 border-brand-200 bg-brand-50 p-5">
+              <div className="flex items-start gap-3">
+                <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-brand-100 text-xl">🛡️</div>
+                <p className="text-sm font-medium leading-relaxed text-brand-900">
+                  {t("contact.officeNotice")}
+                </p>
+              </div>
+            </div>
+
             <div className="overflow-hidden rounded-xl border border-slate-200">
               <iframe
                 title="Bhat Overseas office location"

@@ -4,11 +4,12 @@ import Link from "next/link";
 import { useI18n } from "@/lib/i18n";
 
 const stepKeys = [
-  { n: 1, titleKey: "process.step1.title", bodyKey: "process.step1.body", icon: "🔍", color: "from-brand-500 to-brand-700" },
-  { n: 2, titleKey: "process.step2.title", bodyKey: "process.step2.body", icon: "💬", color: "from-cyan-500 to-blue-600" },
-  { n: 3, titleKey: "process.step3.title", bodyKey: "process.step3.body", icon: "📄", color: "from-amber-500 to-orange-600", highlight: true },
-  { n: 4, titleKey: "process.step4.title", bodyKey: "process.step4.body", icon: "🛂", color: "from-emerald-500 to-teal-600" },
-  { n: 5, titleKey: "process.step5.title", bodyKey: "process.step5.body", icon: "✈️", color: "from-indigo-500 to-purple-600" }
+  { n: 1, titleKey: "process.step1.title", bodyKey: "process.step1.body", icon: "📝", color: "from-brand-500 to-brand-700" },
+  { n: 2, titleKey: "process.step2.title", bodyKey: "process.step2.body", icon: "🔍", color: "from-cyan-500 to-blue-600" },
+  { n: 3, titleKey: "process.step3.title", bodyKey: "process.step3.body", icon: "💬", color: "from-amber-500 to-orange-600", highlight: true },
+  { n: 4, titleKey: "process.step4.title", bodyKey: "process.step4.body", icon: "📄", color: "from-emerald-500 to-teal-600" },
+  { n: 5, titleKey: "process.step5.title", bodyKey: "process.step5.body", icon: "🛂", color: "from-indigo-500 to-purple-600" },
+  { n: 6, titleKey: "process.step6.title", bodyKey: "process.step6.body", icon: "✈️", color: "from-pink-500 to-rose-600" }
 ];
 
 export default function ProcessPage() {

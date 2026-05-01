@@ -20,7 +20,14 @@ export default function AboutPage() {
           <span className="inline-flex items-center gap-2 rounded-full bg-brand-50 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-brand-700 ring-1 ring-brand-100">
             {t("about.estBadge")}
           </span>
-          <p className="lead mt-5">{t("about.intro")}</p>
+          <p className="lead mt-5">{t("about.intro1")}</p>
+          <p className="mt-4 text-lg leading-relaxed text-slate-700">{t("about.intro2")}</p>
+          <p className="mt-4 text-lg font-semibold leading-relaxed text-brand-800">{t("about.missionStatement")}</p>
+          <p className="mt-4 text-base leading-relaxed text-slate-700">{t("about.processNote")}</p>
+          <p className="mt-4 text-base leading-relaxed text-slate-700">{t("about.network")}</p>
+          <p className="mt-4 rounded-xl border-l-4 border-accent-500 bg-amber-50 p-5 text-base font-semibold italic leading-relaxed text-slate-800">
+            {t("about.commitment")}
+          </p>
 
           <div className="mt-12 grid gap-8 md:grid-cols-2">
             <div className="card">
