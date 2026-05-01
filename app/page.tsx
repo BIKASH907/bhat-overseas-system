@@ -13,21 +13,21 @@ const countries = [
     flag: "🇹🇷",
     code: "TR",
     image: "https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?auto=format&fit=crop&w=900&q=70",
-    benefits: ["Seasonal & Full-time Jobs", "High Demand for Workers", "Easy Process"]
+    benefitKeys: ["country.benefit1", "country.benefit2", "country.benefit3"]
   },
   {
     name: "Romania",
     flag: "🇷🇴",
     code: "RO",
     image: "/romania.png",
-    benefits: ["Work Permit Visa", "Good Salary & Benefits", "Multiple Job Sectors"]
+    benefitKeys: ["country.ro1", "country.ro2", "country.ro3"]
   },
   {
     name: "Austria",
     flag: "🇦🇹",
     code: "AT",
     image: "https://images.unsplash.com/photo-1516550893923-42d28e5677af?auto=format&fit=crop&w=900&q=70",
-    benefits: ["Seasonal Jobs", "Attractive Salary", "Schengen Country"]
+    benefitKeys: ["country.at1", "country.at2", "country.at3"]
   }
 ];
 
@@ -134,34 +134,31 @@ export default function HomePage() {
               className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-semibold ring-1 ring-white/30 backdrop-blur sm:text-sm"
               style={{ background: "rgba(255,255,255,0.15)" }}
             >
-              🏆 Trusted Recruitment Partner for Nepali Workers
+              {t("hero.badge")}
             </span>
 
             <h1
               className="mt-6 font-extrabold tracking-tight"
               style={{ fontSize: "clamp(2.25rem, 5vw, 3.5rem)", lineHeight: 1.05, textShadow: "0 2px 12px rgba(0,0,0,0.25)" }}
             >
-              Work Abroad.
+              {t("hero.headline1")}
               <br />
-              Build a <span style={{ color: "#FFAB5C" }}>Better Life.</span>
+              {t("hero.headline2a")}<span style={{ color: "#FFAB5C" }}>{t("hero.headline2b")}</span>
             </h1>
 
             <p
               className="mt-5 max-w-lg text-base sm:text-lg"
               style={{ color: "#E5EAF5", lineHeight: 1.6, textShadow: "0 1px 6px rgba(0,0,0,0.2)" }}
             >
-              Government-licensed recruitment for Nepali workers in{" "}
-              <strong className="text-white">Turkey, Romania &amp; Austria</strong>. We{" "}
-              <strong className="text-white">screen, verify, and interview</strong> every candidate
-              before submission to employers — no shortcuts, no false promises.
+              {t("hero.subtext")}
             </p>
 
             {/* Feature pills with glass effect */}
             <div className="mt-7 flex flex-wrap gap-x-6 gap-y-4">
               {[
-                { icon: "💰", label: "High Salary", sub: "€550 – €1,500" },
-                { icon: "🛡️", label: "100% Legal", sub: "Govt. Licensed" },
-                { icon: "⚡", label: "Fast Process", sub: "2 – 3 Months" }
+                { icon: "💰", label: t("feature.salary"), sub: t("feature.salary.value") },
+                { icon: "🛡️", label: t("feature.legal"), sub: t("feature.legal.value") },
+                { icon: "⚡", label: t("feature.fast"), sub: t("feature.fast.value") }
               ].map((f, i) => (
                 <div key={i} className="flex items-center gap-2.5">
                   <div
@@ -185,14 +182,14 @@ export default function HomePage() {
                 className="inline-flex items-center justify-center gap-2 rounded-[10px] px-7 py-3.5 text-sm font-bold uppercase tracking-wide text-white shadow-lg transition hover:-translate-y-0.5 hover:shadow-xl"
                 style={{ background: "#FF6B00", boxShadow: "0 10px 30px rgba(255, 107, 0, 0.35)" }}
               >
-                Apply Now
+                {t("btn.applyNow")}
                 <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
               </Link>
               <Link
                 href="/jobs"
                 className="inline-flex items-center justify-center gap-2 rounded-[10px] border-2 border-white/60 bg-white/10 px-7 py-3.5 text-sm font-bold uppercase tracking-wide text-white backdrop-blur transition hover:bg-white hover:text-brand-800"
               >
-                View Jobs
+                {t("btn.viewJobs")}
                 <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20 6h-4V4c0-1.1-.9-2-2-2h-4c-1.1 0-2 .9-2 2v2H4c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zM10 4h4v2h-4V4z" /></svg>
               </Link>
             </div>
@@ -210,21 +207,20 @@ export default function HomePage() {
               </div>
               <div>
                 <div className="text-xs font-bold uppercase tracking-[0.2em] text-amber-700">
-                  Ethical Recruitment Policy
+                  {t("ethical.label")}
                 </div>
                 <p className="mt-2 text-base font-semibold text-slate-900 sm:text-lg">
-                  We do <span className="text-amber-700">NOT</span> collect documents from every applicant.
-                  Only shortlisted candidates — after interview &amp; screening — are processed.
+                  {t("ethical.text1")}
                 </p>
                 <p className="mt-1 text-sm text-slate-600">
-                  No upfront paperwork. No false promises. A safe recruitment journey for every Nepali worker.
+                  {t("ethical.text2")}
                 </p>
               </div>
               <Link
                 href="/process"
                 className="inline-flex flex-shrink-0 items-center justify-center gap-2 rounded-lg border-2 border-brand-700 px-5 py-2.5 text-sm font-bold text-brand-700 transition hover:bg-brand-700 hover:text-white"
               >
-                See Our Process →
+                {t("ethical.cta")} →
               </Link>
             </div>
           </div>
@@ -236,12 +232,12 @@ export default function HomePage() {
         <div className="mx-auto max-w-7xl container-px">
           <div className="flex flex-wrap items-end justify-between gap-4">
             <div>
-              <p className="text-xs font-bold uppercase tracking-[0.2em] text-accent-500">Popular Destinations</p>
-              <h2 className="mt-2 heading-2">Countries We Serve</h2>
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-accent-500">{t("countries.popular")}</p>
+              <h2 className="mt-2 heading-2">{t("countries.title2")}</h2>
               <div className="mt-2 h-1 w-16 rounded-full bg-accent-500" />
             </div>
             <Link href="/countries" className="inline-flex items-center gap-2 rounded-lg border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-brand-700 hover:text-brand-700">
-              VIEW ALL COUNTRIES
+              {t("countries.viewAll").toUpperCase()}
               <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2A10 10 0 002 12a10 10 0 0010 10 10 10 0 0010-10A10 10 0 0012 2zm0 18a8 8 0 110-16 8 8 0 010 16zm-1-13l5 5-5 5v-3H7v-4h4z" /></svg>
             </Link>
           </div>
@@ -298,10 +294,10 @@ export default function HomePage() {
                 <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
                   <h3 className="text-3xl font-extrabold uppercase tracking-tight">{c.name}</h3>
                   <ul className="mt-4 space-y-1.5 text-sm">
-                    {c.benefits.map((b) => (
-                      <li key={b} className="flex items-center gap-2">
+                    {c.benefitKeys.map((bk) => (
+                      <li key={bk} className="flex items-center gap-2">
                         <span className="flex h-4 w-4 items-center justify-center rounded-full bg-accent-500 text-[10px] font-bold">✓</span>
-                        {b}
+                        {t(bk)}
                       </li>
                     ))}
                   </ul>
@@ -321,12 +317,12 @@ export default function HomePage() {
           <div className="mx-auto max-w-7xl container-px">
             <div className="flex flex-wrap items-end justify-between gap-4">
               <div>
-                <p className="text-xs font-bold uppercase tracking-[0.2em] text-accent-500">Featured Jobs</p>
-                <h2 className="mt-2 heading-2">Latest Job Opportunities</h2>
+                <p className="text-xs font-bold uppercase tracking-[0.2em] text-accent-500">{t("comingSoon.label")}</p>
+                <h2 className="mt-2 heading-2">{t("comingSoon.title")}</h2>
                 <div className="mt-2 h-1 w-16 rounded-full bg-accent-500" />
               </div>
               <Link href="/jobs" className="inline-flex items-center gap-2 rounded-lg border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-brand-700 hover:text-brand-700">
-                VIEW ALL JOBS
+                {t("comingSoon.viewAll").toUpperCase()}
               </Link>
             </div>
 
@@ -340,21 +336,20 @@ export default function HomePage() {
           <div className="mx-auto max-w-7xl container-px">
             <div className="flex flex-wrap items-end justify-between gap-4">
               <div>
-                <p className="text-xs font-bold uppercase tracking-[0.2em] text-accent-500">Featured Jobs</p>
-                <h2 className="mt-2 heading-2">Latest Job Opportunities</h2>
+                <p className="text-xs font-bold uppercase tracking-[0.2em] text-accent-500">{t("comingSoon.label")}</p>
+                <h2 className="mt-2 heading-2">{t("comingSoon.title")}</h2>
                 <div className="mt-2 h-1 w-16 rounded-full bg-accent-500" />
               </div>
             </div>
             <div className="mt-8 rounded-2xl border-2 border-dashed border-brand-200 bg-white px-8 py-12 text-center sm:px-16">
               <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-brand-100 text-3xl">📋</div>
-              <h3 className="mt-6 heading-3">New Openings Coming Soon</h3>
+              <h3 className="mt-6 heading-3">{t("comingSoon.empty.title")}</h3>
               <p className="mx-auto mt-3 max-w-xl text-slate-600">
-                We are currently verifying fresh openings with our partner employers in Turkey, Romania, and Austria.
-                Apply now and we'll match you with the right opportunity as soon as it opens.
+                {t("comingSoon.empty.body")}
               </p>
               <div className="mt-7 flex flex-wrap justify-center gap-4">
-                <Link href="/apply" className="btn-accent">Apply Now →</Link>
-                <Link href="/contact" className="btn-outline">Contact Us</Link>
+                <Link href="/apply" className="btn-accent">{t("btn.applyNow")} →</Link>
+                <Link href="/contact" className="btn-outline">{t("btn.contactUs")}</Link>
               </div>
             </div>
           </div>
@@ -425,26 +420,26 @@ export default function HomePage() {
         <div className="relative mx-auto max-w-7xl container-px">
           <div className="text-center">
             <span className="inline-flex items-center gap-2 rounded-full bg-brand-700 px-4 py-1.5 text-sm font-semibold text-white shadow-sm">
-              🤝 Verified Partnerships
+              🤝 {t("partners.label")}
             </span>
-            <h2 className="mt-5 heading-2">Our Trusted Partner Employers</h2>
+            <h2 className="mt-5 heading-2">{t("partners.title")}</h2>
             <p className="mx-auto mt-3 max-w-2xl text-slate-600">
-              Bhat Overseas works <strong className="text-slate-900">directly</strong> with these verified employers across our destination countries — no middlemen, no surprises.
+              {t("partners.body")}
             </p>
           </div>
 
           <div className="mx-auto mt-10 grid max-w-3xl grid-cols-3 gap-4 sm:gap-8">
             <div className="rounded-xl border border-slate-200 bg-white p-5 text-center shadow-sm">
               <div className="text-3xl font-extrabold text-brand-700 sm:text-4xl">{featuredPartners.length}+</div>
-              <div className="mt-1 text-xs font-medium uppercase tracking-wider text-slate-500">Verified Employers</div>
+              <div className="mt-1 text-xs font-medium uppercase tracking-wider text-slate-500">{t("partners.statEmp")}</div>
             </div>
             <div className="rounded-xl border border-slate-200 bg-white p-5 text-center shadow-sm">
               <div className="text-3xl font-extrabold text-brand-700 sm:text-4xl">3</div>
-              <div className="mt-1 text-xs font-medium uppercase tracking-wider text-slate-500">Countries</div>
+              <div className="mt-1 text-xs font-medium uppercase tracking-wider text-slate-500">{t("partners.statCountries")}</div>
             </div>
             <div className="rounded-xl border border-slate-200 bg-white p-5 text-center shadow-sm">
               <div className="text-3xl font-extrabold text-brand-700 sm:text-4xl">100%</div>
-              <div className="mt-1 text-xs font-medium uppercase tracking-wider text-slate-500">Direct Contracts</div>
+              <div className="mt-1 text-xs font-medium uppercase tracking-wider text-slate-500">{t("partners.statContracts")}</div>
             </div>
           </div>
 
@@ -460,7 +455,7 @@ export default function HomePage() {
               >
                 {p.featured && (
                   <span className="absolute right-3 top-3 inline-flex items-center gap-1 rounded-full bg-accent-500 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-white">
-                    ★ Featured
+                    ★ {t("partners.featured")}
                   </span>
                 )}
                 <div className="flex items-start gap-3">
@@ -487,7 +482,7 @@ export default function HomePage() {
               href="/countries"
               className="inline-flex items-center gap-2 rounded-lg border-2 border-brand-700 px-5 py-2.5 text-sm font-semibold text-brand-700 transition hover:bg-brand-700 hover:text-white"
             >
-              See full partner details on Countries page →
+              {t("partners.cta")} →
             </Link>
           </div>
         </div>
@@ -497,8 +492,8 @@ export default function HomePage() {
       <section className="section bg-slate-50">
         <div className="mx-auto max-w-7xl container-px">
           <div className="text-center">
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-accent-500">What Our Clients Say</p>
-            <h2 className="mt-2 heading-2">Trusted by Thousands of<br />Happy Workers</h2>
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-accent-500">{t("test.label")}</p>
+            <h2 className="mt-2 heading-2">{t("test.title1")}<br />{t("test.title2")}</h2>
             <div className="mx-auto mt-2 h-1 w-16 rounded-full bg-accent-500" />
           </div>
 
@@ -548,14 +543,19 @@ export default function HomePage() {
       <section className="bg-gradient-to-r from-brand-800 via-brand-900 to-brand-800 text-white">
         <div className="mx-auto max-w-7xl container-px py-12">
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            {bigStats.map((s, i) => (
+            {[
+              { valueKey: "stat.since", labelKey: "stat.since.label", icon: "📅" },
+              { valueKey: "stat.placed", labelKey: "stat.placed.label", icon: "👥" },
+              { valueKey: "stat.employers", labelKey: "stat.employers.label", icon: "🤝" },
+              { valueKey: "stat.countries", labelKey: "stat.countries.label", icon: "🌍" }
+            ].map((s, i) => (
               <div key={i} className="flex items-center gap-4">
                 <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-xl bg-white/10 ring-1 ring-white/20">
-                  <span className="text-2xl">{["📅", "👥", "🤝", "🌍"][i]}</span>
+                  <span className="text-2xl">{s.icon}</span>
                 </div>
                 <div>
-                  <div className="text-3xl font-extrabold leading-none">{s.value}</div>
-                  <div className="mt-1 text-sm font-medium text-blue-200">{s.label}</div>
+                  <div className="text-3xl font-extrabold leading-none">{t(s.valueKey)}</div>
+                  <div className="mt-1 text-sm font-medium text-blue-200">{t(s.labelKey)}</div>
                 </div>
               </div>
             ))}
