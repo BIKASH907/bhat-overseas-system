@@ -49,13 +49,14 @@ export default function Header() {
           ))}
         </nav>
 
-        <div className="flex items-center gap-3">
-          <div className="hidden sm:flex items-center rounded-lg border border-slate-200 bg-slate-50 p-1">
+        <div className="flex items-center gap-2 sm:gap-3">
+          {/* Language toggle — ALWAYS visible (in header on mobile and desktop) */}
+          <div className="flex items-center rounded-lg border border-slate-200 bg-slate-50 p-0.5 sm:p-1">
             {LANGS.map((l) => (
               <button
                 key={l.code}
                 onClick={() => setLang(l.code as Lang)}
-                className={`rounded px-2.5 py-1 text-xs font-semibold transition ${
+                className={`rounded px-2 py-1 text-[11px] font-semibold transition sm:px-2.5 sm:text-xs ${
                   lang === l.code
                     ? "bg-brand-700 text-white"
                     : "text-slate-600 hover:text-slate-900"
@@ -101,21 +102,7 @@ export default function Header() {
             >
               {t("nav.apply")}
             </Link>
-            <div className="mt-4 flex items-center gap-2">
-              {LANGS.map((l) => (
-                <button
-                  key={l.code}
-                  onClick={() => setLang(l.code as Lang)}
-                  className={`rounded px-3 py-1.5 text-xs font-semibold transition ${
-                    lang === l.code
-                      ? "bg-brand-700 text-white"
-                      : "border border-slate-200 text-slate-600"
-                  }`}
-                >
-                  {l.label}
-                </button>
-              ))}
-            </div>
+            {/* Language toggle removed from mobile menu — it's now in the always-visible header */}
           </nav>
         </div>
       )}
