@@ -61,7 +61,7 @@ export default function AboutPage() {
                     <img
                       src="/bikash.jpg"
                       alt="Bikash Bhat — Founder & CEO of Bhat Overseas"
-                      className="relative h-36 w-36 rounded-full bg-white object-contain p-1 shadow-xl ring-4 ring-white sm:h-44 sm:w-44"
+                      className="relative h-36 w-36 rounded-full object-cover shadow-xl ring-4 ring-white sm:h-44 sm:w-44"
                     />
                   </div>
                   <h3 className="mt-5 text-xl font-extrabold text-slate-900 sm:text-2xl">
@@ -90,7 +90,7 @@ export default function AboutPage() {
                     <img
                       src="/Ebubekir.png"
                       alt="Ebubekir Güneş — Türkiye Representative of Bhat Overseas"
-                      className="relative h-36 w-36 rounded-full bg-white object-contain p-1 shadow-xl ring-4 ring-white sm:h-44 sm:w-44"
+                      className="relative h-36 w-36 rounded-full object-cover shadow-xl ring-4 ring-white sm:h-44 sm:w-44"
                     />
                   </div>
                   <h3 className="mt-5 text-xl font-extrabold text-slate-900 sm:text-2xl">
