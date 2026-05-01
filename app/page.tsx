@@ -488,8 +488,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ====== TESTIMONIALS ====== */}
-      <section className="section bg-slate-50">
+      {/* ====== TESTIMONIALS ====== — Hidden until real worker testimonials are collected. To re-enable, change `false` to `true` below. */}
+      {false && (<section className="section bg-slate-50">
         <div className="mx-auto max-w-7xl container-px">
           <div className="text-center">
             <p className="text-xs font-bold uppercase tracking-[0.2em] text-accent-500">{t("test.label")}</p>
@@ -537,7 +537,7 @@ export default function HomePage() {
             ))}
           </div>
         </div>
-      </section>
+      </section>)}
 
       {/* ====== STATS BAR ====== */}
       <section className="bg-gradient-to-r from-brand-800 via-brand-900 to-brand-800 text-white">

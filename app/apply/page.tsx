@@ -85,7 +85,7 @@ function ApplyForm() {
           >
             {prefilledJob && (
               <div className="mb-6 rounded-lg bg-brand-50 px-4 py-3 text-sm text-brand-800">
-                Applying for: <span className="font-semibold">{prefilledJob}</span>
+                {t("apply.applyingFor")}: <span className="font-semibold">{prefilledJob}</span>
                 <input type="hidden" name="jobId" value={prefilledJob} />
               </div>
             )}
@@ -93,32 +93,32 @@ function ApplyForm() {
             <div className="grid gap-5 sm:grid-cols-2">
               <div className="sm:col-span-2">
                 <label htmlFor="fullName" className="label">{t("apply.fullName")} *</label>
-                <input id="fullName" name="fullName" required className="input" placeholder="Ram Bahadur Thapa" />
+                <input id="fullName" name="fullName" required className="input" placeholder={t("apply.placeholder.fullName")} />
               </div>
 
               <div>
                 <label htmlFor="passportNumber" className="label">{t("apply.passport")} *</label>
-                <input id="passportNumber" name="passportNumber" required className="input" placeholder="N1234567" />
+                <input id="passportNumber" name="passportNumber" required className="input" placeholder={t("apply.placeholder.passport")} />
               </div>
 
               <div>
                 <label htmlFor="phone" className="label">{t("apply.phone")} *</label>
-                <input id="phone" name="phone" required type="tel" className="input" placeholder="+977 98XXXXXXXX" />
+                <input id="phone" name="phone" required type="tel" className="input" placeholder={t("apply.placeholder.phone")} />
               </div>
 
               <div className="sm:col-span-2">
                 <label htmlFor="email" className="label">{t("apply.email")}</label>
-                <input id="email" name="email" type="email" className="input" placeholder="you@example.com" />
+                <input id="email" name="email" type="email" className="input" placeholder={t("apply.placeholder.email")} />
               </div>
 
               <div className="sm:col-span-2">
                 <label htmlFor="preferredCountry" className="label">{t("apply.preferredCountry")} *</label>
                 <select id="preferredCountry" name="preferredCountry" required className="input">
-                  <option value="">— Select —</option>
-                  <option value="Turkey">Turkey</option>
-                  <option value="Romania">Romania</option>
-                  <option value="Austria">Austria</option>
-                  <option value="Any">Any</option>
+                  <option value="">{t("apply.select")}</option>
+                  <option value="Turkey">{t("apply.country.turkey")}</option>
+                  <option value="Romania">{t("apply.country.romania")}</option>
+                  <option value="Austria">{t("apply.country.austria")}</option>
+                  <option value="Any">{t("apply.country.any")}</option>
                 </select>
               </div>
 
