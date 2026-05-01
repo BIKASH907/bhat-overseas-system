@@ -22,7 +22,7 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-40 bg-white/95 shadow-sm backdrop-blur">
       <TopBar />
-      <div className="mx-auto flex max-w-7xl items-center justify-between container-px py-4">
+      <div className="mx-auto flex max-w-7xl items-center justify-between container-px py-2">
         <Link
           href="/"
           className="group flex items-center transition"
@@ -32,7 +32,7 @@ export default function Header() {
           <img
             src="/logo.png"
             alt="Bhat Overseas — Building Bridges, Empowering Nations"
-            className="h-24 w-auto transition duration-300 group-hover:scale-110 sm:h-28 lg:h-32"
+            className="h-14 w-auto transition duration-300 group-hover:scale-110 sm:h-16 lg:h-20"
             style={{ filter: "drop-shadow(0 4px 12px rgba(10, 61, 145, 0.15))" }}
           />
         </Link>
