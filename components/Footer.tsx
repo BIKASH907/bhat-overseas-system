@@ -32,7 +32,7 @@ export default function Footer() {
               <img
                 src="/logo.png"
                 alt="Bhat Overseas"
-                className="h-28 w-auto transition duration-300 group-hover:scale-110 sm:h-32 lg:h-40"
+                className="h-14 w-auto transition duration-300 group-hover:scale-110 sm:h-16 lg:h-20"
                 style={{ filter: "drop-shadow(0 6px 16px rgba(10, 61, 145, 0.18))" }}
               />
             </Link>
