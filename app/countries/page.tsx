@@ -250,8 +250,6 @@ export default function CountriesPage() {
   );
 }
 
-f
-
 function StatCell({ icon, label, value, accent }: { icon: string; label: string; value: string; accent?: boolean }) {
   return (
     <div className="rounded-xl border border-slate-200 bg-white p-4 transition hover:border-brand-300 hover:shadow-sm">
