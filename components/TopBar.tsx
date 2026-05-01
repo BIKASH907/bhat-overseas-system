@@ -1,11 +1,9 @@
 "use client";
 
-// Slim utility bar shown above the main navbar — only on larger screens.
-// Pulls real contact details from env with sensible defaults.
+import { useI18n } from "@/lib/i18n";
 
 const license = process.env.NEXT_PUBLIC_LICENSE || "186/061/062";
 const email = process.env.NEXT_PUBLIC_EMAIL || "bhatoverseas36@gmail.com";
-const hours = process.env.NEXT_PUBLIC_HOURS || "Sun – Fri (10:00 AM – 6:00 PM)";
 
 const socials = [
   { name: "Facebook", href: "https://facebook.com", path: "M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z" },
@@ -15,13 +13,14 @@ const socials = [
 ];
 
 export default function TopBar() {
+  const { t } = useI18n();
   return (
     <div className="hidden lg:block bg-brand-900 text-white">
       <div className="mx-auto max-w-7xl container-px py-1.5 flex items-center justify-between text-xs">
         <div className="flex items-center gap-6">
           <span className="flex items-center gap-2">
             <svg className="h-4 w-4 text-accent-500" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg>
-            <span>Govt. Lic No.: <strong className="font-semibold">{license}</strong></span>
+            <span>{t("topbar.license")}: <strong className="font-semibold">{license}</strong></span>
           </span>
           <a href={`mailto:${email}`} className="flex items-center gap-2 transition hover:text-accent-500">
             <svg className="h-4 w-4 text-accent-500" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
@@ -29,23 +28,14 @@ export default function TopBar() {
           </a>
           <span className="flex items-center gap-2">
             <svg className="h-4 w-4 text-accent-500" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm5 11h-6V6h2v5h4z"/></svg>
-            <span>{hours}</span>
+            <span>{t("topbar.hours")}</span>
           </span>
         </div>
-
         <div className="flex items-center gap-2">
           {socials.map((s) => (
-            <a
-              key={s.name}
-              href={s.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={s.name}
-              className="flex h-7 w-7 items-center justify-center rounded-full transition hover:bg-white/10 hover:text-accent-500"
-            >
-              <svg className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="currentColor">
-                <path d={s.path} />
-              </svg>
+            <a key={s.name} href={s.href} target="_blank" rel="noopener noreferrer" aria-label={s.name}
+              className="flex h-7 w-7 items-center justify-center rounded-full transition hover:bg-white/10 hover:text-accent-500">
+              <svg className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="currentColor"><path d={s.path} /></svg>
             </a>
           ))}
         </div>

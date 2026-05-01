@@ -37,11 +37,11 @@ export default function Footer() {
               />
             </Link>
             <p className="mt-4 text-sm font-bold italic" style={{ color: "#FF6B00" }}>
-              Building Bridges, Empowering Nations
+              {t("footer.builtBridges")}
             </p>
             <p className="mt-3 text-sm leading-relaxed text-slate-600">{t("footer.tagline")}</p>
             <p className="mt-3 rounded-lg border border-emerald-200 bg-emerald-50 px-3 py-2 text-xs font-medium leading-relaxed text-emerald-800">
-              ✓ A trusted and ethical manpower company ensuring safe recruitment for Nepali workers.
+              {t("footer.trustLine")}
             </p>
             <p className="mt-3 text-xs text-slate-500">{t("footer.disclaimer")}</p>
           </div>

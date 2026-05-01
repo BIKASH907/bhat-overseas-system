@@ -69,11 +69,10 @@ function ApplyForm() {
               </div>
               <div>
                 <div className="text-sm font-bold uppercase tracking-wider text-amber-800">
-                  Important Notice — Document Policy
+                  {t("apply.docNotice.label")}
                 </div>
                 <p className="mt-1.5 text-sm font-semibold text-amber-900">
-                  We do NOT collect original documents at this initial stage. Only candidates
-                  selected after interview &amp; screening are asked to submit documents.
+                  {t("apply.docNotice.text")}
                 </p>
               </div>
             </div>

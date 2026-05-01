@@ -77,11 +77,11 @@ const bigStats = [
 ];
 
 // Why-choose-us features
-const whyFeatures = [
-  { icon: "🛡️", title: "Govt. Licensed", body: "Authorized Recruitment Agency" },
-  { icon: "💰", title: "No Hidden Charge", body: "Transparent Process and Fees" },
-  { icon: "👥", title: "End-to-End Support", body: "From Application to Departure" },
-  { icon: "🎯", title: "Visa Success Rate", body: "High Visa Success Record" }
+const whyFeatureKeys = [
+  { icon: "🛡️", titleKey: "why.licensed", bodyKey: "why.licensed.body" },
+  { icon: "💰", titleKey: "why.noHidden", bodyKey: "why.noHidden.body" },
+  { icon: "👥", titleKey: "why.support", bodyKey: "why.support.body" },
+  { icon: "🎯", titleKey: "why.success", bodyKey: "why.success.body" }
 ];
 
 export default function HomePage() {
@@ -392,10 +392,10 @@ export default function HomePage() {
               <div className="relative">
                 <div className="text-5xl">🧳</div>
                 <h3 className="mt-4 text-2xl font-extrabold leading-tight">
-                  Ready to Start Your Journey?
+                  {t("homeCta.ready")}
                 </h3>
                 <p className="mt-3 text-blue-100">
-                  Apply now and our team will guide you at every step — from paperwork to airport.
+                  {t("homeCta.body")}
                 </p>
                 <Link
                   href="/apply"
@@ -501,22 +501,22 @@ export default function HomePage() {
             {[
               {
                 name: "Suresh Tamang",
-                role: "Working in Turkey",
-                quote: "Bhat Overseas helped me get a great job in Turkey. The process was smooth and easy.",
+                roleKey: "test.s.role",
+                quoteKey: "test.s.quote",
                 initial: "S",
                 color: "from-blue-500 to-brand-700"
               },
               {
                 name: "Maya Gurung",
-                role: "Working in Romania",
-                quote: "Very professional team. I got my visa on time and good support after arrival.",
+                roleKey: "test.m.role",
+                quoteKey: "test.m.quote",
                 initial: "M",
                 color: "from-pink-500 to-purple-600"
               },
               {
                 name: "Dipak Karki",
-                role: "Working in Austria",
-                quote: "Best consultancy in Nepal for Europe jobs. Highly recommended!",
+                roleKey: "test.d.role",
+                quoteKey: "test.d.quote",
                 initial: "D",
                 color: "from-emerald-500 to-teal-600"
               }
@@ -528,10 +528,10 @@ export default function HomePage() {
                   </div>
                   <div>
                     <div className="font-bold text-slate-900">{tst.name}</div>
-                    <div className="text-xs text-slate-500">{tst.role}</div>
+                    <div className="text-xs text-slate-500">{t(tst.roleKey)}</div>
                    </div>
                 </div>
-                <p className="mt-5 text-sm leading-relaxed text-slate-700">&ldquo;{tst.quote}&rdquo;</p>
+                <p className="mt-5 text-sm leading-relaxed text-slate-700">&ldquo;{t(tst.quoteKey)}&rdquo;</p>
                 <div className="mt-4 text-amber-500">★★★★★</div>
               </article>
             ))}
