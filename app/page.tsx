@@ -60,22 +60,6 @@ const featuredPartners: PartnerCard[] = [
   { name: "Prime Link Human Capital", countryFlag: "🇷🇴", countryName: "Romania", sector: "Recruitment Partner", icon: "🤝", featured: true }
 ];
 
-// Trust bar — 4 items shown as a white floating card under the hero
-const trustItems = [
-  { iconBg: "bg-brand-50", iconColor: "text-brand-700", icon: "🛡️", title: "Govt. Licensed", subtitle: "Authorized Recruitment Agency" },
-  { iconBg: "bg-emerald-50", iconColor: "text-emerald-700", icon: "👥", title: "16+ Partners", subtitle: "Verified EU Employers" },
-  { iconBg: "bg-amber-50", iconColor: "text-amber-700", icon: "🔍", title: "Screened & Verified", subtitle: "Every CV is Checked" },
-  { iconBg: "bg-rose-50", iconColor: "text-rose-700", icon: "🎧", title: "Full Support", subtitle: "From Application to Deployment" }
-];
-
-// Stats — bottom strip of the home page
-const bigStats = [
-  { value: "Since 2023", label: "Recruiting Nepali Talent" },
-  { value: "1,000+", label: "Workers Placed" },
-  { value: "16+", label: "Verified Employers" },
-  { value: "3", label: "Countries Served" }
-];
-
 // Why-choose-us features
 const whyFeatureKeys = [
   { icon: "🛡️", titleKey: "why.licensed", bodyKey: "why.licensed.body" },
@@ -370,14 +354,14 @@ export default function HomePage() {
               <div className="mt-2 h-1 w-16 rounded-full bg-accent-500" />
 
               <div className="mt-10 grid gap-6 sm:grid-cols-2">
-                {whyFeatures.map((f) => (
-                  <div key={f.title} className="flex items-start gap-4">
+                {whyFeatureKeys.map((f) => (
+                  <div key={f.titleKey} className="flex items-start gap-4">
                     <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-brand-50 text-2xl ring-1 ring-brand-100">
                       {f.icon}
                     </div>
                     <div>
-                      <h3 className="font-bold text-slate-900">{f.title}</h3>
-                      <p className="mt-1 text-sm text-slate-600">{f.body}</p>
+                      <h3 className="font-bold text-slate-900">{t(f.titleKey)}</h3>
+                      <p className="mt-1 text-sm text-slate-600">{t(f.bodyKey)}</p>
                     </div>
                   </div>
                 ))}
