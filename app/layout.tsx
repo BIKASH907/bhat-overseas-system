@@ -27,10 +27,34 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Bhat Overseas — Work Abroad Opportunities for Nepali Workers",
     description:
-      "Trusted recruitment for Turkey, Romania & Austria. Apply in under 2 minutes.",
+      "Government-licensed Nepali recruitment agency. Trusted placement in Turkey, Romania & Austria. License No. 186/061/062. Apply in under 2 minutes.",
     url: siteUrl,
     siteName: "Bhat Overseas",
-    type: "website"
+    type: "website",
+    locale: "en_US",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Bhat Overseas — Work Abroad Opportunities in Turkey, Romania & Austria"
+      }
+    ]
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Bhat Overseas — Work Abroad Opportunities for Nepali Workers",
+    description:
+      "Government-licensed Nepali recruitment agency. Trusted placement in Turkey, Romania & Austria.",
+    images: ["/og-image.png"]
+  },
+  icons: {
+    icon: "/logo.png",
+    shortcut: "/logo.png",
+    apple: "/logo.png"
+  },
+  alternates: {
+    canonical: siteUrl
   },
   robots: { index: true, follow: true }
 };
