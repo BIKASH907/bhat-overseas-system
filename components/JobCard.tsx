@@ -4,10 +4,11 @@ import Link from "next/link";
 import { Job } from "@/lib/seed-jobs";
 import { useI18n } from "@/lib/i18n";
 
-const flagEmoji: Record<string, string> = {
-  Turkey: "🇹🇷",
-  Romania: "🇷🇴",
-  Austria: "🇦🇹"
+// Real flag images from flagcdn.com — Windows browsers don't render flag emojis.
+const flagUrl: Record<string, string> = {
+  Turkey: "https://flagcdn.com/w80/tr.png",
+  Romania: "https://flagcdn.com/w80/ro.png",
+  Austria: "https://flagcdn.com/w80/at.png"
 };
 
 export default function JobCard({ job }: { job: Job }) {
@@ -16,7 +17,13 @@ export default function JobCard({ job }: { job: Job }) {
     <article className="card flex flex-col">
       <div className="mb-3 flex items-center justify-between">
         <span className="inline-flex items-center gap-1.5 rounded-full bg-brand-50 px-3 py-1 text-xs font-semibold text-brand-700">
-          <span>{flagEmoji[job.country] || "🏳️"}</span> {job.country}
+          {flagUrl[job.country] ? (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img src={flagUrl[job.country]} alt={`${job.country} flag`} className="h-3 w-4 rounded-sm object-cover ring-1 ring-slate-200" />
+          ) : (
+            <span>🏳️</span>
+          )}
+          {job.country}
         </span>
         <span
           className={`inline-flex rounded-full px-2.5 py-0.5 text-xs font-semibold ${

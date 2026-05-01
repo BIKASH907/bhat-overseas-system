@@ -6,21 +6,24 @@ import { useI18n } from "@/lib/i18n";
 
 const order: Array<keyof typeof countryInfo> = ["Turkey", "Romania", "Austria"];
 
-const meta: Record<string, { flag: string; image: string; gradient: string; taglineKey: string }> = {
+// Real flag images from flagcdn.com (already allowlisted in next.config.js).
+// Using real images instead of emoji flags because Windows browsers refuse
+// to render flag emojis and show the 2-letter country code instead.
+const meta: Record<string, { flagUrl: string; image: string; gradient: string; taglineKey: string }> = {
   Turkey: {
-    flag: "🇹🇷",
+    flagUrl: "https://flagcdn.com/w160/tr.png",
     image: "https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?auto=format&fit=crop&w=1200&q=70",
     gradient: "from-red-600 via-red-700 to-red-900",
     taglineKey: "countriesPage.tagline.turkey"
   },
   Romania: {
-    flag: "🇷🇴",
+    flagUrl: "https://flagcdn.com/w160/ro.png",
     image: "/romania.png",
     gradient: "from-blue-700 via-amber-500 to-red-700",
     taglineKey: "countriesPage.tagline.romania"
   },
   Austria: {
-    flag: "🇦🇹",
+    flagUrl: "https://flagcdn.com/w160/at.png",
     image: "https://images.unsplash.com/photo-1516550893923-42d28e5677af?auto=format&fit=crop&w=1200&q=70",
     gradient: "from-red-700 via-white to-red-700",
     taglineKey: "countriesPage.tagline.austria"
@@ -82,7 +85,8 @@ export default function CountriesPage() {
                 href={`#${c.toLowerCase()}`}
                 className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm font-semibold ring-1 ring-white/30 backdrop-blur transition hover:bg-white hover:text-brand-800"
               >
-                <span>{meta[c].flag}</span> {c}
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={meta[c].flagUrl} alt={c} className="h-4 w-6 rounded-sm object-cover ring-1 ring-white/30" /> {c}
               </a>
             ))}
           </div>
@@ -130,8 +134,9 @@ export default function CountriesPage() {
                   {/* Country header content */}
                   <div className="relative flex h-full items-end p-6 sm:p-8">
                     <div className="flex items-center gap-4 text-white">
-                      <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-white/95 text-4xl shadow-xl">
-                        {m.flag}
+                      <div className="flex h-16 w-16 items-center justify-center overflow-hidden rounded-2xl bg-white/95 shadow-xl">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img src={m.flagUrl} alt={`${c} flag`} className="h-full w-full object-cover" />
                       </div>
                       <div>
                         <h2 className="text-3xl font-extrabold uppercase tracking-tight sm:text-4xl">{c}</h2>
@@ -244,6 +249,8 @@ export default function CountriesPage() {
     </>
   );
 }
+
+f
 
 function StatCell({ icon, label, value, accent }: { icon: string; label: string; value: string; accent?: boolean }) {
   return (

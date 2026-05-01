@@ -7,24 +7,25 @@ import { Job, seedJobs } from "@/lib/seed-jobs";
 import JobCard from "@/components/JobCard";
 
 // Country cards on the home page — image background + benefits + CTA
+// Using real flag images from flagcdn.com because Windows browsers don't render flag emojis.
 const countries = [
   {
     name: "Turkey",
-    flag: "🇹🇷",
+    flagUrl: "https://flagcdn.com/w160/tr.png",
     code: "TR",
     image: "https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?auto=format&fit=crop&w=900&q=70",
     benefitKeys: ["country.benefit1", "country.benefit2", "country.benefit3"]
   },
   {
     name: "Romania",
-    flag: "🇷🇴",
+    flagUrl: "https://flagcdn.com/w160/ro.png",
     code: "RO",
     image: "/romania.png",
     benefitKeys: ["country.ro1", "country.ro2", "country.ro3"]
   },
   {
     name: "Austria",
-    flag: "🇦🇹",
+    flagUrl: "https://flagcdn.com/w160/at.png",
     code: "AT",
     image: "https://images.unsplash.com/photo-1516550893923-42d28e5677af?auto=format&fit=crop&w=900&q=70",
     benefitKeys: ["country.at1", "country.at2", "country.at3"]
@@ -43,22 +44,22 @@ type PartnerCard = {
 };
 
 const featuredPartners: PartnerCard[] = [
-  { name: "DOĞA GALVANİZ METAL", countryFlag: "🇹🇷", countryName: "Turkey", sectorKey: "sector.metalConstruction", icon: "🔩" },
-  { name: "BAHA GRUP ORMAN ÜRÜNLERİ", countryFlag: "🇹🇷", countryName: "Turkey", sectorKey: "sector.forestry", icon: "🌲" },
-  { name: "DLN KALIP VE İNŞAAT", countryFlag: "🇹🇷", countryName: "Turkey", sectorKey: "sector.construction", icon: "🏗️" },
-  { name: "MNC PİGMENT", countryFlag: "🇹🇷", countryName: "Turkey", sectorKey: "sector.industrial", icon: "🏭" },
-  { name: "OYTUN YUMURTA YARKA", countryFlag: "🇹🇷", countryName: "Turkey", sectorKey: "sector.agricultureFood", icon: "🌾" },
-  { name: "NUR SEM ELEKTRİK", countryFlag: "🇹🇷", countryName: "Turkey", sectorKey: "sector.electricalTextile", icon: "⚡" },
-  { name: "KÖKSAN PET VE PLASTİK", countryFlag: "🇹🇷", countryName: "Turkey", sectorKey: "sector.packaging", icon: "📦" },
-  { name: "TEKKELİ GIDA", countryFlag: "🇹🇷", countryName: "Turkey", sectorKey: "sector.foodIndustry", icon: "🍞" },
-  { name: "RIOS BEACH OTEL", countryFlag: "🇹🇷", countryName: "Turkey", sectorKey: "sector.hospitalitySeneta", icon: "🏖️", featured: true },
-  { name: "KUTLUSAN KAFES", countryFlag: "🇹🇷", countryName: "Turkey", sectorKey: "sector.agriculture", icon: "🌱" },
-  { name: "AHŞAP URUN SANAYI", countryFlag: "🇹🇷", countryName: "Turkey", sectorKey: "sector.woodProducts", icon: "🪵" },
-  { name: "ALANYA ÖZKAYMAK TURIZM", countryFlag: "🇹🇷", countryName: "Turkey", sectorKey: "sector.tourism", icon: "🌊" },
-  { name: "EMMİDAĞ MERMER", countryFlag: "🇹🇷", countryName: "Turkey", sectorKey: "sector.marbleMining", icon: "⛏️" },
-  { name: "GRANİTSAN MADENCİLİK", countryFlag: "🇹🇷", countryName: "Turkey", sectorKey: "sector.mining", icon: "⛰️" },
-  { name: "CROWNE PLAZA", countryFlag: "🇹🇷", countryName: "Turkey", sectorKey: "sector.hotelMartiTermal", icon: "🏨", featured: true },
-  { name: "Prime Link Human Capital", countryFlag: "🇷🇴", countryName: "Romania", sectorKey: "sector.recruitmentPartner", icon: "🤝", featured: true }
+  { name: "DOĞA GALVANİZ METAL", countryFlag: "https://flagcdn.com/w40/tr.png", countryName: "Turkey", sectorKey: "sector.metalConstruction", icon: "🔩" },
+  { name: "BAHA GRUP ORMAN ÜRÜNLERİ", countryFlag: "https://flagcdn.com/w40/tr.png", countryName: "Turkey", sectorKey: "sector.forestry", icon: "🌲" },
+  { name: "DLN KALIP VE İNŞAAT", countryFlag: "https://flagcdn.com/w40/tr.png", countryName: "Turkey", sectorKey: "sector.construction", icon: "🏗️" },
+  { name: "MNC PİGMENT", countryFlag: "https://flagcdn.com/w40/tr.png", countryName: "Turkey", sectorKey: "sector.industrial", icon: "🏭" },
+  { name: "OYTUN YUMURTA YARKA", countryFlag: "https://flagcdn.com/w40/tr.png", countryName: "Turkey", sectorKey: "sector.agricultureFood", icon: "🌾" },
+  { name: "NUR SEM ELEKTRİK", countryFlag: "https://flagcdn.com/w40/tr.png", countryName: "Turkey", sectorKey: "sector.electricalTextile", icon: "⚡" },
+  { name: "KÖKSAN PET VE PLASTİK", countryFlag: "https://flagcdn.com/w40/tr.png", countryName: "Turkey", sectorKey: "sector.packaging", icon: "📦" },
+  { name: "TEKKELİ GIDA", countryFlag: "https://flagcdn.com/w40/tr.png", countryName: "Turkey", sectorKey: "sector.foodIndustry", icon: "🍞" },
+  { name: "RIOS BEACH OTEL", countryFlag: "https://flagcdn.com/w40/tr.png", countryName: "Turkey", sectorKey: "sector.hospitalitySeneta", icon: "🏖️", featured: true },
+  { name: "KUTLUSAN KAFES", countryFlag: "https://flagcdn.com/w40/tr.png", countryName: "Turkey", sectorKey: "sector.agriculture", icon: "🌱" },
+  { name: "AHŞAP URUN SANAYI", countryFlag: "https://flagcdn.com/w40/tr.png", countryName: "Turkey", sectorKey: "sector.woodProducts", icon: "🪵" },
+  { name: "ALANYA ÖZKAYMAK TURIZM", countryFlag: "https://flagcdn.com/w40/tr.png", countryName: "Turkey", sectorKey: "sector.tourism", icon: "🌊" },
+  { name: "EMMİDAĞ MERMER", countryFlag: "https://flagcdn.com/w40/tr.png", countryName: "Turkey", sectorKey: "sector.marbleMining", icon: "⛏️" },
+  { name: "GRANİTSAN MADENCİLİK", countryFlag: "https://flagcdn.com/w40/tr.png", countryName: "Turkey", sectorKey: "sector.mining", icon: "⛰️" },
+  { name: "CROWNE PLAZA", countryFlag: "https://flagcdn.com/w40/tr.png", countryName: "Turkey", sectorKey: "sector.hotelMartiTermal", icon: "🏨", featured: true },
+  { name: "Prime Link Human Capital", countryFlag: "https://flagcdn.com/w40/ro.png", countryName: "Romania", sectorKey: "sector.recruitmentPartner", icon: "🤝", featured: true }
 ];
 
 // Why-choose-us features
@@ -294,8 +295,9 @@ export default function HomePage() {
 
                 {/* Top: flag + popular */}
                 <div className="relative p-5 flex justify-between items-start">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white/95 text-2xl shadow-md">
-                    {c.flag}
+                  <div className="flex h-12 w-12 items-center justify-center overflow-hidden rounded-xl bg-white/95 shadow-md">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={c.flagUrl} alt={`${c.name} flag`} className="h-full w-full object-cover" />
                   </div>
                   <span className="inline-flex items-center rounded-md bg-accent-500 px-2.5 py-1 text-[11px] font-bold uppercase tracking-wider text-white shadow">
                     {t("home.popular")}
@@ -532,7 +534,8 @@ export default function HomePage() {
                   </div>
                   <div className="min-w-0 flex-1">
                     <div className="flex items-center gap-1.5 text-xs font-medium text-slate-500">
-                      <span>{p.countryFlag}</span>
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img src={p.countryFlag} alt={`${p.countryName} flag`} className="h-3 w-4 rounded-sm object-cover ring-1 ring-slate-200" />
                       <span>{p.countryName}</span>
                     </div>
                     <div className="mt-1 font-bold leading-tight text-slate-900">{p.name}</div>

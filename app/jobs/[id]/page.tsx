@@ -52,7 +52,11 @@ export default function JobDetailPage() {
     );
   }
 
-  const flag: Record<string, string> = { Turkey: "🇹🇷", Romania: "🇷🇴", Austria: "🇦🇹" };
+  const flagUrl: Record<string, string> = {
+    Turkey: "https://flagcdn.com/w80/tr.png",
+    Romania: "https://flagcdn.com/w80/ro.png",
+    Austria: "https://flagcdn.com/w80/at.png"
+  };
 
   return (
     <article className="mx-auto max-w-4xl container-px py-12">
@@ -63,7 +67,11 @@ export default function JobDetailPage() {
       <header className="mt-6">
         <div className="flex flex-wrap gap-2">
           <span className="inline-flex items-center gap-1.5 rounded-full bg-brand-50 px-3 py-1 text-sm font-semibold text-brand-700">
-            {flag[job.country]} {job.country}
+            {flagUrl[job.country] && (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img src={flagUrl[job.country]} alt={`${job.country} flag`} className="h-3.5 w-5 rounded-sm object-cover ring-1 ring-slate-200" />
+            )}
+            {job.country}
           </span>
           <span
             className={`inline-flex rounded-full px-3 py-1 text-sm font-semibold ${
