@@ -104,6 +104,53 @@ export default function ContactPage() {
               </div>
             </div>
 
+            {/* === Turkey representative — local contact in Türkiye === */}
+            <div className="overflow-hidden rounded-xl border-2 border-red-200 bg-gradient-to-br from-red-50 via-white to-red-50 shadow-sm">
+              <div className="border-b border-red-100 bg-white/60 px-5 py-3">
+                <div className="flex items-center gap-2">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src="https://flagcdn.com/w40/tr.png"
+                    alt="Türkiye flag"
+                    className="h-4 w-6 rounded-sm object-cover ring-1 ring-red-200"
+                  />
+                  <div className="text-xs font-bold uppercase tracking-wider text-red-700">
+                    {t("turkeyRep.label")}
+                  </div>
+                </div>
+              </div>
+              <div className="p-5">
+                <div className="flex items-start gap-4">
+                  <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-red-100 text-xl ring-2 ring-red-200">
+                    👤
+                  </div>
+                  <div className="min-w-0 flex-1">
+                    <div className="text-lg font-bold text-slate-900">{t("turkeyRep.name")}</div>
+                    <div className="text-sm text-slate-600">{t("turkeyRep.role")}</div>
+                    <div className="mt-3 grid gap-2">
+                      <a
+                        href="tel:+905342307832"
+                        className="inline-flex items-center gap-2 text-sm font-semibold text-slate-900 transition hover:text-red-700"
+                      >
+                        <span className="text-base">📞</span>
+                        {t("turkeyRep.phone")}
+                      </a>
+                      <a
+                        href="https://wa.me/905342307832"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex w-fit items-center gap-2 rounded-lg bg-emerald-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-emerald-700"
+                      >
+                        <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.52 3.48A11.93 11.93 0 0012.01 0C5.39 0 0 5.39 0 12.01a11.93 11.93 0 001.61 6L0 24l6.18-1.62a11.94 11.94 0 005.83 1.49h.01c6.62 0 12-5.39 12-12.01a11.93 11.93 0 00-3.5-8.38zM17.39 14.45c-.29-.15-1.74-.86-2.01-.95-.27-.1-.47-.15-.66.15-.2.29-.76.95-.93 1.15-.17.2-.34.22-.63.07-.29-.15-1.23-.45-2.34-1.45-.86-.77-1.45-1.72-1.62-2.01-.17-.29-.02-.45.13-.6.13-.13.29-.34.43-.51.15-.17.2-.29.29-.49.1-.2.05-.37-.02-.51-.07-.15-.66-1.6-.91-2.19-.24-.58-.49-.5-.66-.51l-.56-.01c-.2 0-.51.07-.78.37-.27.29-1.03 1-1.03 2.45 0 1.45 1.06 2.85 1.21 3.05.15.2 2.09 3.19 5.06 4.47.71.31 1.26.49 1.69.62.71.22 1.36.19 1.87.12.57-.08 1.74-.71 1.99-1.4.25-.69.25-1.28.17-1.4-.07-.12-.27-.2-.56-.34z"/></svg>
+                        {t("turkeyRep.whatsappCta")}
+                      </a>
+                    </div>
+                    <p className="mt-3 text-xs leading-relaxed text-slate-500">{t("turkeyRep.note")}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <div className="rounded-xl border-2 border-brand-200 bg-brand-50 p-5">
               <div className="flex items-start gap-3">
                 <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-brand-100 text-xl">🛡️</div>

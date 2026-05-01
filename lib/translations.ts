@@ -414,6 +414,15 @@ const en: Dict = {
   "home.viewJobsArrow": "VIEW JOBS →",
   "home.applyNowUpper": "APPLY NOW",
 
+  // === Turkey representative ===
+  "turkeyRep.label": "🇹🇷 Türkiye Representative",
+  "turkeyRep.name": "Ebubekir Güneş",
+  "turkeyRep.role": "Local contact in Türkiye",
+  "turkeyRep.phoneLabel": "Phone",
+  "turkeyRep.phone": "0534 230 78 32",
+  "turkeyRep.whatsappCta": "Chat on WhatsApp",
+  "turkeyRep.note": "Candidates and employers in Türkiye can reach our local representative directly.",
+
 };
 
 const tr: Dict = {
@@ -788,6 +797,15 @@ const tr: Dict = {
   "home.viewJobsArrow": "İŞLERİ GÖR →",
   "home.applyNowUpper": "ŞİMDİ BAŞVUR",
 
+  // === Türkiye temsilcisi ===
+  "turkeyRep.label": "🇹🇷 Türkiye Temsilcisi",
+  "turkeyRep.name": "Ebubekir Güneş",
+  "turkeyRep.role": "Türkiye'deki yerel iletişim noktası",
+  "turkeyRep.phoneLabel": "Telefon",
+  "turkeyRep.phone": "0534 230 78 32",
+  "turkeyRep.whatsappCta": "WhatsApp'tan Yaz",
+  "turkeyRep.note": "Türkiye'deki adaylar ve işverenler yerel temsilcimize doğrudan ulaşabilir.",
+
 };
 
 const de: Dict = {
@@ -1161,6 +1179,15 @@ const de: Dict = {
   "home.popular": "Beliebt",
   "home.viewJobsArrow": "STELLEN ANSEHEN →",
   "home.applyNowUpper": "JETZT BEWERBEN",
+
+  // === Türkei-Vertreter ===
+  "turkeyRep.label": "🇹🇷 Türkei-Vertreter",
+  "turkeyRep.name": "Ebubekir Güneş",
+  "turkeyRep.role": "Lokaler Ansprechpartner in der Türkei",
+  "turkeyRep.phoneLabel": "Telefon",
+  "turkeyRep.phone": "0534 230 78 32",
+  "turkeyRep.whatsappCta": "Auf WhatsApp Schreiben",
+  "turkeyRep.note": "Kandidaten und Arbeitgeber in der Türkei können unseren lokalen Vertreter direkt erreichen.",
 
 };
 
