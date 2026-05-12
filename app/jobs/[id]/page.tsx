@@ -11,7 +11,7 @@ import { jobPostingSchema, breadcrumbSchema } from "@/lib/schema";
 export default function JobDetailPage() {
   const params = useParams<{ id: string }>();
   const id = params?.id;
-  const { t } = useI18n();
+  const { t, lang } = useI18n();
   const [job, setJob] = useState<Job | null>(null);
   const [loading, setLoading] = useState(true);
 
