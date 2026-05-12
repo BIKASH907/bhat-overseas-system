@@ -2,6 +2,8 @@
 
 import Link from "next/link";
 import { useI18n } from "@/lib/i18n";
+import JsonLd from "@/components/JsonLd";
+import { faqPageSchema } from "@/lib/schema";
 
 const stepKeys = [
   { n: 1, titleKey: "process.step1.title", bodyKey: "process.step1.body", icon: "📝", color: "from-brand-500 to-brand-700" },
@@ -13,9 +15,10 @@ const stepKeys = [
 ];
 
 export default function ProcessPage() {
-  const { t } = useI18n();
+  const { t, lang } = useI18n();
   return (
     <>
+      <JsonLd data={faqPageSchema(lang)} />
       <section className="bg-gradient-to-br from-brand-800 to-brand-900 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-7xl container-px">
           <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-xs font-bold uppercase tracking-wider ring-1 ring-white/20">

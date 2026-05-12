@@ -5,6 +5,8 @@ import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Job, seedJobs } from "@/lib/seed-jobs";
 import { useI18n } from "@/lib/i18n";
+import JsonLd from "@/components/JsonLd";
+import { jobPostingSchema, breadcrumbSchema } from "@/lib/schema";
 
 export default function JobDetailPage() {
   const params = useParams<{ id: string }>();
@@ -60,6 +62,11 @@ export default function JobDetailPage() {
 
   return (
     <article className="mx-auto max-w-4xl container-px py-12">
+      <JsonLd data={jobPostingSchema(job, lang)} />
+      <JsonLd data={breadcrumbSchema(lang, [
+        { name: t("nav.home"), url: "/" },
+        { name: t("nav.jobs"), url: "/jobs" }
+      ])} />
       <Link href="/jobs" className="text-sm text-brand-700 hover:underline">
         ← Back to all jobs
       </Link>
