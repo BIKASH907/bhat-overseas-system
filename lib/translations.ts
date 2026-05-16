@@ -433,7 +433,21 @@ const en: Dict = {
   "team.ebubekir.role": "Türkiye Representative",
   "team.ebubekir.location": "Türkiye",
   "team.ebubekir.bio": "Ebubekir is our local representative in Türkiye, coordinating directly with partner employers and supporting candidates on the ground after deployment.",
+  "team.andrey.role": "Thailand Branch Director",
+  "team.andrey.location": "Phuket, Thailand",
+  "team.andrey.bio": "Andrey Chabanov leads our Thailand branch office (Asialink Co., LTD.) in Phuket, expanding Bhat Overseas's reach into Southeast Asia and coordinating with regional employers and partners.",
   "team.contactCta": "Contact",
+
+  // === Thailand branch office ===
+  "branch.thailand.label": "🇹🇭 Thailand Branch Office",
+  "branch.thailand.company": "Asialink Co., LTD.",
+  "branch.thailand.manager": "Andrey Chabanov",
+  "branch.thailand.managerRole": "Branch Director",
+  "branch.thailand.phoneLabel": "Phone",
+  "branch.thailand.phone": "+66 98 324 3687",
+  "branch.thailand.addressLabel": "Address",
+  "branch.thailand.address": "80130, Thailand, Phuket, Soi Palai 16/11",
+  "branch.thailand.note": "Our Thailand branch office, managed by Andrey Chabanov, serves candidates and employers across Southeast Asia.",
 
 };
 
@@ -828,7 +842,21 @@ const tr: Dict = {
   "team.ebubekir.role": "Türkiye Temsilcisi",
   "team.ebubekir.location": "Türkiye",
   "team.ebubekir.bio": "Ebubekir, Türkiye'deki yerel temsilcimizdir; ortak işverenlerle doğrudan koordinasyon kurar ve adaylara yerleştirme sonrası sahada destek olur.",
+  "team.andrey.role": "Tayland Şube Müdürü",
+  "team.andrey.location": "Phuket, Tayland",
+  "team.andrey.bio": "Andrey Chabanov, Phuket'teki Tayland şube ofisimizi (Asialink Co., LTD.) yönetmekte olup Bhat Overseas'ın Güneydoğu Asya'daki erişimini genişletmekte ve bölgesel işverenler ile ortaklarla koordinasyon kurmaktadır.",
   "team.contactCta": "İletişim",
+
+  // === Tayland şube ofisi ===
+  "branch.thailand.label": "🇹🇭 Tayland Şube Ofisi",
+  "branch.thailand.company": "Asialink Co., LTD.",
+  "branch.thailand.manager": "Andrey Chabanov",
+  "branch.thailand.managerRole": "Şube Müdürü",
+  "branch.thailand.phoneLabel": "Telefon",
+  "branch.thailand.phone": "+66 98 324 3687",
+  "branch.thailand.addressLabel": "Adres",
+  "branch.thailand.address": "80130, Tayland, Phuket, Soi Palai 16/11",
+  "branch.thailand.note": "Andrey Chabanov tarafından yönetilen Tayland şube ofisimiz, Güneydoğu Asya'daki adaylara ve işverenlere hizmet vermektedir.",
 
 };
 
@@ -1223,7 +1251,21 @@ const de: Dict = {
   "team.ebubekir.role": "Türkei-Vertreter",
   "team.ebubekir.location": "Türkei",
   "team.ebubekir.bio": "Ebubekir ist unser lokaler Vertreter in der Türkei. Er koordiniert direkt mit Partner-Arbeitgebern und unterstützt Kandidaten vor Ort nach der Vermittlung.",
+  "team.andrey.role": "Niederlassungsleiter Thailand",
+  "team.andrey.location": "Phuket, Thailand",
+  "team.andrey.bio": "Andrey Chabanov leitet unsere thailändische Niederlassung (Asialink Co., LTD.) in Phuket, erweitert die Präsenz von Bhat Overseas in Südostasien und koordiniert mit regionalen Arbeitgebern und Partnern.",
   "team.contactCta": "Kontakt",
+
+  // === Thailand-Niederlassung ===
+  "branch.thailand.label": "🇹🇭 Thailand-Niederlassung",
+  "branch.thailand.company": "Asialink Co., LTD.",
+  "branch.thailand.manager": "Andrey Chabanov",
+  "branch.thailand.managerRole": "Niederlassungsleiter",
+  "branch.thailand.phoneLabel": "Telefon",
+  "branch.thailand.phone": "+66 98 324 3687",
+  "branch.thailand.addressLabel": "Adresse",
+  "branch.thailand.address": "80130, Thailand, Phuket, Soi Palai 16/11",
+  "branch.thailand.note": "Unsere thailändische Niederlassung unter der Leitung von Andrey Chabanov betreut Kandidaten und Arbeitgeber in ganz Südostasien.",
 
 };
 

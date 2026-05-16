@@ -9,3 +9,5 @@ out/
 public/uploads/
 *.pdf
 *.pdf
+tsconfig.tsbuildinfo
+tsconfig.tsbuildinfo
